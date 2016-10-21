@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.ca.com/erwin" xmlns:EM2="http://www.ca.com/erwin/EM2data" xmlns:EMX="http://www.ca.com/erwin/data" xmlns:erwin="http://www.ca.com/erwin">
+  <xs:import namespace="http://www.ca.com/erwin/EM2data" schemaLocation="EM2.xsd"/>
+  <xs:import namespace="http://www.ca.com/erwin/data" schemaLocation="sgoe.xsd"/>
+  <xs:element name="ERwin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Model"/>
+        <xs:element ref="EM2:Model_Proxy_Object"/>
+      </xs:sequence>
+      <xs:attribute name="FileVersion" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="Format" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

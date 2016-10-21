@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified" targetNamespace="http://www.ca.com/erwin/EM2data"
+    xmlns:EM2="http://www.ca.com/erwin/EM2data">
+  <xs:element name="Model_Proxy_Object">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EM2:Model_Proxy_ObjectProps"/>
+        <xs:element ref="EM2:Stored_Display_Proxy_Object_Groups"/>
+        <xs:element ref="EM2:Subject_Area_Proxy_Object_Groups"/>
+        <xs:element ref="EM2:Forward_Engineer_Options_Report_Groups"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Model_Proxy_ObjectProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EM2:Name"/>
+        <xs:element ref="EM2:Long_Id"/>
+        <xs:element ref="EM2:Proxied_Object_Id"/>
+        <xs:element ref="EM2:Current_Subject_Area_Ref"/>
+        <xs:element ref="EM2:Current_Forward_Engineer_Option_Report_Ref"/>
+        <xs:element ref="EM2:Next_Udp_Id"/>
+        <xs:element ref="EM2:Excluded_Abstract_Entity_Ids_Array"/>
+        <xs:element ref="EM2:Next_Name_Id_Entity"/>
+        <xs:element ref="EM2:Next_Name_Id_Relationship"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Current_Subject_Area_Ref" type="xs:string"/>
+  <xs:element name="Current_Forward_Engineer_Option_Report_Ref" type="xs:string"/>
+  <xs:element name="Next_Udp_Id" type="xs:integer"/>
+  <xs:element name="Excluded_Abstract_Entity_Ids_Array">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Next_Name_Id_Entity">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+          <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Next_Name_Id_Relationship">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+          <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Stored_Display_Proxy_Object_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EM2:Stored_Display_Proxy_Object"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Stored_Display_Proxy_Object">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EM2:Stored_Display_Proxy_ObjectProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Stored_Display_Proxy_ObjectProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EM2:Name"/>
+        <xs:element ref="EM2:Long_Id"/>
+        <xs:element ref="EM2:DisplayLevel_Logical"/>
+        <xs:element ref="EM2:DisplayLevel_Physical"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EM2:Display_AK_Logical"/>
+          <xs:element ref="EM2:Display_AK_Physical"/>
+          <xs:element ref="EM2:Display_Cardinality_Logical"/>
+          <xs:element ref="EM2:Display_Cardinality_Physical"/>
+          <xs:element ref="EM2:Display_Data_Type_Logical"/>
+          <xs:element ref="EM2:Display_Data_Type_Physical"/>
+        </xs:sequence>
+        <xs:element ref="EM2:Display_FK_Designator_Physical"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EM2:Display_Not_Null"/>
+          <xs:element ref="EM2:Display_PK_Designator_Logical"/>
+          <xs:element ref="EM2:Display_PK_Designator_Physical"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="EM2:Display_RI_Logical"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EM2:Display_RI_Physical"/>
+          <xs:element ref="EM2:Display_Relation_Name_Logical"/>
+          <xs:element ref="EM2:Display_Relation_Name_Physical"/>
+          <xs:element ref="EM2:Display_Rolenames"/>
+        </xs:sequence>
+        <xs:element ref="EM2:Proxied_Object_Id"/>
+        <xs:element ref="EM2:Shadow_On"/>
+        <xs:element ref="EM2:Shadow_Width"/>
+        <xs:element ref="EM2:Shadow_Height"/>
+        <xs:element minOccurs="0" ref="EM2:Zoom_Level"/>
+        <xs:element ref="EM2:Display_DW_Icons"/>
+        <xs:element minOccurs="0" ref="EM2:Display_View_Column_Expressions"/>
+        <xs:element ref="EM2:Is_Physical_View_Active"/>
+        <xs:element minOccurs="0" ref="EM2:Use_Diagonal_Lines"/>
+        <xs:element ref="EM2:Prohibit_Manual_Entity_Resize"/>
+        <xs:element minOccurs="0" ref="EM2:Display_Attribute_Icons"/>
+        <xs:element minOccurs="0" ref="EM2:Display_Dangling_Rels"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EM2:Display_Entity_Icons"/>
+          <xs:element ref="EM2:Display_Domain_Logical"/>
+        </xs:sequence>
+        <xs:element ref="EM2:Display_FK_Designator_Logical"/>
+        <xs:element ref="EM2:Display_Subcat_Name"/>
+        <xs:element ref="EM2:Display_View_Column_Data_Type"/>
+        <xs:element minOccurs="0" ref="EM2:Display_View_Column_Null_Option"/>
+        <xs:element ref="EM2:Display_View_Relations"/>
+        <xs:element ref="EM2:Display_Views"/>
+        <xs:element ref="EM2:Horizontal_Scroll_Position"/>
+        <xs:element ref="EM2:Show_Migrated_Attributes"/>
+        <xs:element ref="EM2:Vertical_Scroll_Position"/>
+        <xs:element ref="EM2:Zoom_Option_Deprecated"/>
+        <xs:choice minOccurs="0">
+          <xs:element ref="EM2:Show_Page_Grid"/>
+          <xs:sequence>
+            <xs:element ref="EM2:Disallow_Manual_Rel_Layout"/>
+            <xs:element ref="EM2:Align_To_Grid"/>
+            <xs:element ref="EM2:Layout_Grid_Horizontal_Spacing"/>
+            <xs:element ref="EM2:Layout_Grid_Vertical_Spacing"/>
+          </xs:sequence>
+        </xs:choice>
+        <xs:element minOccurs="0" ref="EM2:Display_Domain_Physical"/>
+        <xs:element minOccurs="0" ref="EM2:Display_Subtype_Discriminator_Logical"/>
+        <xs:element ref="EM2:Display_Ungenerated_Relationships"/>
+        <xs:element ref="EM2:Display_Ungenerated_Tables"/>
+        <xs:element ref="EM2:Display_Ungenerated_Views"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayLevel_Logical" type="xs:integer"/>
+  <xs:element name="DisplayLevel_Physical" type="xs:integer"/>
+  <xs:element name="Display_AK_Logical" type="xs:boolean"/>
+  <xs:element name="Display_AK_Physical" type="xs:boolean"/>
+  <xs:element name="Display_Cardinality_Logical" type="xs:boolean"/>
+  <xs:element name="Display_Cardinality_Physical" type="xs:boolean"/>
+  <xs:element name="Display_Data_Type_Logical" type="xs:boolean"/>
+  <xs:element name="Display_Data_Type_Physical" type="xs:boolean"/>
+  <xs:element name="Display_FK_Designator_Physical" type="xs:boolean"/>
+  <xs:element name="Display_Not_Null" type="xs:boolean"/>
+  <xs:element name="Display_PK_Designator_Logical" type="xs:boolean"/>
+  <xs:element name="Display_PK_Designator_Physical" type="xs:boolean"/>
+  <xs:element name="Display_RI_Logical" type="xs:boolean"/>
+  <xs:element name="Display_RI_Physical" type="xs:boolean"/>
+  <xs:element name="Display_Relation_Name_Logical" type="xs:boolean"/>
+  <xs:element name="Display_Relation_Name_Physical" type="xs:boolean"/>
+  <xs:element name="Display_Rolenames" type="xs:boolean"/>
+  <xs:element name="Shadow_On" type="xs:boolean"/>
+  <xs:element name="Shadow_Width" type="xs:integer"/>
+  <xs:element name="Shadow_Height" type="xs:integer"/>
+  <xs:element name="Zoom_Level" type="xs:integer"/>
+  <xs:element name="Display_DW_Icons" type="xs:boolean"/>
+  <xs:element name="Display_View_Column_Expressions" type="xs:boolean"/>
+  <xs:element name="Is_Physical_View_Active" type="xs:boolean"/>
+  <xs:element name="Use_Diagonal_Lines" type="xs:boolean"/>
+  <xs:element name="Prohibit_Manual_Entity_Resize" type="xs:boolean"/>
+  <xs:element name="Display_Attribute_Icons" type="xs:boolean"/>
+  <xs:element name="Display_Dangling_Rels" type="xs:boolean"/>
+  <xs:element name="Display_Entity_Icons" type="xs:boolean"/>
+  <xs:element name="Display_Domain_Logical" type="xs:boolean"/>
+  <xs:element name="Display_FK_Designator_Logical" type="xs:boolean"/>
+  <xs:element name="Display_Subcat_Name" type="xs:integer"/>
+  <xs:element name="Display_View_Column_Data_Type" type="xs:boolean"/>
+  <xs:element name="Display_View_Column_Null_Option" type="xs:boolean"/>
+  <xs:element name="Display_View_Relations" type="xs:boolean"/>
+  <xs:element name="Display_Views" type="xs:boolean"/>
+  <xs:element name="Horizontal_Scroll_Position" type="xs:integer"/>
+  <xs:element name="Show_Migrated_Attributes" type="xs:boolean"/>
+  <xs:element name="Vertical_Scroll_Position" type="xs:integer"/>
+  <xs:element name="Zoom_Option_Deprecated" type="xs:integer"/>
+  <xs:element name="Show_Page_Grid" type="xs:boolean"/>
+  <xs:element name="Disallow_Manual_Rel_Layout" type="xs:boolean"/>
+  <xs:element name="Align_To_Grid" type="xs:boolean"/>
+  <xs:element name="Layout_Grid_Horizontal_Spacing" type="xs:integer"/>
+  <xs:element name="Layout_Grid_Vertical_Spacing" type="xs:integer"/>
+  <xs:element name="Display_Domain_Physical" type="xs:boolean"/>
+  <xs:element name="Display_Subtype_Discriminator_Logical" type="xs:boolean"/>
+  <xs:element name="Display_Ungenerated_Relationships" type="xs:boolean"/>
+  <xs:element name="Display_Ungenerated_Tables" type="xs:boolean"/>
+  <xs:element name="Display_Ungenerated_Views" type="xs:boolean"/>
+  <xs:element name="Subject_Area_Proxy_Object_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EM2:Subject_Area_Proxy_Object"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Subject_Area_Proxy_Object">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EM2:Subject_Area_Proxy_ObjectProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Subject_Area_Proxy_ObjectProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EM2:Name"/>
+        <xs:element ref="EM2:Long_Id"/>
+        <xs:element ref="EM2:Proxied_Object_Id"/>
+        <xs:element ref="EM2:Current_Stored_Display_Ref"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Current_Stored_Display_Ref" type="xs:string"/>
+  <xs:element name="Forward_Engineer_Options_Report_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EM2:Forward_Engineer_Options_Report"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Forward_Engineer_Options_Report">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EM2:Forward_Engineer_Options_ReportProps"/>
+        <xs:element ref="EM2:Forward_Engineer_Options_Set_Groups"/>
+        <xs:element ref="EM2:Forward_Engineer_Owner_Override_Groups"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Forward_Engineer_Options_ReportProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="EM2:Built_In_Id"/>
+        <xs:element ref="EM2:Name"/>
+        <xs:element ref="EM2:Long_Id"/>
+        <xs:element ref="EM2:Forward_Engineer_Template_File_Location"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Built_In_Id" type="xs:integer"/>
+  <xs:element name="Forward_Engineer_Template_File_Location" type="xs:NCName"/>
+  <xs:element name="Forward_Engineer_Options_Set_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EM2:Forward_Engineer_Options_Set"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Forward_Engineer_Options_Set">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EM2:Forward_Engineer_Options_SetProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Forward_Engineer_Options_SetProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EM2:Name"/>
+        <xs:element ref="EM2:Long_Id"/>
+        <xs:element ref="EM2:Report_Option_Set_Enabled"/>
+        <xs:element ref="EM2:Report_Option_Set_Multivalued"/>
+        <xs:element ref="EM2:Report_Option_Set_Option_Deprecated"/>
+        <xs:element ref="EM2:Report_Option_Set_Type"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Report_Option_Set_Enabled" type="xs:boolean"/>
+  <xs:element name="Report_Option_Set_Multivalued" type="xs:boolean"/>
+  <xs:element name="Report_Option_Set_Option_Deprecated" type="xs:integer"/>
+  <xs:element name="Report_Option_Set_Type" type="xs:integer"/>
+  <xs:element name="Forward_Engineer_Owner_Override_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EM2:Forward_Engineer_Owner_Override"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Forward_Engineer_Owner_Override">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EM2:Forward_Engineer_Owner_OverrideProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Forward_Engineer_Owner_OverrideProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EM2:Name"/>
+        <xs:element ref="EM2:Long_Id"/>
+        <xs:element ref="EM2:Object_Typecode"/>
+        <xs:element ref="EM2:Owner_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Object_Typecode" type="xs:string"/>
+  <xs:element name="Owner_Name">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Name" type="xs:string"/>
+  <xs:element name="Long_Id" type="xs:string"/>
+  <xs:element name="Proxied_Object_Id">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,2212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" 
+    targetNamespace="http://www.ca.com/erwin/data"   
+    xmlns:EMX="http://www.ca.com/erwin/data">
+  <xs:element name="Model">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:ModelEnvProps"/>
+        <xs:element ref="EMX:ModelProps"/>
+        <xs:element ref="EMX:Entity_Groups"/>
+        <xs:element ref="EMX:Domain_Groups"/>
+        <xs:element ref="EMX:Oracle_Tablespace_Groups"/>
+        <xs:element ref="EMX:Bitmap_Groups"/>
+        <xs:element ref="EMX:Subject_Area_Groups"/>
+        <xs:element ref="EMX:Relationship_Groups"/>
+        <xs:element ref="EMX:Default_Groups"/>
+        <xs:element ref="EMX:Validation_Rule_Groups"/>
+        <xs:element ref="EMX:Trigger_Template_Groups"/>
+        <xs:element ref="EMX:Default_Trigger_Template_Groups"/>
+        <xs:element ref="EMX:Name_Mapping_Groups"/>
+        <xs:element ref="EMX:Naming_Options_Groups"/>
+        <xs:element ref="EMX:History_Information_Groups"/>
+        <xs:element ref="EMX:Sequence_Groups"/>
+        <xs:element ref="EMX:Font_Groups"/>
+        <xs:element ref="EMX:Default_Fonts_And_Colors_Groups"/>
+        <xs:element ref="EMX:Owner_Override_Groups"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModelEnvProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Locator"/>
+        <xs:element ref="EMX:Disposition"/>
+        <xs:element ref="EMX:Persistence_Unit_Id"/>
+        <xs:element ref="EMX:Model_Type"/>
+        <xs:element ref="EMX:Target_Server"/>
+        <xs:element ref="EMX:Target_Server_Version"/>
+        <xs:element ref="EMX:Target_Server_Minor_Version"/>
+        <xs:element ref="EMX:Active_Model"/>
+        <xs:element ref="EMX:Hidden_Model"/>
+        <xs:element ref="EMX:Storage_Format"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Locator" type="xs:string"/>
+  <xs:element name="Disposition">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Persistence_Unit_Id" type="xs:string"/>
+  <xs:element name="Model_Type" type="xs:integer"/>
+  <xs:element name="Target_Server_Version" type="xs:integer"/>
+  <xs:element name="Target_Server_Minor_Version" type="xs:integer"/>
+  <xs:element name="Active_Model" type="xs:integer"/>
+  <xs:element name="Hidden_Model" type="xs:integer"/>
+  <xs:element name="Storage_Format" type="xs:integer"/>
+  <xs:element name="ModelProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Definition"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Type"/>
+        <xs:element ref="EMX:Parent_Update_Rule"/>
+        <xs:element ref="EMX:Parent_Delete_Rule"/>
+        <xs:element ref="EMX:Parent_Insert_Rule"/>
+        <xs:element ref="EMX:Child_Update_Rule"/>
+        <xs:element ref="EMX:Child_Delete_Rule"/>
+        <xs:element ref="EMX:Child_Insert_Rule"/>
+        <xs:element ref="EMX:Naming_Standards_File_Name"/>
+        <xs:element ref="EMX:Allow_Special_Characters"/>
+        <xs:element ref="EMX:Remove_Vowels_In_Name_Mapping"/>
+        <xs:element ref="EMX:Special_Character_Action_Type"/>
+        <xs:element ref="EMX:Replacement_Character"/>
+        <xs:element ref="EMX:Tracking_History_Objects"/>
+        <xs:element ref="EMX:Tracking_History_Events"/>
+        <xs:element ref="EMX:Author"/>
+        <xs:element ref="EMX:Enforce_Unique_Naming"/>
+        <xs:element ref="EMX:Target_Server"/>
+        <xs:element ref="EMX:Option_Non_Key_Attributes_Not_Null"/>
+        <xs:element ref="EMX:DBMS_Major_Version"/>
+        <xs:element ref="EMX:Logical_Notation_Type"/>
+        <xs:element ref="EMX:Display_Split_Relationship_Names"/>
+        <xs:element ref="EMX:DBMS_Minor_Version"/>
+        <xs:element ref="EMX:Max_View_Expression_Display_Length"/>
+        <xs:element ref="EMX:Physical_Notation_Type"/>
+        <xs:element ref="EMX:Index_Name_Macro"/>
+        <xs:element ref="EMX:Max_Definition_Display_Length"/>
+        <xs:element ref="EMX:Table_Name_Macro"/>
+        <xs:element ref="EMX:Display_Child_To_Parent_Verb_Phrase"/>
+        <xs:element ref="EMX:Display_Parent_To_Child_Verb_Phrase"/>
+        <xs:element ref="EMX:WYSIWYG_Print"/>
+        <xs:element ref="EMX:DSM_File_Path"/>
+        <xs:element ref="EMX:Option_Non_Identifying_Relationship_Not_Null"/>
+        <xs:element ref="EMX:Migrate_Through_Logical_Only_Relationships"/>
+        <xs:element ref="EMX:Parent_Update_Rule_Identifying"/>
+        <xs:element ref="EMX:Parent_Delete_Rule_Identifying"/>
+        <xs:element ref="EMX:Parent_Insert_Rule_Identifying"/>
+        <xs:element ref="EMX:Child_Update_Rule_Identifying"/>
+        <xs:element ref="EMX:Child_Delete_Rule_Identifying"/>
+        <xs:element ref="EMX:Child_Insert_Rule_Identifying"/>
+        <xs:element ref="EMX:Parent_Update_Rule_Nonidentifying"/>
+        <xs:element ref="EMX:Parent_Delete_Rule_Nonidentifying"/>
+        <xs:element ref="EMX:Parent_Insert_Rule_Nonidentifying"/>
+        <xs:element ref="EMX:Child_Update_Rule_Nonidentifying"/>
+        <xs:element ref="EMX:Child_Delete_Rule_Nonidentifying"/>
+        <xs:element ref="EMX:Child_Insert_Rule_Nonidentifying"/>
+        <xs:element ref="EMX:Parent_Update_Rule_Nonidentifying_Not_Null"/>
+        <xs:element ref="EMX:Parent_Delete_Rule_Nonidentifying_Not_Null"/>
+        <xs:element ref="EMX:Parent_Insert_Rule_Nonidentifying_Not_Null"/>
+        <xs:element ref="EMX:Child_Update_Rule_Nonidentifying_Not_Null"/>
+        <xs:element ref="EMX:Child_Delete_Rule_Nonidentifying_Not_Null"/>
+        <xs:element ref="EMX:Child_Insert_Rule_Nonidentifying_Not_Null"/>
+        <xs:element ref="EMX:Parent_Update_Rule_Subtype"/>
+        <xs:element ref="EMX:Parent_Delete_Rule_Subtype"/>
+        <xs:element ref="EMX:Parent_Insert_Rule_Subtype"/>
+        <xs:element ref="EMX:Child_Update_Rule_Subtype"/>
+        <xs:element ref="EMX:Child_Delete_Rule_Subtype"/>
+        <xs:element ref="EMX:Child_Insert_Rule_Subtype"/>
+        <xs:element ref="EMX:Metadata_Version"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Proxy_Short_Id"/>
+        <xs:element ref="EMX:Option_Use_Data_Type_In_Unification"/>
+        <xs:element ref="EMX:Target_Server_And_Version_Array"/>
+        <xs:element ref="EMX:Trans_History_Process_Executing_Type"/>
+        <xs:element ref="EMX:History_Event_Executing_Info"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+        <xs:element ref="EMX:Trans_Suspend_Naming_Standards"/>
+        <xs:element ref="EMX:Trans_NSM_Cache_Synch_Mode"/>
+        <xs:element ref="EMX:Store_RI_Triggers_In_Model"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Naming_Standards_File_Name" type="xs:string"/>
+  <xs:element name="Allow_Special_Characters" type="xs:boolean"/>
+  <xs:element name="Remove_Vowels_In_Name_Mapping" type="xs:boolean"/>
+  <xs:element name="Special_Character_Action_Type" type="xs:integer"/>
+  <xs:element name="Replacement_Character" type="xs:integer"/>
+  <xs:element name="Tracking_History_Objects" type="xs:integer"/>
+  <xs:element name="Tracking_History_Events" type="xs:integer"/>
+  <xs:element name="Enforce_Unique_Naming" type="xs:integer"/>
+  <xs:element name="Option_Non_Key_Attributes_Not_Null" type="xs:integer"/>
+  <xs:element name="DBMS_Major_Version">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logical_Notation_Type" type="xs:integer"/>
+  <xs:element name="Display_Split_Relationship_Names" type="xs:boolean"/>
+  <xs:element name="DBMS_Minor_Version">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Max_View_Expression_Display_Length" type="xs:integer"/>
+  <xs:element name="Physical_Notation_Type" type="xs:integer"/>
+  <xs:element name="Index_Name_Macro" type="xs:string"/>
+  <xs:element name="Max_Definition_Display_Length" type="xs:integer"/>
+  <xs:element name="Table_Name_Macro" type="xs:string"/>
+  <xs:element name="Display_Child_To_Parent_Verb_Phrase" type="xs:boolean"/>
+  <xs:element name="Display_Parent_To_Child_Verb_Phrase" type="xs:boolean"/>
+  <xs:element name="WYSIWYG_Print" type="xs:boolean"/>
+  <xs:element name="DSM_File_Path" type="xs:string"/>
+  <xs:element name="Option_Non_Identifying_Relationship_Not_Null" type="xs:integer"/>
+  <xs:element name="Migrate_Through_Logical_Only_Relationships" type="xs:boolean"/>
+  <xs:element name="Parent_Update_Rule_Identifying" type="xs:integer"/>
+  <xs:element name="Parent_Delete_Rule_Identifying" type="xs:integer"/>
+  <xs:element name="Parent_Insert_Rule_Identifying" type="xs:integer"/>
+  <xs:element name="Child_Update_Rule_Identifying" type="xs:integer"/>
+  <xs:element name="Child_Delete_Rule_Identifying" type="xs:integer"/>
+  <xs:element name="Child_Insert_Rule_Identifying" type="xs:integer"/>
+  <xs:element name="Parent_Update_Rule_Nonidentifying" type="xs:integer"/>
+  <xs:element name="Parent_Delete_Rule_Nonidentifying" type="xs:integer"/>
+  <xs:element name="Parent_Insert_Rule_Nonidentifying" type="xs:integer"/>
+  <xs:element name="Child_Update_Rule_Nonidentifying" type="xs:integer"/>
+  <xs:element name="Child_Delete_Rule_Nonidentifying" type="xs:integer"/>
+  <xs:element name="Child_Insert_Rule_Nonidentifying" type="xs:integer"/>
+  <xs:element name="Parent_Update_Rule_Nonidentifying_Not_Null" type="xs:integer"/>
+  <xs:element name="Parent_Delete_Rule_Nonidentifying_Not_Null" type="xs:integer"/>
+  <xs:element name="Parent_Insert_Rule_Nonidentifying_Not_Null" type="xs:integer"/>
+  <xs:element name="Child_Update_Rule_Nonidentifying_Not_Null" type="xs:integer"/>
+  <xs:element name="Child_Delete_Rule_Nonidentifying_Not_Null" type="xs:integer"/>
+  <xs:element name="Child_Insert_Rule_Nonidentifying_Not_Null" type="xs:integer"/>
+  <xs:element name="Parent_Update_Rule_Subtype" type="xs:integer"/>
+  <xs:element name="Parent_Delete_Rule_Subtype" type="xs:integer"/>
+  <xs:element name="Parent_Insert_Rule_Subtype" type="xs:integer"/>
+  <xs:element name="Child_Update_Rule_Subtype" type="xs:integer"/>
+  <xs:element name="Child_Delete_Rule_Subtype" type="xs:integer"/>
+  <xs:element name="Child_Insert_Rule_Subtype" type="xs:integer"/>
+  <xs:element name="Metadata_Version" type="xs:integer"/>
+  <xs:element name="Option_Use_Data_Type_In_Unification" type="xs:boolean"/>
+  <xs:element name="Target_Server_And_Version_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Target_Server_And_Version"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Target_Server_And_Version">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="index" use="required" type="xs:integer"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trans_History_Process_Executing_Type" type="xs:integer"/>
+  <xs:element name="History_Event_Executing_Info" type="xs:string"/>
+  <xs:element name="Trans_Suspend_Naming_Standards" type="xs:boolean"/>
+  <xs:element name="Trans_NSM_Cache_Synch_Mode" type="xs:integer"/>
+  <xs:element name="Store_RI_Triggers_In_Model" type="xs:boolean"/>
+  <xs:element name="Entity_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Entity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:EntityProps"/>
+        <xs:element ref="EMX:Attribute_Groups"/>
+        <xs:element ref="EMX:Key_Group_Groups"/>
+        <xs:element minOccurs="0" ref="EMX:History_Information_Groups"/>
+        <xs:element ref="EMX:Oracle_Physical_Storage_Groups"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EntityProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Definition"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Type"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EMX:Note"/>
+          <xs:element ref="EMX:Note_2"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="EMX:Note_3"/>
+        <xs:element ref="EMX:Schema_Name"/>
+        <xs:element ref="EMX:Comment"/>
+        <xs:element minOccurs="0" ref="EMX:Is_Logical_Only"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Oracle_Regular_Storage_Ref"/>
+        <xs:element ref="EMX:Drawing_Objects_Ref_Array"/>
+        <xs:element minOccurs="0" ref="EMX:Child_Relationships_Ref_Array"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Do_Not_Generate"/>
+        <xs:element minOccurs="0" ref="EMX:Parent_Relationships_Ref_Array"/>
+        <xs:element ref="EMX:Attributes_Order_Ref_Array"/>
+        <xs:element ref="EMX:Physical_Columns_Order_Ref_Array"/>
+        <xs:element ref="EMX:Oracle_Data_Storage_Type"/>
+        <xs:element ref="EMX:Columns_Order_Ref_Array"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EMX:Trans_Attributes_Order_Snapshot_Ref_Array"/>
+          <xs:element ref="EMX:Trans_Columns_Order_Snapshot_Ref_Array"/>
+          <xs:element ref="EMX:Trans_Physical_Order_Snapshot_Ref_Array"/>
+        </xs:sequence>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+        <xs:element ref="EMX:Name_Qualifier"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Note_2" type="xs:string"/>
+  <xs:element name="Note_3">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Oracle_Regular_Storage_Ref" type="xs:string"/>
+  <xs:element name="Child_Relationships_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Child_Relationships_Ref"/>
+      </xs:sequence>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Child_Relationships_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Relationships_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Parent_Relationships_Ref"/>
+      </xs:sequence>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Relationships_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Attributes_Order_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Attributes_Order_Ref"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Attributes_Order_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Physical_Columns_Order_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Physical_Columns_Order_Ref"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Physical_Columns_Order_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Data_Storage_Type" type="xs:integer"/>
+  <xs:element name="Columns_Order_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Columns_Order_Ref"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Columns_Order_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trans_Attributes_Order_Snapshot_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Trans_Attributes_Order_Snapshot_Ref"/>
+      </xs:sequence>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trans_Attributes_Order_Snapshot_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trans_Columns_Order_Snapshot_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Trans_Columns_Order_Snapshot_Ref"/>
+      </xs:sequence>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trans_Columns_Order_Snapshot_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trans_Physical_Order_Snapshot_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Trans_Physical_Order_Snapshot_Ref"/>
+      </xs:sequence>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trans_Physical_Order_Snapshot_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Attribute_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Attribute"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Attribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:AttributeProps"/>
+        <xs:element minOccurs="0" ref="EMX:History_Information_Groups"/>
+        <xs:element minOccurs="0" ref="EMX:Check_Constraint_Usage_Groups"/>
+        <xs:element minOccurs="0" ref="EMX:Default_Constraint_Usage_Groups"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AttributeProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="EMX:Definition"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Type"/>
+        <xs:element minOccurs="0" ref="EMX:Note"/>
+        <xs:element ref="EMX:Physical_Data_Type"/>
+        <xs:element ref="EMX:Icon_Ref"/>
+        <xs:element ref="EMX:Null_Option_Type"/>
+        <xs:element minOccurs="0" ref="EMX:Physical_Order"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EMX:Parent_Attribute_Ref"/>
+          <xs:element ref="EMX:Parent_Relationship_Ref"/>
+        </xs:sequence>
+        <xs:element ref="EMX:Comment"/>
+        <xs:element minOccurs="0" ref="EMX:Is_Logical_Only"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Logical_Data_Type"/>
+        <xs:element ref="EMX:Parent_Domain_Ref"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EMX:Hide_In_Logical"/>
+          <xs:element ref="EMX:Hide_In_Physical"/>
+        </xs:sequence>
+        <xs:element ref="EMX:Font_Color"/>
+        <xs:element ref="EMX:Master_Attribute_Ref"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EMX:Is_Color_Inherited"/>
+          <xs:element ref="EMX:Is_Font_Inherited"/>
+        </xs:sequence>
+        <xs:element ref="EMX:Font_Ref"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EMX:Attribute_Order"/>
+          <xs:element ref="EMX:Column_Order"/>
+        </xs:sequence>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element minOccurs="0" ref="EMX:Trans_Unification_Suppression_Count"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+        <xs:element minOccurs="0" ref="EMX:Prohibit_Check_Constraint_Inheritance"/>
+        <xs:element minOccurs="0" ref="EMX:Prohibit_Default_Constraint_Inheritance"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Physical_Order">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Attribute_Ref" type="xs:string"/>
+  <xs:element name="Parent_Relationship_Ref" type="xs:string"/>
+  <xs:element name="Hide_In_Logical">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:boolean">
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+          <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Hide_In_Physical">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:boolean">
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+          <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Master_Attribute_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Attribute_Order">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Column_Order">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trans_Unification_Suppression_Count" type="xs:integer"/>
+  <xs:element name="Key_Group_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Key_Group"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Key_Group">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Key_GroupProps"/>
+        <xs:element minOccurs="0" ref="EMX:Key_Group_Member_Groups"/>
+        <xs:element minOccurs="0" ref="EMX:Oracle_Constraint_State_Groups"/>
+        <xs:element minOccurs="0" ref="EMX:Oracle_Attribute_Storage_Groups"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Key_GroupProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Key_Group_Type"/>
+        <xs:element minOccurs="0" ref="EMX:Relationship_Ref"/>
+        <xs:element ref="EMX:Schema_Name"/>
+        <xs:element minOccurs="0" ref="EMX:Comment"/>
+        <xs:element minOccurs="0" ref="EMX:Is_Logical_Only"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Generate_As_Constraint"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Do_Not_Generate"/>
+        <xs:element minOccurs="0" ref="EMX:Key_Group_Members_Order_Ref_Array"/>
+        <xs:element ref="EMX:Constraint_Name"/>
+        <xs:element ref="EMX:Is_Unique"/>
+        <xs:element minOccurs="0" ref="EMX:Index_Members_Order_Ref_Array"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+        <xs:element ref="EMX:Name_Qualifier"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Key_Group_Type" type="xs:NCName"/>
+  <xs:element name="Relationship_Ref" type="xs:string"/>
+  <xs:element name="Generate_As_Constraint" type="xs:boolean"/>
+  <xs:element name="Key_Group_Members_Order_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Key_Group_Members_Order_Ref"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Key_Group_Members_Order_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Constraint_Name">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Is_Unique">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:boolean">
+          <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Index_Members_Order_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Index_Members_Order_Ref"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Index_Members_Order_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Key_Group_Member_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Key_Group_Member"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Key_Group_Member">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Key_Group_MemberProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Key_Group_MemberProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Attribute_Ref"/>
+        <xs:element ref="EMX:Key_Group_Sort_Order"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element minOccurs="0" ref="EMX:Parent_Key_Group_Member_Ref"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+        <xs:element ref="EMX:Index_Member_Order"/>
+        <xs:element ref="EMX:Key_Group_Member_Order"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Attribute_Ref" type="xs:string"/>
+  <xs:element name="Key_Group_Sort_Order" type="xs:NCName"/>
+  <xs:element name="Parent_Key_Group_Member_Ref" type="xs:string"/>
+  <xs:element name="Index_Member_Order">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+          <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Key_Group_Member_Order">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+          <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Attribute_Storage_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Oracle_Attribute_Storage"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Attribute_Storage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Oracle_Attribute_StorageProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Attribute_StorageProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EMX:Oracle_Percent_Free"/>
+          <xs:element ref="EMX:Oracle_Initial_Transactions"/>
+          <xs:element ref="EMX:Oracle_Tablespace_Ref"/>
+          <xs:element ref="EMX:Oracle_Initial_Extent_Size"/>
+          <xs:element ref="EMX:Oracle_Next_Extent_Size"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="EMX:Oracle_Min_Extents"/>
+        <xs:element minOccurs="0" ref="EMX:Oracle_Buffer_Pool"/>
+        <xs:element minOccurs="0" ref="EMX:Oracle_No_Logging"/>
+        <xs:element minOccurs="0" ref="EMX:Oracle_Max_Extent_Type"/>
+        <xs:element minOccurs="0" ref="EMX:Oracle_Tablespace_Usage_Type"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Do_Not_Generate"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Tablespace_Usage_Type" type="xs:integer"/>
+  <xs:element name="Oracle_Physical_Storage_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Oracle_Physical_Storage"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Physical_Storage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Oracle_Physical_StorageProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Physical_StorageProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Type"/>
+        <xs:element ref="EMX:Oracle_Percent_Free"/>
+        <xs:element ref="EMX:Oracle_Initial_Transactions"/>
+        <xs:element ref="EMX:Oracle_Tablespace_Ref"/>
+        <xs:element ref="EMX:Oracle_Initial_Extent_Size"/>
+        <xs:element ref="EMX:Oracle_Next_Extent_Size"/>
+        <xs:element minOccurs="0" ref="EMX:Oracle_Min_Extents"/>
+        <xs:element minOccurs="0" ref="EMX:Oracle_Percent_Increase"/>
+        <xs:element ref="EMX:Oracle_Buffer_Pool"/>
+        <xs:element ref="EMX:Oracle_No_Logging"/>
+        <xs:element ref="EMX:Oracle_Max_Extent_Type"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Do_Not_Generate"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Percent_Increase" type="xs:integer"/>
+  <xs:element name="Domain_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Domain"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Domain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:DomainProps"/>
+        <xs:element minOccurs="0" ref="EMX:Oracle_Constraint_State_Groups"/>
+        <xs:element minOccurs="0" ref="EMX:Check_Constraint_Usage_Groups"/>
+        <xs:element minOccurs="0" ref="EMX:Default_Constraint_Usage_Groups"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DomainProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice minOccurs="0">
+          <xs:element ref="EMX:Built_In_Id"/>
+          <xs:element ref="EMX:Definition"/>
+        </xs:choice>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Type"/>
+        <xs:element minOccurs="0" ref="EMX:Note"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EMX:Physical_Data_Type"/>
+          <xs:element ref="EMX:Icon_Ref"/>
+        </xs:sequence>
+        <xs:element ref="EMX:Null_Option_Type"/>
+        <xs:element minOccurs="0" ref="EMX:Comment"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Logical_Data_Type"/>
+        <xs:element minOccurs="0" ref="EMX:Parent_Domain_Ref"/>
+        <xs:element minOccurs="0" ref="EMX:Oracle_Constraint_State_Ref"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Attribute_Name"/>
+        <xs:element ref="EMX:Column_Name"/>
+        <xs:element minOccurs="0" ref="EMX:Attribute_Definition"/>
+        <xs:element ref="EMX:Column_Comment"/>
+        <xs:element minOccurs="0" ref="EMX:Attribute_Icon_Ref"/>
+        <xs:element minOccurs="0" ref="EMX:Attribute_Note"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+        <xs:element minOccurs="0" ref="EMX:Prohibit_Check_Constraint_Inheritance"/>
+        <xs:element minOccurs="0" ref="EMX:Prohibit_Default_Constraint_Inheritance"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Constraint_State_Ref" type="xs:string"/>
+  <xs:element name="Attribute_Name">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Column_Name">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Attribute_Definition" type="xs:string"/>
+  <xs:element name="Column_Comment">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Attribute_Icon_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Attribute_Note" type="xs:string"/>
+  <xs:element name="Oracle_Tablespace_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Oracle_Tablespace"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Tablespace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Oracle_TablespaceProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_TablespaceProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Definition"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Oracle_Is_Offline"/>
+        <xs:element ref="EMX:Oracle_No_Logging"/>
+        <xs:element ref="EMX:Local_Extent_Management_Type"/>
+        <xs:element ref="EMX:Extent_Size"/>
+        <xs:element ref="EMX:Extent_Management_Type"/>
+        <xs:element ref="EMX:Segment_Management_Type"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Do_Not_Generate"/>
+        <xs:element ref="EMX:Tablespace_Type"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Is_Offline" type="xs:boolean"/>
+  <xs:element name="Local_Extent_Management_Type" type="xs:integer"/>
+  <xs:element name="Extent_Size" type="xs:NMTOKEN"/>
+  <xs:element name="Extent_Management_Type" type="xs:integer"/>
+  <xs:element name="Segment_Management_Type" type="xs:integer"/>
+  <xs:element name="Tablespace_Type" type="xs:integer"/>
+  <xs:element name="Bitmap_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Bitmap"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Bitmap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:BitmapProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BitmapProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="EMX:Built_In_Id"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Bitmap_File_Name"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EMX:Built_In_Bitmap_Type"/>
+          <xs:element ref="EMX:Image_Id"/>
+        </xs:sequence>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Bitmap_File_Name">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Built_In_Bitmap_Type" type="xs:integer"/>
+  <xs:element name="Image_Id" type="xs:integer"/>
+  <xs:element name="Subject_Area_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Subject_Area"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Subject_Area">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Subject_AreaProps"/>
+        <xs:element ref="EMX:Stored_Display_Groups"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Subject_AreaProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="EMX:Built_In_Id"/>
+        <xs:element ref="EMX:Definition"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Referenced_Entities_Ref_Array"/>
+        <xs:element ref="EMX:Referenced_Relationships_Ref_Array"/>
+        <xs:element ref="EMX:Author"/>
+        <xs:element ref="EMX:Filter_Dangling_Relationships_From_FE"/>
+        <xs:element ref="EMX:Object_Order"/>
+        <xs:element minOccurs="0" ref="EMX:Is_Main_Subject_Area"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Proxy_Short_Id"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+        <xs:element ref="EMX:Creation_Time"/>
+        <xs:element ref="EMX:Modification_Time"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Referenced_Entities_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Referenced_Entities_Ref"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Referenced_Entities_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Referenced_Relationships_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Referenced_Relationships_Ref"/>
+      </xs:sequence>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Referenced_Relationships_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Filter_Dangling_Relationships_From_FE" type="xs:boolean"/>
+  <xs:element name="Is_Main_Subject_Area" type="xs:boolean"/>
+  <xs:element name="Stored_Display_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Stored_Display"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Stored_Display">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Stored_DisplayProps"/>
+        <xs:element ref="EMX:Drawing_Object_Entity_Groups"/>
+        <xs:element ref="EMX:Drawing_Object_Relationship_Groups"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Stored_DisplayProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Author"/>
+        <xs:element ref="EMX:Object_Order"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Proxy_Short_Id"/>
+        <xs:element ref="EMX:Print_Border"/>
+        <xs:element ref="EMX:Print_Bottom_Margin"/>
+        <xs:element ref="EMX:Print_Color"/>
+        <xs:element ref="EMX:Print_Footer"/>
+        <xs:element ref="EMX:Print_Header"/>
+        <xs:element ref="EMX:Print_Left_Margin"/>
+        <xs:element ref="EMX:Print_Orientation"/>
+        <xs:element ref="EMX:Print_Paper_Size"/>
+        <xs:element minOccurs="0" ref="EMX:Print_Paper_Source"/>
+        <xs:element ref="EMX:Print_Printer_Name"/>
+        <xs:element ref="EMX:Print_Range"/>
+        <xs:element ref="EMX:Print_Right_Margin"/>
+        <xs:element ref="EMX:Print_Scaling"/>
+        <xs:element ref="EMX:Print_Top_Margin"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+        <xs:element ref="EMX:Print_Paper_Dimensions"/>
+        <xs:element ref="EMX:Print_Paper_Form_Type"/>
+        <xs:element ref="EMX:Creation_Time"/>
+        <xs:element ref="EMX:Modification_Time"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Print_Border" type="xs:boolean"/>
+  <xs:element name="Print_Bottom_Margin" type="xs:integer"/>
+  <xs:element name="Print_Color" type="xs:boolean"/>
+  <xs:element name="Print_Footer" type="xs:string"/>
+  <xs:element name="Print_Header" type="xs:string"/>
+  <xs:element name="Print_Left_Margin" type="xs:integer"/>
+  <xs:element name="Print_Orientation" type="xs:integer"/>
+  <xs:element name="Print_Paper_Size" type="xs:string"/>
+  <xs:element name="Print_Paper_Source" type="xs:integer"/>
+  <xs:element name="Print_Printer_Name" type="xs:string"/>
+  <xs:element name="Print_Range" type="xs:integer"/>
+  <xs:element name="Print_Right_Margin" type="xs:integer"/>
+  <xs:element name="Print_Scaling" type="xs:integer"/>
+  <xs:element name="Print_Top_Margin" type="xs:integer"/>
+  <xs:element name="Print_Paper_Dimensions" type="xs:decimal"/>
+  <xs:element name="Print_Paper_Form_Type" type="xs:integer"/>
+  <xs:element name="Drawing_Object_Entity_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Drawing_Object_Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Drawing_Object_Entity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Drawing_Object_EntityProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Drawing_Object_EntityProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Location_Rectangle"/>
+        <xs:element ref="EMX:Model_Object_Ref"/>
+        <xs:element ref="EMX:Font_Color"/>
+        <xs:element ref="EMX:Fill_Color"/>
+        <xs:element ref="EMX:Outline_Color"/>
+        <xs:element ref="EMX:Definition_Font_Ref"/>
+        <xs:element ref="EMX:Font_Ref"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Anchor_Point"/>
+        <xs:element minOccurs="0" ref="EMX:Fixed_Size_Point"/>
+        <xs:element ref="EMX:Definition_Color"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fill_Color">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Definition_Font_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Anchor_Point" type="xs:string"/>
+  <xs:element name="Fixed_Size_Point" type="xs:string"/>
+  <xs:element name="Definition_Color">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Drawing_Object_Relationship_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Drawing_Object_Relationship"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Drawing_Object_Relationship">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Drawing_Object_RelationshipProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Drawing_Object_RelationshipProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Location_Rectangle"/>
+        <xs:element ref="EMX:Model_Object_Ref"/>
+        <xs:element ref="EMX:Font_Color"/>
+        <xs:element ref="EMX:Outline_Color"/>
+        <xs:element ref="EMX:Parent_Connection_Side"/>
+        <xs:element ref="EMX:Child_Connection_Side"/>
+        <xs:element ref="EMX:Relationship_Coordinates_Array"/>
+        <xs:element ref="EMX:Is_User_Controlled_Path"/>
+        <xs:element ref="EMX:Parent_Verb_Phrase_Side"/>
+        <xs:element ref="EMX:Child_Verb_Phrase_Side"/>
+        <xs:element ref="EMX:Mid_Point_Of_Relationship_Point"/>
+        <xs:element ref="EMX:Parent_Verb_Phrase_Point"/>
+        <xs:element ref="EMX:Child_Verb_Phrase_Point"/>
+        <xs:element ref="EMX:Is_Color_Inherited"/>
+        <xs:element ref="EMX:Is_Font_Inherited"/>
+        <xs:element ref="EMX:Font_Ref"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element minOccurs="0" ref="EMX:Child_Drawing_Object_Ref"/>
+        <xs:element minOccurs="0" ref="EMX:Parent_Drawing_Object_Ref"/>
+        <xs:element ref="EMX:Child_Connection_Position"/>
+        <xs:element ref="EMX:Parent_Connection_Position"/>
+        <xs:element ref="EMX:Middle_Verb_Phrase_Point"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Connection_Side" type="xs:integer"/>
+  <xs:element name="Child_Connection_Side" type="xs:integer"/>
+  <xs:element name="Relationship_Coordinates_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Relationship_Coordinates"/>
+      </xs:sequence>
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Relationship_Coordinates">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Is_User_Controlled_Path" type="xs:boolean"/>
+  <xs:element name="Parent_Verb_Phrase_Side" type="xs:integer"/>
+  <xs:element name="Child_Verb_Phrase_Side" type="xs:integer"/>
+  <xs:element name="Mid_Point_Of_Relationship_Point" type="xs:string"/>
+  <xs:element name="Parent_Verb_Phrase_Point" type="xs:string"/>
+  <xs:element name="Child_Verb_Phrase_Point" type="xs:string"/>
+  <xs:element name="Child_Drawing_Object_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Drawing_Object_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Child_Connection_Position" type="xs:integer"/>
+  <xs:element name="Parent_Connection_Position" type="xs:integer"/>
+  <xs:element name="Middle_Verb_Phrase_Point" type="xs:string"/>
+  <xs:element name="Relationship_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Relationship"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Relationship">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:RelationshipProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RelationshipProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Type"/>
+        <xs:element minOccurs="0" ref="EMX:Note"/>
+        <xs:element ref="EMX:Null_Option_Type"/>
+        <xs:element ref="EMX:Child_To_Parent_Verb_Phrase"/>
+        <xs:element ref="EMX:Cardinality"/>
+        <xs:element minOccurs="0" ref="EMX:Relationship_Sequence"/>
+        <xs:element ref="EMX:Key_Group_Ref"/>
+        <xs:element ref="EMX:Parent_Update_Rule"/>
+        <xs:element ref="EMX:Parent_Delete_Rule"/>
+        <xs:element ref="EMX:Parent_Insert_Rule"/>
+        <xs:element ref="EMX:Child_Update_Rule"/>
+        <xs:element ref="EMX:Child_Delete_Rule"/>
+        <xs:element ref="EMX:Child_Insert_Rule"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Parent_To_Child_Verb_Phrase"/>
+        <xs:element ref="EMX:Parent_Entity_Ref"/>
+        <xs:element ref="EMX:Child_Entity_Ref"/>
+        <xs:element ref="EMX:Child_Update_Trigger_Template_Ref"/>
+        <xs:element ref="EMX:Child_Insert_Trigger_Template_Ref"/>
+        <xs:element ref="EMX:Parent_Update_Trigger_Template_Ref"/>
+        <xs:element ref="EMX:Parent_Delete_Trigger_Template_Ref"/>
+        <xs:element ref="EMX:Drawing_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Do_Not_Generate"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Child_To_Parent_Verb_Phrase" type="xs:string"/>
+  <xs:element name="Cardinality">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="AutoCalculated" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Relationship_Sequence" type="xs:integer"/>
+  <xs:element name="Key_Group_Ref" type="xs:string"/>
+  <xs:element name="Parent_To_Child_Verb_Phrase" type="xs:NCName"/>
+  <xs:element name="Parent_Entity_Ref" type="xs:string"/>
+  <xs:element name="Child_Entity_Ref" type="xs:string"/>
+  <xs:element name="Child_Update_Trigger_Template_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Child_Insert_Trigger_Template_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Update_Trigger_Template_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Delete_Trigger_Template_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Default"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:DefaultProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DefaultProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Server_Value"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Validation_Rule_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Validation_Rule"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Validation_Rule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Validation_RuleProps"/>
+        <xs:element minOccurs="0" ref="EMX:Valid_Value_Groups"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Validation_RuleProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Type"/>
+        <xs:element ref="EMX:Server_Value"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EMX:Validation_Rule_Min_Value"/>
+          <xs:element ref="EMX:Validation_Rule_Max_Value"/>
+        </xs:sequence>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Validation_Rule_Min_Value" type="xs:integer"/>
+  <xs:element name="Validation_Rule_Max_Value" type="xs:integer"/>
+  <xs:element name="Valid_Value_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Valid_Value"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Valid_Value">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Valid_ValueProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Valid_ValueProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Value_Display_Name"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Object_Order"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Value_Display_Name" type="xs:string"/>
+  <xs:element name="Trigger_Template_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Trigger_Template"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trigger_Template">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Trigger_TemplateProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trigger_TemplateProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Built_In_Id"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Type"/>
+        <xs:element ref="EMX:Template_Code"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Do_Not_Generate"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Template_Code" type="xs:string"/>
+  <xs:element name="Default_Trigger_Template_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Default_Trigger_Template"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Trigger_Template">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Default_Trigger_TemplateProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Trigger_TemplateProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Built_In_Id"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element minOccurs="0" ref="EMX:Trigger_Template_Ref"/>
+        <xs:element ref="EMX:Template_Purpose_Text"/>
+        <xs:element ref="EMX:Template_Purpose"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Do_Not_Generate"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Trigger_Template_Ref" type="xs:string"/>
+  <xs:element name="Template_Purpose_Text" type="xs:string"/>
+  <xs:element name="Template_Purpose" type="xs:integer"/>
+  <xs:element name="Name_Mapping_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Name_Mapping"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Name_Mapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name_MappingProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Name_MappingProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Built_In_Id"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Use_Name_Mapping_Glossary"/>
+        <xs:element ref="EMX:Use_Alternate_Abbreviation"/>
+        <xs:element ref="EMX:Macro_Text"/>
+        <xs:element ref="EMX:Name_Mapping_Prefix"/>
+        <xs:element ref="EMX:Suffix"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Object_Typecode"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Use_Name_Mapping_Glossary" type="xs:boolean"/>
+  <xs:element name="Use_Alternate_Abbreviation" type="xs:boolean"/>
+  <xs:element name="Macro_Text" type="xs:string"/>
+  <xs:element name="Name_Mapping_Prefix">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Suffix">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Naming_Options_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Naming_Options"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Naming_Options">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Naming_OptionsProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Naming_OptionsProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Built_In_Id"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:choice>
+          <xs:element ref="EMX:Is_Logical_Only"/>
+          <xs:element ref="EMX:Is_Physical_Only"/>
+        </xs:choice>
+        <xs:element ref="EMX:Case_Conversion_Type"/>
+        <xs:element ref="EMX:Max_Length"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Object_Typecode"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Is_Physical_Only" type="xs:boolean"/>
+  <xs:element name="Case_Conversion_Type" type="xs:integer"/>
+  <xs:element name="Max_Length" type="xs:integer"/>
+  <xs:element name="Sequence_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Sequence"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Sequence">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:SequenceProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SequenceProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Schema_Name"/>
+        <xs:element ref="EMX:Is_Cache_On"/>
+        <xs:element ref="EMX:Is_Min"/>
+        <xs:element ref="EMX:Is_Max"/>
+        <xs:element ref="EMX:Cache_Capacity"/>
+        <xs:element ref="EMX:Order_On"/>
+        <xs:element ref="EMX:Starting_Value"/>
+        <xs:element ref="EMX:Increment_By"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Do_Not_Generate"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+        <xs:element ref="EMX:Is_Cycle_On"/>
+        <xs:element ref="EMX:Max_Value"/>
+        <xs:element ref="EMX:Min_Value"/>
+        <xs:element ref="EMX:Name_Qualifier"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Is_Cache_On" type="xs:boolean"/>
+  <xs:element name="Is_Min" type="xs:boolean"/>
+  <xs:element name="Is_Max" type="xs:boolean"/>
+  <xs:element name="Cache_Capacity" type="xs:integer"/>
+  <xs:element name="Order_On" type="xs:boolean"/>
+  <xs:element name="Starting_Value" type="xs:integer"/>
+  <xs:element name="Increment_By" type="xs:integer"/>
+  <xs:element name="Is_Cycle_On" type="xs:boolean"/>
+  <xs:element name="Max_Value" type="xs:integer"/>
+  <xs:element name="Min_Value" type="xs:integer"/>
+  <xs:element name="Font_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Font"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Font">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:FontProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FontProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="EMX:Built_In_Id"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Font_Type_Face"/>
+        <xs:element ref="EMX:Font_Size"/>
+        <xs:element ref="EMX:Is_Font_Bold"/>
+        <xs:element ref="EMX:Is_Font_Italic"/>
+        <xs:element ref="EMX:Is_Font_Underlined"/>
+        <xs:element ref="EMX:Is_Font_Strikeout"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Font_Type_Face" type="xs:string"/>
+  <xs:element name="Font_Size" type="xs:integer"/>
+  <xs:element name="Is_Font_Bold" type="xs:boolean"/>
+  <xs:element name="Is_Font_Italic" type="xs:boolean"/>
+  <xs:element name="Is_Font_Underlined" type="xs:boolean"/>
+  <xs:element name="Is_Font_Strikeout" type="xs:boolean"/>
+  <xs:element name="Default_Fonts_And_Colors_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Default_Fonts_And_Colors"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Fonts_And_Colors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Default_Fonts_And_ColorsProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Fonts_And_ColorsProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Built_In_Id"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Default_Entity_Name_Font_Ref"/>
+        <xs:element ref="EMX:Default_Entity_Definition_Font_Ref"/>
+        <xs:element ref="EMX:Default_Subtype_Name_Font_Ref"/>
+        <xs:element ref="EMX:Default_General_Font_Ref"/>
+        <xs:element ref="EMX:Default_Relation_Name_Font_Ref"/>
+        <xs:element ref="EMX:Default_Owned_Attribute_Font_Ref"/>
+        <xs:element ref="EMX:Default_FK_Attribute_Font_Ref"/>
+        <xs:element ref="EMX:Default_Drawing_Object_Font_Ref"/>
+        <xs:element ref="EMX:Default_DO_Word_Break"/>
+        <xs:element ref="EMX:Default_DO_Adjust_Fit"/>
+        <xs:element ref="EMX:Default_DO_Vertical_Alignment"/>
+        <xs:element ref="EMX:Default_DO_Horizontal_Alignment"/>
+        <xs:element ref="EMX:Default_DO_Background_Style"/>
+        <xs:element ref="EMX:Default_DO_Background_Pattern"/>
+        <xs:element ref="EMX:Default_DO_Outline_Width"/>
+        <xs:element ref="EMX:Default_DO_Outline_Style"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Default_DO_Fill_Color"/>
+        <xs:element ref="EMX:Default_Drawing_Object_Color"/>
+        <xs:element ref="EMX:Default_DO_Outline_Color"/>
+        <xs:element ref="EMX:Default_Entity_Definition_Color"/>
+        <xs:element ref="EMX:Default_Entity_Fill_Color"/>
+        <xs:element ref="EMX:Default_Entity_Name_Color"/>
+        <xs:element ref="EMX:Default_Entity_Outline_Color"/>
+        <xs:element ref="EMX:Default_General_Background_Color"/>
+        <xs:element ref="EMX:Default_Owned_Attribute_Color"/>
+        <xs:element ref="EMX:Default_Relation_Name_Color"/>
+        <xs:element ref="EMX:Default_Subtype_Fill_Color"/>
+        <xs:element ref="EMX:Default_Subtype_Outline_Color"/>
+        <xs:element ref="EMX:Default_FK_Attribute_Color_Inheritance_Type"/>
+        <xs:element ref="EMX:Default_FK_Attribute_Font_Inheritance_Type"/>
+        <xs:element ref="EMX:Default_Relation_Color_Inherited"/>
+        <xs:element ref="EMX:Default_Relation_Name_Font_Inherited"/>
+        <xs:element ref="EMX:Default_Subtype_Color_Inherited"/>
+        <xs:element ref="EMX:Default_Subtype_Name_Font_Inherited"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Entity_Name_Font_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Entity_Definition_Font_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Subtype_Name_Font_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_General_Font_Ref" type="xs:string"/>
+  <xs:element name="Default_Relation_Name_Font_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Owned_Attribute_Font_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_FK_Attribute_Font_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Drawing_Object_Font_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_DO_Word_Break" type="xs:boolean"/>
+  <xs:element name="Default_DO_Adjust_Fit" type="xs:boolean"/>
+  <xs:element name="Default_DO_Vertical_Alignment" type="xs:integer"/>
+  <xs:element name="Default_DO_Horizontal_Alignment" type="xs:integer"/>
+  <xs:element name="Default_DO_Background_Style" type="xs:integer"/>
+  <xs:element name="Default_DO_Background_Pattern" type="xs:integer"/>
+  <xs:element name="Default_DO_Outline_Width" type="xs:integer"/>
+  <xs:element name="Default_DO_Outline_Style" type="xs:integer"/>
+  <xs:element name="Default_DO_Fill_Color" type="xs:integer"/>
+  <xs:element name="Default_Drawing_Object_Color" type="xs:integer"/>
+  <xs:element name="Default_DO_Outline_Color" type="xs:integer"/>
+  <xs:element name="Default_Entity_Definition_Color" type="xs:integer"/>
+  <xs:element name="Default_Entity_Fill_Color" type="xs:integer"/>
+  <xs:element name="Default_Entity_Name_Color" type="xs:integer"/>
+  <xs:element name="Default_Entity_Outline_Color" type="xs:integer"/>
+  <xs:element name="Default_General_Background_Color" type="xs:integer"/>
+  <xs:element name="Default_Owned_Attribute_Color" type="xs:integer"/>
+  <xs:element name="Default_Relation_Name_Color" type="xs:integer"/>
+  <xs:element name="Default_Subtype_Fill_Color" type="xs:integer"/>
+  <xs:element name="Default_Subtype_Outline_Color" type="xs:integer"/>
+  <xs:element name="Default_FK_Attribute_Color_Inheritance_Type" type="xs:integer"/>
+  <xs:element name="Default_FK_Attribute_Font_Inheritance_Type" type="xs:integer"/>
+  <xs:element name="Default_Relation_Color_Inherited" type="xs:boolean"/>
+  <xs:element name="Default_Relation_Name_Font_Inherited" type="xs:boolean"/>
+  <xs:element name="Default_Subtype_Color_Inherited" type="xs:boolean"/>
+  <xs:element name="Default_Subtype_Name_Font_Inherited" type="xs:boolean"/>
+  <xs:element name="Owner_Override_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Owner_Override"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Owner_Override">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Owner_OverrideProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Owner_OverrideProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Do_Not_Generate"/>
+        <xs:element ref="EMX:Object_Typecode"/>
+        <xs:element ref="EMX:Owner_Name"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Owner_Name">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Target_Server">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+          <xs:attribute name="ReadOnly" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Definition">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Name">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Long_Id" type="xs:string"/>
+  <xs:element name="Owner_Path">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Type">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="ReadOnly" type="xs:NCName"/>
+          <xs:attribute name="Tool" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Update_Rule">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Delete_Rule">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Insert_Rule">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Child_Update_Rule">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Child_Delete_Rule">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Child_Insert_Rule">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Author" type="xs:string"/>
+  <xs:element name="Dependent_Objects_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="EMX:Dependent_Objects_Ref"/>
+      </xs:sequence>
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Dependent_Objects_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Proxy_Short_Id">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ReadOnly" type="xs:NCName"/>
+      <xs:attribute name="Tool" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Formatted_Name">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="User_Formatted_Physical_Name">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Note">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Schema_Name">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Comment">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Is_Logical_Only" type="xs:boolean"/>
+  <xs:element name="Physical_Name">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+      <xs:attribute name="ReadOnly" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Drawing_Objects_Ref_Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:Drawing_Objects_Ref"/>
+      </xs:sequence>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Drawing_Objects_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Do_Not_Generate">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:boolean">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Name_Qualifier">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+          <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Physical_Data_Type">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Icon_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Null_Option_Type">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logical_Data_Type">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Domain_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Font_Color">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Is_Color_Inherited">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Is_Font_Inherited">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Font_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prohibit_Check_Constraint_Inheritance" type="xs:boolean"/>
+  <xs:element name="Prohibit_Default_Constraint_Inheritance" type="xs:boolean"/>
+  <xs:element name="History_Information_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="EMX:History_Information"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="History_Information">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:History_InformationProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="History_InformationProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="EMX:Built_In_Id"/>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element minOccurs="0" ref="EMX:Comment"/>
+        <xs:element ref="EMX:Description"/>
+        <xs:element ref="EMX:History_Event_Type"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+        <xs:element ref="EMX:Creation_Time"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Description" type="xs:string"/>
+  <xs:element name="History_Event_Type" type="xs:integer"/>
+  <xs:element name="Check_Constraint_Usage_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Check_Constraint_Usage"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Check_Constraint_Usage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Check_Constraint_UsageProps"/>
+        <xs:element minOccurs="0" ref="EMX:Oracle_Constraint_State_Groups"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Check_Constraint_UsageProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Server_Value"/>
+        <xs:element ref="EMX:Validation_Rule_Ref"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element minOccurs="0" ref="EMX:Parent_Check_Constraint_Usage_Ref"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Validation_Rule_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Check_Constraint_Usage_Ref" type="xs:string"/>
+  <xs:element name="Default_Constraint_Usage_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Default_Constraint_Usage"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Constraint_Usage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Default_Constraint_UsageProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Constraint_UsageProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Server_Value"/>
+        <xs:element ref="EMX:Default_Ref"/>
+        <xs:element ref="EMX:Physical_Name"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element minOccurs="0" ref="EMX:Parent_Default_Constraint_Usage_Ref"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Default_Ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parent_Default_Constraint_Usage_Ref" type="xs:string"/>
+  <xs:element name="Oracle_Constraint_State_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Oracle_Constraint_State"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Constraint_State">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Oracle_Constraint_StateProps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Constraint_StateProps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="EMX:Name"/>
+        <xs:element ref="EMX:Long_Id"/>
+        <xs:element ref="EMX:Owner_Path"/>
+        <xs:element ref="EMX:Dependent_Objects_Ref_Array"/>
+        <xs:element ref="EMX:Do_Not_Generate"/>
+        <xs:element ref="EMX:User_Formatted_Name"/>
+        <xs:element ref="EMX:User_Formatted_Physical_Name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Oracle_Percent_Free" type="xs:integer"/>
+  <xs:element name="Oracle_Initial_Transactions" type="xs:integer"/>
+  <xs:element name="Oracle_Tablespace_Ref" type="xs:string"/>
+  <xs:element name="Oracle_Initial_Extent_Size" type="xs:NMTOKEN"/>
+  <xs:element name="Oracle_Next_Extent_Size" type="xs:NMTOKEN"/>
+  <xs:element name="Oracle_Min_Extents" type="xs:integer"/>
+  <xs:element name="Oracle_Buffer_Pool" type="xs:integer"/>
+  <xs:element name="Oracle_No_Logging" type="xs:boolean"/>
+  <xs:element name="Oracle_Max_Extent_Type" type="xs:integer"/>
+  <xs:element name="Built_In_Id" type="xs:integer"/>
+  <xs:element name="Object_Order" type="xs:integer"/>
+  <xs:element name="Creation_Time" type="xs:string"/>
+  <xs:element name="Modification_Time" type="xs:string"/>
+  <xs:element name="Location_Rectangle">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" use="required" type="xs:NCName"/>
+      <xs:attribute name="ReadOnly" use="required" type="xs:NCName"/>
+      <xs:attribute name="Tool" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Model_Object_Ref" type="xs:string"/>
+  <xs:element name="Outline_Color">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="Derived" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Server_Value">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Derived" type="xs:NCName"/>
+      <xs:attribute name="ReadOnly" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Object_Typecode" type="xs:string"/>
+</xs:schema>

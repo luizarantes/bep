@@ -1,0 +1,157 @@
+
+<weblogic-enterprise-bean>
+	<ejb-name>CiaDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>CiaDaoImpl#com.bep.startup.dao.CiaDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>CiaServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>CiaServiceImpl#com.bep.startup.service.CiaService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>ContactPersonDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>ContactPersonDaoImpl#com.bep.startup.dao.ContactPersonDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>ContactPersonServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>ContactPersonServiceImpl#com.bep.startup.service.ContactPersonService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>DisciplineDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>DisciplineDaoImpl#com.bep.startup.dao.DisciplineDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>DisciplineServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>DisciplineServiceImpl#com.bep.startup.service.DisciplineService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>GoalDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>GoalDaoImpl#com.bep.startup.dao.GoalDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>GoalServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>GoalServiceImpl#com.bep.startup.service.GoalService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>HardwareDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>HardwareDaoImpl#com.bep.startup.dao.HardwareDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>HardwareServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>HardwareServiceImpl#com.bep.startup.service.HardwareService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>HardwareTypeDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>HardwareTypeDaoImpl#com.bep.startup.dao.HardwareTypeDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>HardwareTypeServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>HardwareTypeServiceImpl#com.bep.startup.service.HardwareTypeService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>InviteDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>InviteDaoImpl#com.bep.startup.dao.InviteDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>InviteServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>InviteServiceImpl#com.bep.startup.service.InviteService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>KeyMemberDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>KeyMemberDaoImpl#com.bep.startup.dao.KeyMemberDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>KeyMemberServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>KeyMemberServiceImpl#com.bep.startup.service.KeyMemberService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>PotenticalUseDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>PotenticalUseDaoImpl#com.bep.startup.dao.PotenticalUseDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>PotenticalUseServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>PotenticalUseServiceImpl#com.bep.startup.service.PotenticalUseService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>ProjectCiaDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>ProjectCiaDaoImpl#com.bep.startup.dao.ProjectCiaDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>ProjectCiaServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>ProjectCiaServiceImpl#com.bep.startup.service.ProjectCiaService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>ProjectDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>ProjectDaoImpl#com.bep.startup.dao.ProjectDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>ProjectServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>ProjectServiceImpl#com.bep.startup.service.ProjectService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>SoftwareDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>SoftwareDaoImpl#com.bep.startup.dao.SoftwareDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>SoftwareServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>SoftwareServiceImpl#com.bep.startup.service.SoftwareService</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>SoftwareTypeDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>SoftwareTypeDaoImpl#com.bep.startup.dao.SoftwareTypeDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>SoftwareTypeServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>SoftwareTypeServiceImpl#com.bep.startup.service.SoftwareTypeService</jndi-name>
+</weblogic-enterprise-bean>
