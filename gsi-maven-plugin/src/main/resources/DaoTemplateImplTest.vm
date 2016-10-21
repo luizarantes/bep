@@ -1,0 +1,220 @@
+#include("header.vm") 
+
+package ${package}.dao.impl;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+#if($entity.useCalendar)
+import java.util.Calendar;
+#end
+#if($entity.useDate)
+import java.util.Date;
+#end
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.validation.ConstraintViolationException;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import ${package}.dao.${entityName}Dao;
+#foreach ($packageEntity in $entity.packageEntity)
+import ${package}.model.domain.${packageEntity};
+#end
+#foreach ($packageEnum in $entity.packageEnum)
+import $packageEnum;
+#end
+
+import com.indracompany.core.CriteriaCondition;
+import com.indracompany.core.DefaultCriteriaCondition;
+import com.indracompany.core.dao.jpa.AbstractDaoImplTest;
+
+#include("comments.vm")
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(value = "classpath:/${packageDefault}/dao/GenericJpaDaoTest-context.xml")
+public class ${entityName}DaoImplTest extends AbstractDaoImplTest<${entityName}, ${entityName}Dao> {
+
+	@Inject
+	private ${entityName}Dao dao;
+	#if($entity.useCalendar)
+
+    private Calendar calendar = Calendar.getInstance();
+    #end
+
+	public ${entityName}Dao getDao() {
+        return this.dao;
+    }
+
+    public void setDao(${entityName}Dao dao) {
+        this.dao = dao;
+    }
+    #if($entity.useCalendar)
+
+    public Calendar getCalendar() {
+        return this.calendar;
+    }
+    #end
+
+	/**
+	 * Test method for {@link com.indracompany.kernel.dao.jpa.AbstractJpaDao#create(com.indracompany.core.model.DomainBean)}.
+	 */
+	@Test
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void testCreate() {
+    #foreach ($dataEntity in $entity.dataEntity)
+    $dataEntity
+    #end
+
+        ${entityName} result = null;
+
+        try {
+           result = this.getDao().create(this.getDomain());            
+        } catch (ConstraintViolationException e) {
+            assertConstraintViolationException(e);
+        }
+
+        assertNotNull(result);
+        assertNotNull(result.getId());
+        assertEquals(this.getDomain(), result);
+
+	}
+
+	/**
+	 * Test method for {@link com.indracompany.kernel.dao.jpa.DefaultJpaDao#findByCriteria(com.indracompany.core.CriteriaCondition)}.
+	 */
+	@Test
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void testFindByCriteria() {
+    #foreach ($dataEntity in $entity.dataEntity)
+    $dataEntity
+    #end
+
+		CriteriaCondition criteria = new DefaultCriteriaCondition("findByCriteria", this.getDomain());
+		List<${entityName}> result = this.getDao().findByCriteria(criteria);
+		assertEquals(1, result.size());
+	}
+
+	/**
+	 * Test method for {@link com.indracompany.kernel.dao.jpa.DefaultJpaDao#findUniqueResultByCriteria(com.indracompany.core.CriteriaCondition)}.
+	 */
+	@Test
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void testFindUniqueResultByCriteria() {
+		this.getDomain().setId(${typePK}.valueOf("10"));
+		CriteriaCondition criteria = new DefaultCriteriaCondition("findUniqueResultByCriteria", this.getDomain().getClass(), this.getDomain(), 0, Integer.MAX_VALUE, false);
+		${entityName} result = this.getDao().findUniqueResultByCriteria(criteria);
+
+		assertNotNull(result);
+		assertEquals(this.getDomain(), result);
+	}
+
+	/**
+	 * Test method for {@link com.indracompany.kernel.dao.jpa.AbstractJpaDao#delete(com.indracompany.core.CriteriaCondition)}.
+	 */
+	@Test
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void testDeleteCriteriaCondition() {
+		this.getDomain().setId(${typePK}.valueOf("10"));
+		CriteriaCondition criteria = new DefaultCriteriaCondition("delete", this.getDomain().getClass(), this.getDomain(), 0, Integer.MAX_VALUE, false);
+
+		try {
+			this.getDao().delete(criteria);
+		} catch (ConstraintViolationException e) {
+            assertConstraintViolationException(e);
+        } catch(Exception e) {
+			fail(e.getMessage());
+		}
+	}
+
+	/**
+	 * Test method for {@link com.indracompany.kernel.dao.jpa.AbstractJpaDao#findById(java.io.Serializable)}.
+	 */
+	@Test
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void testFindById() {
+		try {
+			this.getDao().findById(${typePK}.valueOf("10"));
+		} catch(Exception e) {
+			fail(e.getMessage());
+		}
+	}
+
+	/**
+	 * Test method for {@link com.indracompany.kernel.dao.jpa.AbstractJpaDao#findAll()}.
+	 */
+	@Test
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void testFindAll() {
+		List<${entityName}> result = this.getDao().findAll();
+		assertNotNull(result);
+		assertTrue(result.size() > 0);
+	}
+
+	/**
+	 * Test method for {@link com.indracompany.kernel.dao.jpa.AbstractJpaDao#update(com.indracompany.core.model.DomainBean)}.
+	 */
+	@Test
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void testUpdate() {
+		this.getDomain().setId(${typePK}.valueOf("10"));
+    #foreach ($dataEntity in $entity.dataEntity)
+    $dataEntity
+    #end
+
+        ${entityName} result = null;
+
+        try {
+            result = this.getDao().update(this.getDomain());            
+        } catch (ConstraintViolationException e) {
+            assertConstraintViolationException(e);
+        }
+
+        assertNotNull(result);
+        assertEquals(this.getDomain(), result);
+	}
+
+	/**
+	 * Test method for {@link com.indracompany.kernel.dao.jpa.AbstractJpaDao#delete(com.indracompany.core.model.DomainBean)}.
+	 */
+	@Test
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void testDeleteByWithoutDependencies() {
+		this.getDomain().setId(${typePK}.valueOf("10"));
+    #foreach ($dataEntity in $entity.dataEntity)
+    $dataEntity
+    #end
+
+		try {
+			this.getDao().delete(this.getDomain());
+		} catch (ConstraintViolationException e) {
+            assertConstraintViolationException(e);
+		} catch (Exception e) {
+			fail(e.getMessage());
+		}
+	}
+
+	/**
+	 * Test method for {@link com.indracompany.kernel.dao.jpa.AbstractJpaDao#deleteById(java.io.Serializable)}.
+	 */
+	@Test
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void testDeleteById() {
+		try {
+			this.getDao().deleteById(${typePK}.valueOf("10"));
+		} catch (ConstraintViolationException e) {
+            assertConstraintViolationException(e);
+        } catch(Exception e) {
+			fail(e.getMessage());
+		}
+	}
+
+}

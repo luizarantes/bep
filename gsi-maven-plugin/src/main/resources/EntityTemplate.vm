@@ -1,0 +1,290 @@
+#include("header.vm") 
+
+package ${package}.model.domain;
+
+#if($entity.entityHierarchy && !$entity.secondaryEntity)
+#set($idPK = "N")
+#elseif($entity.secondaryEntity && !$entity.entityHierarchy)
+#set($idPK = "N")
+#elseif($entity.secondaryEntity && $entity.entityHierarchy)
+#set($idPK = "Y")
+#else
+#set($idPK = "Y")
+#end
+#if($entity.useDate)
+import java.util.Date;
+#end
+#if($entity.useList)
+import java.util.List;
+#end
+
+#if($entity.useFile || $entity.useClob)
+import javax.persistence.Basic;
+#end
+#if($entity.useCascade)
+import javax.persistence.CascadeType;
+#end
+import javax.persistence.Column;
+#if($entity.entityHierarchy)
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+#end
+#if($entity.secondaryEntity)
+import javax.persistence.DiscriminatorValue;
+#end
+import javax.persistence.Entity;
+#if($entity.useEnum)
+import javax.persistence.Enumerated;
+import javax.persistence.EnumType;
+#end
+#if($entity.useFile || $entity.useClob)
+import javax.persistence.FetchType;
+#end
+#if($idPK == "Y")
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+#end
+#if($entity.entityHierarchy)
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+#end
+#if($entity.useFile || $entity.useClob)
+import javax.persistence.Lob;
+#end
+#if($entity.useJoinColumn)
+import javax.persistence.JoinColumn;
+#end
+#if($entity.useManyToOne)
+import javax.persistence.ManyToOne;
+#end
+#if($entity.useList)
+import javax.persistence.OneToMany;
+#end
+#if($entity.useOneToOne)
+import javax.persistence.OneToOne;
+#end
+#if($idPK == "Y")
+import javax.persistence.SequenceGenerator;
+#end
+#if($entity.secondaryEntity && !$entity.entityHierarchy)
+import javax.persistence.PrimaryKeyJoinColumn;
+#end
+import javax.persistence.Table;
+#if($entity.useDate)
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+#end
+#foreach ($packageValidator in $entity.packageValidator)
+import $packageValidator;
+#end
+
+#foreach ($packageEnum in $entity.packageEnum)
+import $packageEnum;
+#end
+#foreach ($packageValidatorAplication in $entity.packageValidatorAplication)
+import $packageValidatorAplication;
+#end
+
+
+#if($entity.useDisplay)
+import com.btg.pactual.core.utilities.Display;
+#end
+
+#include("comments.vm")
+
+@Entity
+@Table(name = "${entity.phisycalName}")
+#if($entity.entityHierarchy && !$entity.secondaryEntity)
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "${entity.noteEntityConfiguration.discriminatorColumn}", discriminatorType = DiscriminatorType.INTEGER)
+public abstract class ${entity.logicalName} extends DomainEntity<${entity.typePK.type}> {
+#elseif($entity.secondaryEntity && !$entity.entityHierarchy)
+@DiscriminatorValue("${entity.noteEntityConfiguration.discriminatorValue}")
+@PrimaryKeyJoinColumn(name = "${entity.physicalNamePK}", referencedColumnName = "${entity.noteEntityConfiguration.referencedColumnName}")
+public class ${entity.logicalName} extends ${entity.noteEntityConfiguration.referencedEntityLogicalName} {
+#elseif($entity.secondaryEntity && $entity.entityHierarchy)
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "${entity.noteEntityConfiguration.discriminatorColumn}", discriminatorType = DiscriminatorType.INTEGER)
+@DiscriminatorValue("${entity.noteEntityConfiguration.discriminatorValue}")
+public class ${entity.logicalName} extends DomainEntity<${entity.typePK.type}> {
+#else
+public class ${entity.logicalName} extends DomainEntity<${entity.typePK.type}> {
+#end
+
+    private static final long serialVersionUID = 1L;
+
+#if($idPK == "Y")
+    @Id
+    @Column(name = "${entity.physicalNamePK}", nullable = false, updatable = false, precision = ${entity.precisionPK})
+    @SequenceGenerator(name = "sq${entity.logicalName}", sequenceName = "${entity.sequenceName}", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "sq${entity.logicalName}", strategy = GenerationType.SEQUENCE)
+    private ${entity.typePK.type} id;
+    #end
+    #foreach ($field in $entity.columns)
+    #if($field.manyToOne)
+
+    /*
+     * $field.comment
+     */
+    #if($field.notNullNoteValidator)
+
+    #foreach ($validator in $field.noteColumnConfiguration.noteValidator.validators)
+$validator
+    #end
+    #end
+
+    @ManyToOne#if($field.notNullNoteOrm)(cascade = {#foreach ($cascade in $field.noteColumnConfiguration.noteORM.cascades)CascadeType.$cascade,#end})#end
+
+    @JoinColumn(name   = "$field.physicalName", referencedColumnName = "$field.referencedColumnName"#if($field.nullable), nullable = false#end)
+    private $field.type $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+    #end
+    #end    
+    #foreach ($field in $entity.columns)
+    #if($field.oneToOne)
+
+    /*
+     * $field.comment
+     */
+    #if($field.notNullNoteValidator)
+
+    #foreach ($validator in $field.noteColumnConfiguration.noteValidator.validators)
+$validator
+    #end
+    #end
+    #if($field.useMappedBy)
+
+    @OneToOne(mappedBy = "$field.mappedBy"#if($field.notNullNoteOrm), cascade = {#foreach ($cascade in $field.noteColumnConfiguration.noteORM.cascades)CascadeType.$cascade,#end}#end)
+    #else
+
+    @OneToOne#if($field.notNullNoteOrm)(cascade = {#foreach ($cascade in $field.noteColumnConfiguration.noteORM.cascades)CascadeType.$cascade,#end})#end
+
+    @JoinColumn(name  = "$field.physicalName", referencedColumnName = "$field.referencedColumnName"#if($field.nullable), nullable = false#end)
+    #end
+private $field.type $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+    #end
+    #end
+    #foreach ($field in $entity.columns)
+    #if($field.oneToMany)
+
+    /*
+     * $field.comment
+     */
+    @OneToMany(mappedBy = "$field.mappedBy"#if($field.notNullNoteOrm), cascade = {#foreach ($cascade in $field.noteColumnConfiguration.noteORM.cascades)CascadeType.$cascade,#end}#end)
+    private $field.type $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)s;
+    #end
+    #end
+    #foreach ($field in $entity.columns)
+    #if(!$field.oneToMany && !$field.manyToOne && !$field.oneToOne)
+        
+    /*
+     * $field.comment
+     */
+    #if($field.notNullNoteValidator)
+
+    #foreach ($validator in $field.noteColumnConfiguration.noteValidator.validators)
+$validator
+    #end
+    #end
+
+#if($field.date)
+@Temporal(TemporalType.DATE)
+#elseif($field.timestamp)
+	@Temporal(TemporalType.TIMESTAMP)
+#elseif($field.file)
+@Lob
+    @Basic(fetch = FetchType.LAZY)
+#elseif($field.clob)
+@Lob
+    @Basic(fetch = FetchType.LAZY)    
+#elseif($field.display)
+@Display
+#end
+#if($field.enumeration)
+	@Enumerated(EnumType.STRING)
+	@Column(name = "$field.physicalName"#if(!$field.lengthNull), length = ${field.length}#end#if(!$field.precisionNull), precision = ${field.precision}#end#if(!$field.scaleNull), scale = ${field.scale}#end#if($field.nullable), nullable = false#end#if($field.file), columnDefinition = "BLOB"#end)
+    private $field.enumName $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+	#else
+	@Column(name = "$field.physicalName"#if(!$field.lengthNull), length = ${field.length}#end#if(!$field.precisionNull), precision = ${field.precision}#end#if(!$field.scaleNull), scale = ${field.scale}#end#if($field.nullable), nullable = false#end#if($field.file), columnDefinition = "BLOB"#end)
+    private $field.type $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+    #end
+    #end
+    #end
+
+    /**
+     * @param id
+     */
+    public ${entity.logicalName}(${entity.typePK.type} id) {
+        super(id);
+    }
+
+    public ${entity.logicalName}() {
+
+    }
+#if($idPK == "Y")
+
+    /**
+     * @return ${entity.typePK.type}
+     */
+    @Override
+    public ${entity.typePK.type} getId() {
+        return id;
+    }
+
+    /**
+     * @param id
+     */
+    @Override
+    public void setId(${entity.typePK.type} id) {
+        this.id = id;
+    }
+#end
+    #foreach ($field in $entity.columns)
+        #if($field.oneToMany)
+            #set($oneToMany = "s")
+        #else
+            #set($oneToMany = "")
+        #end
+
+     #if(!$field.enumeration)
+
+    /**
+     * $field.comment
+     *
+     * @param $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany
+     */
+    public void set$field.logicalName.substring(0, 1).toUpperCase()$field.logicalName.substring(1)$oneToMany($field.type $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany) {
+        this.$field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany = $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany#if($field.enumeration).toString()#end;
+    }
+
+    /**
+     * $field.comment
+     *
+     * @return $field.type
+     */
+    public $field.type get$field.logicalName.substring(0, 1).toUpperCase()$field.logicalName.substring(1)$oneToMany() {
+        return this.$field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany;
+    }
+    #else
+
+    /**
+     * $field.comment
+     *
+     * @param $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany
+     */
+    public void set$field.logicalName.substring(0, 1).toUpperCase()$field.logicalName.substring(1)($field.enumName $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)) {
+        this.$field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany = $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)#if($field.enumeration)#end;
+    }
+
+    /**
+     * $field.comment
+     *
+     * @return $field.enumName
+     */
+    public $field.enumName get$field.logicalName.substring(0, 1).toUpperCase()$field.logicalName.substring(1)() {
+         return this.$field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+    }
+#end
+#end
+
+}

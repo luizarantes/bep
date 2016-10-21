@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	 <xsd:simpleType name="typeCascade">        
+         <xsd:annotation>
+             <xsd:documentation>
+                 Tipo do Cascade:
+                 ALL     = Cascade all operations
+                 DETACH  = Cascade detach operation
+                 MERGE   = Cascade merge operation
+                 PERSIST = Cascade persist operation
+                 REFRESH = Cascade refresh operation
+                 REMOVE  = Cascade remove operation
+             </xsd:documentation>
+         </xsd:annotation>
+         <xsd:restriction base="xsd:string">
+             <xsd:enumeration value="ALL"></xsd:enumeration>
+             <xsd:enumeration value="DETACH"></xsd:enumeration>
+             <xsd:enumeration value="MERGE"></xsd:enumeration>
+             <xsd:enumeration value="PERSIST"></xsd:enumeration>
+             <xsd:enumeration value="REFRESH"></xsd:enumeration>
+             <xsd:enumeration value="REMOVE"></xsd:enumeration>
+         </xsd:restriction>
+    </xsd:simpleType>    
+     <xsd:element name="noteColumnConfiguration" type="NoteColumnConfiguration" />
+     <xsd:complexType name="NoteColumnConfiguration">
+         <xsd:sequence>
+             <xsd:element name="display" type="Display" minOccurs="0" maxOccurs="1" />
+             <xsd:element name="noteORM" type="NoteORM" minOccurs="0" maxOccurs="1" />
+             <xsd:element name="noteValidator" type="NoteValidator" minOccurs="0" maxOccurs="1" />
+          </xsd:sequence>   
+     </xsd:complexType>
+    <xsd:complexType name="Display">
+        <xsd:sequence>             
+             <xsd:element name="order" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>    
+    </xsd:complexType>   
+    <xsd:complexType name="NoteValidator">
+        <xsd:sequence>
+            <xsd:element name="length" type="Length" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="size" type="Size" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="notNull" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="notEmpty" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="min" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+             <xsd:element name="max" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="pattern" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="past" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="future" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="email" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="valid" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="cnpj" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="cpf" type="xsd:boolean" minOccurs="0" maxOccurs="1" />            
+            <xsd:element name="ipOrMask" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>  
+     <xsd:complexType name="Length">
+        <xsd:sequence>             
+             <xsd:element name="min" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+             <xsd:element name="max" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>    
+    </xsd:complexType>  
+    <xsd:complexType name="Size">
+        <xsd:sequence>             
+             <xsd:element name="min" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+             <xsd:element name="max" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>    
+    </xsd:complexType>  
+    <xsd:complexType name="NoteORM">
+        <xsd:sequence>
+            <xsd:element name="parent" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="parentChildren" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="cascades" type="typeCascade" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="orphanRemoval" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

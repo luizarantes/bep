@@ -1,0 +1,44 @@
+#include("header.vm") 
+
+package ${package}.model.domain;
+
+#if($entity.useDate)
+import java.util.Date;
+#end
+
+#if($entity.useList)
+import javax.persistence.metamodel.ListAttribute;
+#end
+import javax.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.StaticMetamodel;
+
+#foreach ($packageEnum in $entity.packageEnum)
+import $packageEnum;
+#end
+
+#include("comments.vm")
+
+@StaticMetamodel(${entity.logicalName}.class)
+public class ${entity.logicalName}_ {
+
+	public static volatile SingularAttribute<${entity.logicalName}, ${entity.typePK.type}> id;	
+#foreach ($field in $entity.columns)
+#if($field.manyToOne)
+	public static volatile SingularAttribute<${entity.logicalName}, $field.type> $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+#end
+#if($field.oneToOne)
+	public static volatile SingularAttribute<${entity.logicalName}, $field.type> $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+#end
+#if($field.oneToMany)
+	public static volatile ListAttribute<${entity.logicalName}, $field.type.substring(5) $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)s;
+#end
+#if(!$field.manyToOne && !$field.oneToOne && !$field.oneToMany)
+#if(!$field.enumeration)
+	public static volatile SingularAttribute<${entity.logicalName}, $field.type> $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+#else
+	public static volatile SingularAttribute<${entity.logicalName}, $field.enumName> $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+#end
+#end
+#end
+	
+}

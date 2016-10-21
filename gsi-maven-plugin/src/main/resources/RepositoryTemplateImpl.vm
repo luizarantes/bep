@@ -1,0 +1,12 @@
+#include("header.vm") 
+
+package ${package}.data.repository.impl;
+
+import ${package}.data.repository.custom.${entityName}CustomRepository;
+
+
+#include("comments.vm")
+
+public class ${entityName}RepositoryImpl implements ${entityName}CustomRepository {
+
+}

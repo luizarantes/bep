@@ -1,0 +1,102 @@
+#include("header.vm") 
+
+package ${package}.model.dto;
+
+#if($entity.useDate)
+import java.util.Date;
+#end
+
+#foreach ($packageEnum in $entity.packageEnum)
+import $packageEnum;
+#end
+import com.btg.pactual.dto.DataTransferObject;
+
+#include("comments.vm")
+
+public class ${entity.logicalName}DTO extends DataTransferObject {
+
+	private static final long serialVersionUID = 1L;
+	
+	private ${entity.typePK.type} id;
+
+#foreach ($field in $entity.columns)
+#if(!$field.oneToMany && !$field.manyToOne && !$field.oneToOne)
+#if(!$field.enumeration)
+  	/*
+     * $field.comment
+     */
+	private $field.type $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+
+#else
+  	/*
+     * $field.comment
+     */     
+	private $field.enumName $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+
+#end	
+#end
+#end
+
+    /**
+     * @return ${entity.typePK.type}
+     */
+    public ${entity.typePK.type} getId() {
+        return id;
+    }
+
+    /**
+     * @param id
+     */
+    public void setId(${entity.typePK.type} id) {
+        this.id = id;
+    }    
+#foreach ($field in $entity.columns)
+#if(!$field.oneToMany && !$field.manyToOne && !$field.oneToOne)
+    #if($field.oneToMany)
+        #set($oneToMany = "s")
+    #else
+        #set($oneToMany = "")
+    #end
+
+     #if(!$field.enumeration)
+    /**
+     * $field.comment
+     *
+     * @param $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany
+     */
+    public void set$field.logicalName.substring(0, 1).toUpperCase()$field.logicalName.substring(1)$oneToMany($field.type $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany) {
+        this.$field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany = $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany#if($field.enumeration).toString()#end;
+    }
+
+    /**
+     * $field.comment
+     *
+     * @return $field.type
+     */
+    public $field.type get$field.logicalName.substring(0, 1).toUpperCase()$field.logicalName.substring(1)$oneToMany() {
+        return this.$field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany;
+    }
+     #else
+
+    /**
+     * $field.comment
+     *
+     * @param $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany
+     */
+    public void set$field.logicalName.substring(0, 1).toUpperCase()$field.logicalName.substring(1)($field.enumName $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)) {
+        this.$field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)$oneToMany = $field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)#if($field.enumeration)#end;
+    }
+
+    /**
+     * $field.comment
+     *
+     * @return $field.enumName
+     */
+    public $field.enumName get$field.logicalName.substring(0, 1).toUpperCase()$field.logicalName.substring(1)() {
+        return this.$field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1);
+    }
+#end
+#end
+#end
+
+}

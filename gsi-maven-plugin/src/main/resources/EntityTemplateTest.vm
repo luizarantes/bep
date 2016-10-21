@@ -1,0 +1,60 @@
+#include("header.vm") 
+
+package ${package}.model.domain;
+
+import org.junit.After;
+import org.junit.Before;
+
+import com.indracompany.core.model.AbstractDomainBeanTest;
+
+#include("comments.vm")
+
+public class ${entity.logicalName}Test extends AbstractDomainBeanTest<${entity.logicalName}, ${entity.typePK.type}> {
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+        
+	}
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@After
+	public void tearDown() throws Exception {
+
+	}
+
+    @Override
+    protected ${entity.typePK.type} getControlId() {
+        return (${entity.typePK.type}.valueOf("2"));
+    }
+    
+    @Override
+    public ${entity.logicalName} getSmaller() {
+        return new ${entity.logicalName}(${entity.typePK.type}.valueOf("1"));
+    }
+
+    @Override
+    public ${entity.logicalName} getGreater() {
+        return new ${entity.logicalName}(${entity.typePK.type}.valueOf("3"));
+    }
+
+    @Override
+    public ${entity.logicalName} getSame() {
+        return new ${entity.logicalName}(${entity.typePK.type}.valueOf("2"));
+    }
+
+    @Override
+    public ${entity.logicalName} getControl() {
+        return new ${entity.logicalName}(${entity.typePK.type}.valueOf("2"));
+    }
+
+    @Override
+    public ${entity.logicalName} getVanilla() {
+        return new ${entity.logicalName}();
+    }
+
+}

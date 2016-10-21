@@ -1,0 +1,5 @@
+#foreach ($field in $entity.columns)
+#if(!$field.oneToMany && !$field.manyToOne && !$field.oneToOne)
+$field.logicalName.substring(0, 1).toLowerCase()$field.logicalName.substring(1)=
+#end
+#end

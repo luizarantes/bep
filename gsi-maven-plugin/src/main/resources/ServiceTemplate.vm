@@ -1,0 +1,15 @@
+#include("header.vm") 
+
+package ${package}.service;
+
+import ${package}.model.domain.${entityName};
+import com.btg.pactual.core.service.JpaEntityService;
+
+import javax.ejb.Remote;
+
+#include("comments.vm")
+
+@Remote
+public abstract interface ${entityName}Service extends JpaEntityService<${typePK}, ${entityName}> {
+
+}

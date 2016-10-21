@@ -1,0 +1,9 @@
+#include("header.vm") 
+
+package ${package}.data.repository.custom;
+
+#include("comments.vm")
+
+public abstract interface ${entityName}CustomRepository {
+
+}

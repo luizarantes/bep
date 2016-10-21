@@ -1,0 +1,217 @@
+#include("header.vm")
+
+package ${package}.service.impl;
+
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
+import static org.junit.Assert.fail;
+
+import java.util.ArrayList;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import ${package}.dao.${entityName}Dao;
+import ${package}.model.domain.${entityName};
+
+import com.indracompany.core.CriteriaCondition;
+import com.indracompany.core.DefaultCriteriaCondition;
+import com.indracompany.core.model.ValueListHolder;
+import com.indracompany.core.service.CrudBusinessException;
+
+#include("comments.vm")
+
+public class ${entityName}ServiceImplTest  {
+
+	private ${typePK} id;
+	private ${entityName}Dao dao;
+	private ${entityName} domainBean;
+	private ${entityName}ServiceImpl service;
+
+    /**
+     * @return ${typePK}
+     */
+    public ${typePK} getId() {
+       return this.id;
+    }
+
+    /**
+     * @param id
+     */
+    public void setId(${typePK} id)  {
+       this.id = id;
+    }
+
+    /**
+     * @return ${entityName}Dao
+     */
+	public ${entityName}Dao getDao() {
+	   return this.dao;
+	}
+
+    /**
+     * @param dao
+     */
+	public void setDao(${entityName}Dao dao)  {
+	   this.dao = dao;
+	}
+
+    /**
+     * @return ${entityName}
+     */
+	public ${entityName} getDomainBean() {
+       return this.domainBean;
+    }
+
+    /**
+     * @param domainBean
+     */
+    public void setDomainBean(${entityName} domainBean)  {
+       this.domainBean = domainBean;
+    }
+
+    /**
+     * @return ${entityName}ServiceImpl
+     */
+    public ${entityName}ServiceImpl getService() {
+       return this.service;
+    }
+
+    /**
+     * @param service
+     */
+    public void setService(${entityName}ServiceImpl service)  {
+       this.service = service;
+    }
+
+	@Before
+	public void setUp() throws Exception {
+		this.setId(${typePK}.valueOf(1));
+		this.setDao(createMock(${entityName}Dao.class));
+		this.setDomainBean(new ${entityName}(this.getId()));
+		this.setService(new ${entityName}ServiceImpl());
+		this.getService().setDao(this.getDao());
+	}
+
+    @Test
+    public void testCreate() {
+        ${entityName} newDomainBean = new ${entityName}(${typePK}.valueOf(5));
+
+        expect(this.getDao().create(newDomainBean)).andReturn(newDomainBean);
+        replay(this.getDao());
+
+        try {
+            this.getService().create(newDomainBean);
+        } catch(CrudBusinessException e) {
+            fail(e.getMessage());
+        }
+
+        verify(this.getDao());
+    }
+
+    @Test
+    public void testUpdate() {
+        expect(this.getDao().update(this.getDomainBean())).andReturn(this.getDomainBean());
+        replay(this.getDao());
+
+        try {
+            this.getService().update(this.getDomainBean());
+        } catch (CrudBusinessException e) {
+            fail(e.getMessage());
+        }
+
+        verify(this.getDao());
+    }
+
+	@Test
+	public void testDeleteById() {
+		this.getDao().deleteById(this.getId());
+		replay(this.getDao());
+
+		try {
+			this.getService().deleteById(this.getId());
+		} catch (CrudBusinessException e) {
+			fail(e.getMessage());
+		}
+
+		verify(this.getDao());
+	}
+
+	@Test
+	public void testDelete() {
+		this.getDao().delete(this.getDomainBean());
+		replay(this.getDao());
+
+		try {
+			this.getService().delete(this.getDomainBean());
+		} catch (CrudBusinessException e) {
+			fail(e.getMessage());
+		}
+
+		verify(this.getDao());
+	}
+
+	@Test
+	public void testFindById() {
+		expect(this.getDao().findById(this.getId())).andReturn(this.getDomainBean());
+		replay(this.getDao());
+
+		try {
+			this.getService().findById(this.getId());
+		} catch (CrudBusinessException e) {
+			fail(e.getMessage());
+		}
+
+		verify(this.getDao());
+	}
+
+    @Test
+    public void testFindByUniqueResult() {
+        CriteriaCondition criteria = new DefaultCriteriaCondition("findByUniqueResult", this.getDomainBean());
+
+        expect(this.getDao().findUniqueResultByCriteria(criteria)).andReturn(this.getDomainBean());
+        replay(this.getDao());
+
+        this.getService().findUniqueResult(criteria);
+
+        verify(this.getDao());
+    }
+
+	@Test
+	public void testFindAll() {
+		ValueListHolder<${entityName}> resultList = new ValueListHolder<${entityName}>(new ArrayList<${entityName}>());
+		resultList.add(this.getDomainBean());
+
+		expect(this.getDao().findAll()).andReturn(resultList);
+		replay(this.getDao());
+
+		try {
+			this.getService().findAll();
+		} catch(CrudBusinessException e) {
+			fail(e.getMessage());
+		}
+
+		verify(this.getDao());
+	}
+
+	@Test
+	public void testFindByCriteria() {
+		ValueListHolder<${entityName}> resultList = new ValueListHolder<${entityName}>(new ArrayList<${entityName}>());
+		resultList.add(this.getDomainBean());
+		CriteriaCondition criteria = new DefaultCriteriaCondition("findByCriteria", this.getDomainBean());
+
+		expect(this.getDao().findByCriteria(criteria)).andReturn(resultList);
+		replay(this.getDao());
+
+		try {
+			this.getService().findByCriteria(criteria);
+		} catch (CrudBusinessException e) {
+			fail(e.getMessage());
+		}
+
+		verify(this.getDao());
+	}
+
+}

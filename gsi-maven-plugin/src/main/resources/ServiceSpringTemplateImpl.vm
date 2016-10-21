@@ -1,0 +1,76 @@
+#include("header.vm") 
+
+package ${package}.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ${package}.data.repository.${entityName}Repository;
+import ${package}.model.domain.${entityName};
+import ${package}.model.domain.dto.${entityName}DTO;
+import ${package}.service.${entityName}Service;
+
+#include("comments.vm")
+
+@Service
+public class ${entityName}ServiceImpl extends AbstractService implements ${entityName}Service<${entityName}DTO, ${entityName}, Long> {
+    
+    @Autowired
+    private ${entityName}Repository dataRepository;
+    
+    /* (non-Javadoc)
+	 * @see ${package}.service.${entityName}Service#save(java.lang.Object)
+	 */
+	public ${entityName}DTO save(${entityName}DTO dto) {
+		
+		if(dto != null) {
+			${entityName} entity = new ${entityName}();
+			super.copyProperties(entity, dto);
+			entity = this.dataRepository.save(entity);
+			dto.setId(entity.getId());			
+		}
+		
+		return dto;
+	}
+
+	/* (non-Javadoc)
+	 * @see ${package}.service.${entityName}Service#findOne(java.lang.Object)
+	 */
+	public ${entityName}DTO findOne(Long id) {
+		
+		if(id != null) {
+			${entityName}DTO dto = new ${entityName}DTO();
+			super.copyProperties(dto, this.dataRepository.findOne(id));
+			return dto;
+		}
+		
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see ${package}.service.${entityName}Service#findAll(java.lang.Object)
+	 */
+	public Iterable<${entityName}DTO> findAll() {
+
+		Iterable<${entityName}> iterableFindAll = this.dataRepository.findAll();
+		
+		if(iterableFindAll != null) {
+		
+			List<${entityName}DTO> listResult = new ArrayList<${entityName}DTO>(); 
+
+			while(iterableFindAll.iterator().hasNext()) {
+				${entityName}DTO dto = new ${entityName}DTO();
+				super.copyProperties(dto, iterableFindAll.iterator().next());
+				listResult.add(dto);
+			}
+
+			return listResult;
+		}
+
+		return null;
+	}
+
+}

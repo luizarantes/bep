@@ -1,0 +1,27 @@
+#include("header.vm") 
+
+package ${package}.dao.impl;
+
+import com.btg.pactual.core.dao.AbstractJpaDAO;
+import ${package}.dao.${entityName}Dao;
+import ${package}.model.domain.${entityName};
+
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+
+#include("comments.vm")
+
+@Remote(value = ${entityName}Dao.class)
+@Stateless(mappedName = "${entityName}DaoImpl")
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
+public class ${entityName}DaoImpl extends AbstractJpaDAO<${typePK}, ${entityName}> implements ${entityName}Dao {
+
+    private static final long serialVersionUID = 1L;    
+	
+	public ${entityName}DaoImpl() {
+		super();		
+	}    
+
+}

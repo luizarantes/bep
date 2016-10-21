@@ -1,0 +1,33 @@
+#include("header.vm") 
+
+package ${package}.service.impl;
+
+import ${package}.dao.${entityName}Dao;
+import ${package}.model.domain.${entityName};
+import ${package}.service.${entityName}Service;
+import com.btg.pactual.core.service.AbstractJpaEntityServiceImpl;
+
+import javax.ejb.EJB;
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+
+#include("comments.vm")
+
+@Remote(value = ${entityName}Service.class)
+@Stateless(mappedName = "${entityName}ServiceImpl")
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
+public class ${entityName}ServiceImpl extends AbstractJpaEntityServiceImpl<${typePK}, ${entityName}> implements ${entityName}Service {
+
+    private static final long serialVersionUID = 1L;
+    
+ 	/**
+	 * @param dao
+	 */
+	@EJB
+	public void setDao(${entityName}Dao dao) {
+		super.setDao(dao);
+	}
+
+}

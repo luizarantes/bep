@@ -1,0 +1,28 @@
+#include("header.vm") 
+
+package ${package}.model.builder;
+
+import ${package}.model.domain.${entity.logicalName};
+import ${package}.model.dto.${entity.logicalName}DTO;
+
+import com.btg.pactual.commons.utilities.dtobuilder.DTOBuilder;
+
+#include("comments.vm")
+
+public class ${entity.logicalName}Builder implements DTOBuilder<${entity.logicalName}, ${entity.logicalName}DTO> {
+
+
+	public void build(${entity.logicalName} complexy, ${entity.logicalName}DTO dto) {
+#foreach ($field in $entity.columns)
+#if(!$field.oneToMany && !$field.manyToOne && !$field.oneToOne)
+#if($field.oneToMany)
+#set($oneToMany = "s")
+#else
+#set($oneToMany = "")
+#end
+		dto.set$field.logicalName.substring(0, 1).toUpperCase()$field.logicalName.substring(1)$oneToMany(complexy.get$field.logicalName.substring(0, 1).toUpperCase()$field.logicalName.substring(1)$oneToMany());	
+#end
+#end
+	}
+
+}

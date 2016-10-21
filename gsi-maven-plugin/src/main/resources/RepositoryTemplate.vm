@@ -1,0 +1,14 @@
+#include("header.vm") 
+
+package ${package}.data.repository;
+
+import ${package}.model.domain.${entityName};
+import ${package}.data.repository.custom.${entityName}CustomRepository;
+
+import org.springframework.data.repository.CrudRepository;
+
+#include("comments.vm")
+
+public abstract interface ${entityName}Repository extends CrudRepository<${entityName}, ${typePK}>, ${entityName}CustomRepository {
+
+}

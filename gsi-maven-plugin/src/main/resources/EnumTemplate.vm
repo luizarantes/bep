@@ -1,0 +1,23 @@
+#include("header.vm") 
+
+package ${package}.model.type;
+
+#include("comments.vm")
+
+public enum ${enumName}Indicador {
+    #foreach ($constant in $constants)
+    ${constant.validValueProps.valueDisplayName}("${constant.validValueProps.name.content}"),
+    #end;
+
+    private String value;
+
+    ${enumName}Indicador(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return this.value;
+    }
+
+}

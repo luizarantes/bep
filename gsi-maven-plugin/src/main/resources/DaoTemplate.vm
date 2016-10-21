@@ -1,0 +1,15 @@
+#include("header.vm") 
+
+package ${package}.dao;
+
+import com.btg.pactual.core.dao.JpaDAO;
+import ${package}.model.domain.${entityName};
+
+import javax.ejb.Remote;
+
+#include("comments.vm")
+
+@Remote
+public abstract interface ${entityName}Dao extends JpaDAO<${typePK}, ${entityName}> {
+
+}
