@@ -1,4 +1,4 @@
-package com.bep.startup.model.domain.dto;
+package com.madsi.marketing.digital.model.domain.dto;
 
 import java.io.Serializable;
 
