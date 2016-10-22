@@ -49,8 +49,8 @@ public class HardwareType extends DomainEntity<Long> {
     
     @NotNull
         
-	@Column(name = "NM_NAME", length = 60, nullable = false)
-    private String nomeName;
+	@Column(name = "NM_HARDWARE_TYPE", length = 60, nullable = false)
+    private String nameHardwareType;
             
     /**
      * @param id
@@ -102,10 +102,10 @@ public class HardwareType extends DomainEntity<Long> {
     /**
      * NAME OF HARDWARE TYPE
      *
-     * @param nomeName
+     * @param nameHardwareType
      */
-    public void setNomeName(String nomeName) {
-        this.nomeName = nomeName;
+    public void setNameHardwareType(String nameHardwareType) {
+        this.nameHardwareType = nameHardwareType;
     }
 
     /**
@@ -113,8 +113,8 @@ public class HardwareType extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNomeName() {
-        return this.nomeName;
+    public String getNameHardwareType() {
+        return this.nameHardwareType;
     }
     
 }

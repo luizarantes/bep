@@ -8,11 +8,14 @@ package com.bep.startup.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.bep.startup.data.repository.CiaRepository;
 import com.bep.startup.model.domain.dto.CiaDTO;
@@ -25,8 +28,8 @@ import com.bep.startup.service.impl.CiaServiceImpl;
  * @since 1.0
  * 
  */
-@Controller
-@RequestMapping("/api/v1/cia")
+@RestController
+@RequestMapping(path = "/api/v1/cia", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class CiaController {
 
 	@Autowired
@@ -43,22 +46,21 @@ public class CiaController {
 	
 	@ResponseBody
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
-	public ResponseEntity<CiaDTO> save(CiaDTO dto) {
+	public ResponseEntity<CiaDTO> save(@RequestBody CiaDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<CiaDTO>(HttpStatus.OK);
+		return new ResponseEntity<CiaDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one", method = RequestMethod.GET)
-	public ResponseEntity<CiaDTO> findOne(Long id) {
+	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	public ResponseEntity<CiaDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<CiaDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(Long id) {
+	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	public void delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}
 
 }

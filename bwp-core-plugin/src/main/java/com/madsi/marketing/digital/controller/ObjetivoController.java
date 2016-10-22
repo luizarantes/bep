@@ -29,7 +29,7 @@ import com.madsi.marketing.digital.data.repository.ObjetivoRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/objetivo")
+@RequestMapping("/api/v1/objetivo", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class ObjetivoController {
 
 	@Autowired

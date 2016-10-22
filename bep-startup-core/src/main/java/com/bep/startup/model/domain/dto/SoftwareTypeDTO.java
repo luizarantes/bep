@@ -23,7 +23,7 @@ public class SoftwareTypeDTO extends DataTransferObject {
   	/*
      * NAME OF SOFTWARE TYPE
      */
-	private String nomeName;
+	private String nameSoftwareType;
 
 
     /**
@@ -43,10 +43,10 @@ public class SoftwareTypeDTO extends DataTransferObject {
          /**
      * NAME OF SOFTWARE TYPE
      *
-     * @param nomeName
+     * @param nameSoftwareType
      */
-    public void setNomeName(String nomeName) {
-        this.nomeName = nomeName;
+    public void setNameSoftwareType(String nameSoftwareType) {
+        this.nameSoftwareType = nameSoftwareType;
     }
 
     /**
@@ -54,8 +54,8 @@ public class SoftwareTypeDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNomeName() {
-        return this.nomeName;
+    public String getNameSoftwareType() {
+        return this.nameSoftwareType;
     }
      
 }

@@ -29,7 +29,7 @@ import com.madsi.marketing.digital.data.repository.CampanhaRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/campanha")
+@RequestMapping("/api/v1/campanha", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class CampanhaController {
 
 	@Autowired

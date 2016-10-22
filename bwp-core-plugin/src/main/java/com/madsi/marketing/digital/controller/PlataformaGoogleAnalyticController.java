@@ -29,7 +29,7 @@ import com.madsi.marketing.digital.data.repository.PlataformaGoogleAnalyticRepos
  * 
  */
 @RestController
-@RequestMapping("/api/v1/plataformaGoogleAnalytic")
+@RequestMapping("/api/v1/plataformaGoogleAnalytic", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class PlataformaGoogleAnalyticController {
 
 	@Autowired

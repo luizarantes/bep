@@ -23,22 +23,22 @@ public class CiaDTO extends DataTransferObject {
   	/*
      * INFORMATION OF ADDRESS
      */
-	private String descricaoAddress;
+	private String descriptionAddress;
 
   	/*
      * NAME OF CITY
      */
-	private String nomeCity;
+	private String nameCity;
 
   	/*
      * INFORMATION OF ZIP CODE
      */
-	private String descricaoZipCode;
+	private String descriptionZipCode;
 
   	/*
      * NUMBER OF TIN(TAX PAYER) OR ATIN OR PTIN
      */
-	private String descricaoTin;
+	private String descriptionTin;
 
 
     /**
@@ -58,10 +58,10 @@ public class CiaDTO extends DataTransferObject {
          /**
      * INFORMATION OF ADDRESS
      *
-     * @param descricaoAddress
+     * @param descriptionAddress
      */
-    public void setDescricaoAddress(String descricaoAddress) {
-        this.descricaoAddress = descricaoAddress;
+    public void setDescriptionAddress(String descriptionAddress) {
+        this.descriptionAddress = descriptionAddress;
     }
 
     /**
@@ -69,17 +69,17 @@ public class CiaDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescricaoAddress() {
-        return this.descricaoAddress;
+    public String getDescriptionAddress() {
+        return this.descriptionAddress;
     }
              
          /**
      * NAME OF CITY
      *
-     * @param nomeCity
+     * @param nameCity
      */
-    public void setNomeCity(String nomeCity) {
-        this.nomeCity = nomeCity;
+    public void setNameCity(String nameCity) {
+        this.nameCity = nameCity;
     }
 
     /**
@@ -87,17 +87,17 @@ public class CiaDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNomeCity() {
-        return this.nomeCity;
+    public String getNameCity() {
+        return this.nameCity;
     }
              
          /**
      * INFORMATION OF ZIP CODE
      *
-     * @param descricaoZipCode
+     * @param descriptionZipCode
      */
-    public void setDescricaoZipCode(String descricaoZipCode) {
-        this.descricaoZipCode = descricaoZipCode;
+    public void setDescriptionZipCode(String descriptionZipCode) {
+        this.descriptionZipCode = descriptionZipCode;
     }
 
     /**
@@ -105,17 +105,17 @@ public class CiaDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescricaoZipCode() {
-        return this.descricaoZipCode;
+    public String getDescriptionZipCode() {
+        return this.descriptionZipCode;
     }
              
          /**
      * NUMBER OF TIN(TAX PAYER) OR ATIN OR PTIN
      *
-     * @param descricaoTin
+     * @param descriptionTin
      */
-    public void setDescricaoTin(String descricaoTin) {
-        this.descricaoTin = descricaoTin;
+    public void setDescriptionTin(String descriptionTin) {
+        this.descriptionTin = descriptionTin;
     }
 
     /**
@@ -123,8 +123,8 @@ public class CiaDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescricaoTin() {
-        return this.descricaoTin;
+    public String getDescriptionTin() {
+        return this.descriptionTin;
     }
      
 }

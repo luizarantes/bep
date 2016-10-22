@@ -54,7 +54,7 @@ public class Cia extends DomainEntity<Long> {
      */
     
 	@Column(name = "TX_ADDRESS", length = 255)
-    private String descricaoAddress;
+    private String descriptionAddress;
                         
     /*
      * NAME OF CITY
@@ -63,7 +63,7 @@ public class Cia extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "NM_CITY", length = 30, nullable = false)
-    private String nomeCity;
+    private String nameCity;
                         
     /*
      * INFORMATION OF ZIP CODE
@@ -72,14 +72,14 @@ public class Cia extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "TX_ZIP_CODE", length = 10, nullable = false)
-    private String descricaoZipCode;
+    private String descriptionZipCode;
                         
     /*
      * NUMBER OF TIN(TAX PAYER) OR ATIN OR PTIN
      */
     
 	@Column(name = "TX_TIN", length = 10)
-    private String descricaoTin;
+    private String descriptionTin;
                     
     /**
      * @param id
@@ -131,10 +131,10 @@ public class Cia extends DomainEntity<Long> {
     /**
      * INFORMATION OF ADDRESS
      *
-     * @param descricaoAddress
+     * @param descriptionAddress
      */
-    public void setDescricaoAddress(String descricaoAddress) {
-        this.descricaoAddress = descricaoAddress;
+    public void setDescriptionAddress(String descriptionAddress) {
+        this.descriptionAddress = descriptionAddress;
     }
 
     /**
@@ -142,18 +142,18 @@ public class Cia extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoAddress() {
-        return this.descricaoAddress;
+    public String getDescriptionAddress() {
+        return this.descriptionAddress;
     }
                     
      
     /**
      * NAME OF CITY
      *
-     * @param nomeCity
+     * @param nameCity
      */
-    public void setNomeCity(String nomeCity) {
-        this.nomeCity = nomeCity;
+    public void setNameCity(String nameCity) {
+        this.nameCity = nameCity;
     }
 
     /**
@@ -161,18 +161,18 @@ public class Cia extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNomeCity() {
-        return this.nomeCity;
+    public String getNameCity() {
+        return this.nameCity;
     }
                     
      
     /**
      * INFORMATION OF ZIP CODE
      *
-     * @param descricaoZipCode
+     * @param descriptionZipCode
      */
-    public void setDescricaoZipCode(String descricaoZipCode) {
-        this.descricaoZipCode = descricaoZipCode;
+    public void setDescriptionZipCode(String descriptionZipCode) {
+        this.descriptionZipCode = descriptionZipCode;
     }
 
     /**
@@ -180,18 +180,18 @@ public class Cia extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoZipCode() {
-        return this.descricaoZipCode;
+    public String getDescriptionZipCode() {
+        return this.descriptionZipCode;
     }
                     
      
     /**
      * NUMBER OF TIN(TAX PAYER) OR ATIN OR PTIN
      *
-     * @param descricaoTin
+     * @param descriptionTin
      */
-    public void setDescricaoTin(String descricaoTin) {
-        this.descricaoTin = descricaoTin;
+    public void setDescriptionTin(String descriptionTin) {
+        this.descriptionTin = descriptionTin;
     }
 
     /**
@@ -199,8 +199,8 @@ public class Cia extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoTin() {
-        return this.descricaoTin;
+    public String getDescriptionTin() {
+        return this.descriptionTin;
     }
                     
      

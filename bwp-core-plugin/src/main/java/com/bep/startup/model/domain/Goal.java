@@ -74,7 +74,7 @@ public class Goal extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "DS_DESCRIPTION", length = 255, nullable = false)
-    private String descricaoDescription;
+    private String descriptionDescription;
                         
     /*
      * TYPE OF PRIORITY FOR EXAMPLE: PRIMARY OR SECONDARY
@@ -171,10 +171,10 @@ public class Goal extends DomainEntity<Long> {
     /**
      * DESCRIPTION OF GOAL
      *
-     * @param descricaoDescription
+     * @param descriptionDescription
      */
-    public void setDescricaoDescription(String descricaoDescription) {
-        this.descricaoDescription = descricaoDescription;
+    public void setDescriptionDescription(String descriptionDescription) {
+        this.descriptionDescription = descriptionDescription;
     }
 
     /**
@@ -182,8 +182,8 @@ public class Goal extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoDescription() {
-        return this.descricaoDescription;
+    public String getDescriptionDescription() {
+        return this.descriptionDescription;
     }
                     
      

@@ -103,7 +103,7 @@ public class Project extends DomainEntity<Long> {
      */
     
 	@Column(name = "NR_VERSION", length = 3)
-    private String numeroVersion;
+    private String numberVersion;
                         
     /*
      * DATE OF LAST UPDATE
@@ -113,7 +113,7 @@ public class Project extends DomainEntity<Long> {
         
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DT_LAST_UPDATE", nullable = false)
-    private Date dataLastUpdate;
+    private Date dateLastUpdate;
                         
     /*
      * DESCRIPTION OF OVERVIEW
@@ -122,7 +122,7 @@ public class Project extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "DS_OVERVIEW", length = 4000, nullable = false)
-    private String descricaoOverview;
+    private String descriptionOverview;
                         
     /*
      * NAME OF PROJECT
@@ -131,14 +131,14 @@ public class Project extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "TX_NAME", length = 60, nullable = false)
-    private String descricaoName;
+    private String descriptionName;
                         
     /*
      * DESCRIPTION OF LOCATION
      */
     
 	@Column(name = "TX_LOCATION", length = 255)
-    private String descricaoLocation;
+    private String descriptionLocation;
                                                     
     /**
      * @param id
@@ -228,10 +228,10 @@ public class Project extends DomainEntity<Long> {
     /**
      * NUMBER OF VERSION
      *
-     * @param numeroVersion
+     * @param numberVersion
      */
-    public void setNumeroVersion(String numeroVersion) {
-        this.numeroVersion = numeroVersion;
+    public void setNumberVersion(String numberVersion) {
+        this.numberVersion = numberVersion;
     }
 
     /**
@@ -239,18 +239,18 @@ public class Project extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNumeroVersion() {
-        return this.numeroVersion;
+    public String getNumberVersion() {
+        return this.numberVersion;
     }
                     
      
     /**
      * DATE OF LAST UPDATE
      *
-     * @param dataLastUpdate
+     * @param dateLastUpdate
      */
-    public void setDataLastUpdate(Date dataLastUpdate) {
-        this.dataLastUpdate = dataLastUpdate;
+    public void setDateLastUpdate(Date dateLastUpdate) {
+        this.dateLastUpdate = dateLastUpdate;
     }
 
     /**
@@ -258,18 +258,18 @@ public class Project extends DomainEntity<Long> {
      *
      * @return Date
      */
-    public Date getDataLastUpdate() {
-        return this.dataLastUpdate;
+    public Date getDateLastUpdate() {
+        return this.dateLastUpdate;
     }
                     
      
     /**
      * DESCRIPTION OF OVERVIEW
      *
-     * @param descricaoOverview
+     * @param descriptionOverview
      */
-    public void setDescricaoOverview(String descricaoOverview) {
-        this.descricaoOverview = descricaoOverview;
+    public void setDescriptionOverview(String descriptionOverview) {
+        this.descriptionOverview = descriptionOverview;
     }
 
     /**
@@ -277,18 +277,18 @@ public class Project extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoOverview() {
-        return this.descricaoOverview;
+    public String getDescriptionOverview() {
+        return this.descriptionOverview;
     }
                     
      
     /**
      * NAME OF PROJECT
      *
-     * @param descricaoName
+     * @param descriptionName
      */
-    public void setDescricaoName(String descricaoName) {
-        this.descricaoName = descricaoName;
+    public void setDescriptionName(String descriptionName) {
+        this.descriptionName = descriptionName;
     }
 
     /**
@@ -296,18 +296,18 @@ public class Project extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoName() {
-        return this.descricaoName;
+    public String getDescriptionName() {
+        return this.descriptionName;
     }
                     
      
     /**
      * DESCRIPTION OF LOCATION
      *
-     * @param descricaoLocation
+     * @param descriptionLocation
      */
-    public void setDescricaoLocation(String descricaoLocation) {
-        this.descricaoLocation = descricaoLocation;
+    public void setDescriptionLocation(String descriptionLocation) {
+        this.descriptionLocation = descriptionLocation;
     }
 
     /**
@@ -315,8 +315,8 @@ public class Project extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoLocation() {
-        return this.descricaoLocation;
+    public String getDescriptionLocation() {
+        return this.descriptionLocation;
     }
                     
      

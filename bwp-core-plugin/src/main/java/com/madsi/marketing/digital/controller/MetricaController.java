@@ -29,7 +29,7 @@ import com.madsi.marketing.digital.data.repository.MetricaRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/metrica")
+@RequestMapping("/api/v1/metrica", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class MetricaController {
 
 	@Autowired

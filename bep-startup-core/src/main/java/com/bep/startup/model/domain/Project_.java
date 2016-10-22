@@ -26,11 +26,11 @@ public class Project_ {
 	public static volatile ListAttribute<Project, KeyMember> keyMembers;
 	public static volatile SingularAttribute<Project, User> user;
 	public static volatile SingularAttribute<Project, ContactPerson> contactPersonAdmin;
-	public static volatile SingularAttribute<Project, String> numeroVersion;
-	public static volatile SingularAttribute<Project, Date> dataLastUpdate;
-	public static volatile SingularAttribute<Project, String> descricaoOverview;
-	public static volatile SingularAttribute<Project, String> descricaoName;
-	public static volatile SingularAttribute<Project, String> descricaoLocation;
+	public static volatile SingularAttribute<Project, String> numberVersion;
+	public static volatile SingularAttribute<Project, Date> dateLastUpdate;
+	public static volatile SingularAttribute<Project, String> descriptionOverview;
+	public static volatile SingularAttribute<Project, String> descriptionName;
+	public static volatile SingularAttribute<Project, String> descriptionLocation;
 	public static volatile ListAttribute<Project, Invite> invites;
 	public static volatile ListAttribute<Project, ProjectCia> projectCias;
 	public static volatile ListAttribute<Project, Hardware> hardwares;

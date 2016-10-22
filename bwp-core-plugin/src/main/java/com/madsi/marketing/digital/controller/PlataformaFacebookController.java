@@ -29,7 +29,7 @@ import com.madsi.marketing.digital.data.repository.PlataformaFacebookRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/plataformaFacebook")
+@RequestMapping("/api/v1/plataformaFacebook", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class PlataformaFacebookController {
 
 	@Autowired

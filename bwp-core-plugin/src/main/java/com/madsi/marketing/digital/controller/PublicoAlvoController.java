@@ -29,7 +29,7 @@ import com.madsi.marketing.digital.data.repository.PublicoAlvoRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/publicoAlvo")
+@RequestMapping("/api/v1/publicoAlvo", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class PublicoAlvoController {
 
 	@Autowired

@@ -29,7 +29,7 @@ import com.madsi.marketing.digital.data.repository.FaixaEtariaRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/faixaEtaria")
+@RequestMapping("/api/v1/faixaEtaria", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class FaixaEtariaController {
 
 	@Autowired

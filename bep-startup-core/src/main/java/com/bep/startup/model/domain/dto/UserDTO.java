@@ -23,12 +23,12 @@ public class UserDTO extends DataTransferObject {
   	/*
      * MAIL UTILIZED TO LOGIN
      */
-	private String descricaoMail;
+	private String descriptionMail;
 
   	/*
      * PASSWORD OF USER
      */
-	private String descricaoPassword;
+	private String descriptionPassword;
 
 
     /**
@@ -48,10 +48,10 @@ public class UserDTO extends DataTransferObject {
          /**
      * MAIL UTILIZED TO LOGIN
      *
-     * @param descricaoMail
+     * @param descriptionMail
      */
-    public void setDescricaoMail(String descricaoMail) {
-        this.descricaoMail = descricaoMail;
+    public void setDescriptionMail(String descriptionMail) {
+        this.descriptionMail = descriptionMail;
     }
 
     /**
@@ -59,17 +59,17 @@ public class UserDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescricaoMail() {
-        return this.descricaoMail;
+    public String getDescriptionMail() {
+        return this.descriptionMail;
     }
              
          /**
      * PASSWORD OF USER
      *
-     * @param descricaoPassword
+     * @param descriptionPassword
      */
-    public void setDescricaoPassword(String descricaoPassword) {
-        this.descricaoPassword = descricaoPassword;
+    public void setDescriptionPassword(String descriptionPassword) {
+        this.descriptionPassword = descriptionPassword;
     }
 
     /**
@@ -77,8 +77,8 @@ public class UserDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescricaoPassword() {
-        return this.descricaoPassword;
+    public String getDescriptionPassword() {
+        return this.descriptionPassword;
     }
      
 }

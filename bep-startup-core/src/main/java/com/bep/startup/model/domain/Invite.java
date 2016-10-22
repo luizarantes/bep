@@ -64,7 +64,7 @@ public class Invite extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "CD_INVITE", length = 6, nullable = false)
-    private String codigoInvite;
+    private String codeInvite;
             
     /**
      * @param id
@@ -135,10 +135,10 @@ public class Invite extends DomainEntity<Long> {
     /**
      * CODE OF INVITE
      *
-     * @param codigoInvite
+     * @param codeInvite
      */
-    public void setCodigoInvite(String codigoInvite) {
-        this.codigoInvite = codigoInvite;
+    public void setCodeInvite(String codeInvite) {
+        this.codeInvite = codeInvite;
     }
 
     /**
@@ -146,8 +146,8 @@ public class Invite extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getCodigoInvite() {
-        return this.codigoInvite;
+    public String getCodeInvite() {
+        return this.codeInvite;
     }
     
 }

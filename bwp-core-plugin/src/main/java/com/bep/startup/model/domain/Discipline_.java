@@ -23,7 +23,7 @@ public class Discipline_ {
 
 	public static volatile SingularAttribute<Discipline, Long> id;	
 	public static volatile ListAttribute<Discipline, KeyMember> keyMembers;
-	public static volatile SingularAttribute<Discipline, String> descricaoName;
+	public static volatile SingularAttribute<Discipline, String> descriptionDiscipline;
 	public static volatile ListAttribute<Discipline, Goal> goals;
 	
 }

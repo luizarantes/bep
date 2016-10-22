@@ -23,6 +23,6 @@ public class Invite_ {
 	public static volatile SingularAttribute<Invite, Long> id;	
 	public static volatile SingularAttribute<Invite, ContactPerson> contactPerson;
 	public static volatile SingularAttribute<Invite, Project> project;
-	public static volatile SingularAttribute<Invite, String> codigoInvite;
+	public static volatile SingularAttribute<Invite, String> codeInvite;
 	
 }

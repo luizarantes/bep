@@ -23,6 +23,6 @@ public class Software_ {
 	public static volatile SingularAttribute<Software, Long> id;	
 	public static volatile SingularAttribute<Software, Project> project;
 	public static volatile SingularAttribute<Software, SoftwareType> softwareType;
-	public static volatile SingularAttribute<Software, String> descricaoDescription;
+	public static volatile SingularAttribute<Software, String> descriptionDescription;
 	
 }

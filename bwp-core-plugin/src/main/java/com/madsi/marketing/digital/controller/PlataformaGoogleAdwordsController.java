@@ -29,7 +29,7 @@ import com.madsi.marketing.digital.data.repository.PlataformaGoogleAdwordsReposi
  * 
  */
 @RestController
-@RequestMapping("/api/v1/plataformaGoogleAdwords")
+@RequestMapping("/api/v1/plataformaGoogleAdwords", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class PlataformaGoogleAdwordsController {
 
 	@Autowired

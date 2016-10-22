@@ -29,7 +29,7 @@ import com.madsi.marketing.digital.data.repository.EmpresaRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/empresa")
+@RequestMapping("/api/v1/empresa", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class EmpresaController {
 
 	@Autowired

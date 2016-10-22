@@ -24,7 +24,7 @@ public class Goal_ {
 	public static volatile SingularAttribute<Goal, Project> project;
 	public static volatile SingularAttribute<Goal, PotenticalUse> potencialUse;
 	public static volatile SingularAttribute<Goal, Discipline> discipline;
-	public static volatile SingularAttribute<Goal, String> descricaoDescription;
+	public static volatile SingularAttribute<Goal, String> descriptionDescription;
 	public static volatile SingularAttribute<Goal, String> inPriority;
 	
 }

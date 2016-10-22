@@ -29,7 +29,7 @@ import com.madsi.marketing.digital.data.repository.SegmentoRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/segmento")
+@RequestMapping("/api/v1/segmento", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class SegmentoController {
 
 	@Autowired

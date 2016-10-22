@@ -8,13 +8,15 @@ package com.bep.startup.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.bep.startup.model.domain.ProjectCia;
 import com.bep.startup.model.domain.dto.ProjectCiaDTO;
 import com.bep.startup.service.impl.ProjectCiaServiceImpl;
 import com.bep.startup.data.repository.ProjectCiaRepository;
@@ -26,8 +28,8 @@ import com.bep.startup.data.repository.ProjectCiaRepository;
  * @since 1.0
  * 
  */
-@Controller
-@RequestMapping("/api/v1/projectCia")
+@RestController
+@RequestMapping("/api/v1/projectCia", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class ProjectCiaController {
 
 	@Autowired
@@ -44,20 +46,20 @@ public class ProjectCiaController {
 	
 	@ResponseBody
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
-	public ResponseEntity<ProjectCiaDTO> save(ProjectCiaDTO dto) {
+	public ResponseEntity<ProjectCiaDTO> save(@RequestBody ProjectCiaDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<ProjectCiaDTO>(HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one", method = RequestMethod.GET)
-	public ResponseEntity<ProjectCiaDTO> findOne(Long id) {
+	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	public ResponseEntity<ProjectCiaDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<ProjectCiaDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(Long id) {
+	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
 		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}
