@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.KeyMemberRepository;
 public class KeyMemberController {
 
 	@Autowired
-	private KeyMemberServiceImpl<KeyMemberDTO, KeyMember, Long> service;
+	private KeyMemberServiceImpl service;
 
 	@Autowired
     private KeyMemberRepository dataRepository;

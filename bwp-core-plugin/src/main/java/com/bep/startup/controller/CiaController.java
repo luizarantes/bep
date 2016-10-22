@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.CiaRepository;
 public class CiaController {
 
 	@Autowired
-	private CiaServiceImpl<CiaDTO, Cia, Long> service;
+	private CiaServiceImpl service;
 
 	@Autowired
     private CiaRepository dataRepository;

@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.InviteRepository;
 public class InviteController {
 
 	@Autowired
-	private InviteServiceImpl<InviteDTO, Invite, Long> service;
+	private InviteServiceImpl service;
 
 	@Autowired
     private InviteRepository dataRepository;

@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.ProjectRepository;
 public class ProjectController {
 
 	@Autowired
-	private ProjectServiceImpl<ProjectDTO, Project, Long> service;
+	private ProjectServiceImpl service;
 
 	@Autowired
     private ProjectRepository dataRepository;

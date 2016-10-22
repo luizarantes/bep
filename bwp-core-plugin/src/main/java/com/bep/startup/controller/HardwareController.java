@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.HardwareRepository;
 public class HardwareController {
 
 	@Autowired
-	private HardwareServiceImpl<HardwareDTO, Hardware, Long> service;
+	private HardwareServiceImpl service;
 
 	@Autowired
     private HardwareRepository dataRepository;

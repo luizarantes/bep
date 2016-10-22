@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.GoalRepository;
 public class GoalController {
 
 	@Autowired
-	private GoalServiceImpl<GoalDTO, Goal, Long> service;
+	private GoalServiceImpl service;
 
 	@Autowired
     private GoalRepository dataRepository;

@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.PotenticalUseRepository;
 public class PotenticalUseController {
 
 	@Autowired
-	private PotenticalUseServiceImpl<PotenticalUseDTO, PotenticalUse, Long> service;
+	private PotenticalUseServiceImpl service;
 
 	@Autowired
     private PotenticalUseRepository dataRepository;

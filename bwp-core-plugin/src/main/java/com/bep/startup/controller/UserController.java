@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.UserRepository;
 public class UserController {
 
 	@Autowired
-	private UserServiceImpl<UserDTO, User, Long> service;
+	private UserServiceImpl service;
 
 	@Autowired
     private UserRepository dataRepository;

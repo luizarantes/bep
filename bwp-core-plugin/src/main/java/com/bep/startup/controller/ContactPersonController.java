@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.ContactPersonRepository;
 public class ContactPersonController {
 
 	@Autowired
-	private ContactPersonServiceImpl<ContactPersonDTO, ContactPerson, Long> service;
+	private ContactPersonServiceImpl service;
 
 	@Autowired
     private ContactPersonRepository dataRepository;

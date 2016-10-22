@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.ProjectCiaRepository;
 public class ProjectCiaController {
 
 	@Autowired
-	private ProjectCiaServiceImpl<ProjectCiaDTO, ProjectCia, Long> service;
+	private ProjectCiaServiceImpl service;
 
 	@Autowired
     private ProjectCiaRepository dataRepository;

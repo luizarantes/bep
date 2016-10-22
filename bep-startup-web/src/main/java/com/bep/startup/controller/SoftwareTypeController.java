@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.SoftwareTypeRepository;
 public class SoftwareTypeController {
 
 	@Autowired
-	private SoftwareTypeServiceImpl<SoftwareTypeDTO, SoftwareType, Long> service;
+	private SoftwareTypeServiceImpl service;
 
 	@Autowired
     private SoftwareTypeRepository dataRepository;

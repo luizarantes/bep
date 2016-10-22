@@ -31,7 +31,7 @@ import com.bep.startup.data.repository.DisciplineRepository;
 public class DisciplineController {
 
 	@Autowired
-	private DisciplineServiceImpl<DisciplineDTO, Discipline, Long> service;
+	private DisciplineServiceImpl service;
 
 	@Autowired
     private DisciplineRepository dataRepository;
