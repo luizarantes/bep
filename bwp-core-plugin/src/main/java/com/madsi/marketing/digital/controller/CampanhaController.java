@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.madsi.marketing.digital.model.domain.Campanha;
 import com.madsi.marketing.digital.model.domain.dto.CampanhaDTO;
-import com.madsi.marketing.digital.service.CampanhaService;
+import com.madsi.marketing.digital.service.impl.CampanhaServiceImpl;
 import com.madsi.marketing.digital.data.repository.CampanhaRepository;
 
 
@@ -31,7 +31,7 @@ import com.madsi.marketing.digital.data.repository.CampanhaRepository;
 public class CampanhaController {
 
 	@Autowired
-	private CampanhaService<CampanhaDTO, Campanha, Long> service;
+	private CampanhaServiceImpl service;
 
 	@Autowired
     private CampanhaRepository dataRepository;

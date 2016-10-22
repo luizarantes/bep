@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.madsi.marketing.digital.model.domain.Objetivo;
 import com.madsi.marketing.digital.model.domain.dto.ObjetivoDTO;
-import com.madsi.marketing.digital.service.ObjetivoService;
+import com.madsi.marketing.digital.service.impl.ObjetivoServiceImpl;
 import com.madsi.marketing.digital.data.repository.ObjetivoRepository;
 
 
@@ -31,7 +31,7 @@ import com.madsi.marketing.digital.data.repository.ObjetivoRepository;
 public class ObjetivoController {
 
 	@Autowired
-	private ObjetivoService<ObjetivoDTO, Objetivo, Long> service;
+	private ObjetivoServiceImpl service;
 
 	@Autowired
     private ObjetivoRepository dataRepository;

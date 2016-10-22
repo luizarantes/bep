@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.madsi.marketing.digital.data.repository.PublicoAlvoRepository;
 import com.madsi.marketing.digital.model.domain.PublicoAlvo;
 import com.madsi.marketing.digital.model.domain.dto.PublicoAlvoDTO;
-import com.madsi.marketing.digital.service.PublicoAlvoService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.madsi.marketing.digital.service.PublicoAlvoService;
  * 
  */
 @Service
-public class PublicoAlvoServiceImpl extends AbstractService implements PublicoAlvoService<PublicoAlvoDTO, PublicoAlvo, Long> {
+public class PublicoAlvoServiceImpl extends AbstractService<PublicoAlvoDTO, PublicoAlvo, Long>  {
     
     @Autowired
     private PublicoAlvoRepository dataRepository;

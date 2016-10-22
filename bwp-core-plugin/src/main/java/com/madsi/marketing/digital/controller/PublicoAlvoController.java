@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.madsi.marketing.digital.model.domain.PublicoAlvo;
 import com.madsi.marketing.digital.model.domain.dto.PublicoAlvoDTO;
-import com.madsi.marketing.digital.service.PublicoAlvoService;
+import com.madsi.marketing.digital.service.impl.PublicoAlvoServiceImpl;
 import com.madsi.marketing.digital.data.repository.PublicoAlvoRepository;
 
 
@@ -31,7 +31,7 @@ import com.madsi.marketing.digital.data.repository.PublicoAlvoRepository;
 public class PublicoAlvoController {
 
 	@Autowired
-	private PublicoAlvoService<PublicoAlvoDTO, PublicoAlvo, Long> service;
+	private PublicoAlvoServiceImpl service;
 
 	@Autowired
     private PublicoAlvoRepository dataRepository;

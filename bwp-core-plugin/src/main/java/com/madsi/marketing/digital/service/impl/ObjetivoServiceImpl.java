@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.madsi.marketing.digital.data.repository.ObjetivoRepository;
 import com.madsi.marketing.digital.model.domain.Objetivo;
 import com.madsi.marketing.digital.model.domain.dto.ObjetivoDTO;
-import com.madsi.marketing.digital.service.ObjetivoService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.madsi.marketing.digital.service.ObjetivoService;
  * 
  */
 @Service
-public class ObjetivoServiceImpl extends AbstractService implements ObjetivoService<ObjetivoDTO, Objetivo, Long> {
+public class ObjetivoServiceImpl extends AbstractService<ObjetivoDTO, Objetivo, Long>  {
     
     @Autowired
     private ObjetivoRepository dataRepository;

@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.madsi.marketing.digital.data.repository.SegmentoRepository;
 import com.madsi.marketing.digital.model.domain.Segmento;
 import com.madsi.marketing.digital.model.domain.dto.SegmentoDTO;
-import com.madsi.marketing.digital.service.SegmentoService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.madsi.marketing.digital.service.SegmentoService;
  * 
  */
 @Service
-public class SegmentoServiceImpl extends AbstractService implements SegmentoService<SegmentoDTO, Segmento, Long> {
+public class SegmentoServiceImpl extends AbstractService<SegmentoDTO, Segmento, Long>  {
     
     @Autowired
     private SegmentoRepository dataRepository;

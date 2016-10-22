@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.madsi.marketing.digital.model.domain.PlataformaGoogleAdwords;
 import com.madsi.marketing.digital.model.domain.dto.PlataformaGoogleAdwordsDTO;
-import com.madsi.marketing.digital.service.PlataformaGoogleAdwordsService;
+import com.madsi.marketing.digital.service.impl.PlataformaGoogleAdwordsServiceImpl;
 import com.madsi.marketing.digital.data.repository.PlataformaGoogleAdwordsRepository;
 
 
@@ -31,7 +31,7 @@ import com.madsi.marketing.digital.data.repository.PlataformaGoogleAdwordsReposi
 public class PlataformaGoogleAdwordsController {
 
 	@Autowired
-	private PlataformaGoogleAdwordsService<PlataformaGoogleAdwordsDTO, PlataformaGoogleAdwords, Long> service;
+	private PlataformaGoogleAdwordsServiceImpl service;
 
 	@Autowired
     private PlataformaGoogleAdwordsRepository dataRepository;

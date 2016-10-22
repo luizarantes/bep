@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.madsi.marketing.digital.data.repository.PlataformaGoogleAnalyticRepository;
 import com.madsi.marketing.digital.model.domain.PlataformaGoogleAnalytic;
 import com.madsi.marketing.digital.model.domain.dto.PlataformaGoogleAnalyticDTO;
-import com.madsi.marketing.digital.service.PlataformaGoogleAnalyticService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.madsi.marketing.digital.service.PlataformaGoogleAnalyticService;
  * 
  */
 @Service
-public class PlataformaGoogleAnalyticServiceImpl extends AbstractService implements PlataformaGoogleAnalyticService<PlataformaGoogleAnalyticDTO, PlataformaGoogleAnalytic, Long> {
+public class PlataformaGoogleAnalyticServiceImpl extends AbstractService<PlataformaGoogleAnalyticDTO, PlataformaGoogleAnalytic, Long>  {
     
     @Autowired
     private PlataformaGoogleAnalyticRepository dataRepository;

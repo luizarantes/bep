@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.madsi.marketing.digital.model.domain.PlataformaFacebook;
 import com.madsi.marketing.digital.model.domain.dto.PlataformaFacebookDTO;
-import com.madsi.marketing.digital.service.PlataformaFacebookService;
+import com.madsi.marketing.digital.service.impl.PlataformaFacebookServiceImpl;
 import com.madsi.marketing.digital.data.repository.PlataformaFacebookRepository;
 
 
@@ -31,7 +31,7 @@ import com.madsi.marketing.digital.data.repository.PlataformaFacebookRepository;
 public class PlataformaFacebookController {
 
 	@Autowired
-	private PlataformaFacebookService<PlataformaFacebookDTO, PlataformaFacebook, Long> service;
+	private PlataformaFacebookServiceImpl service;
 
 	@Autowired
     private PlataformaFacebookRepository dataRepository;

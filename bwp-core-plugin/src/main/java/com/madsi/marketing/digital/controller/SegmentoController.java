@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.madsi.marketing.digital.model.domain.Segmento;
 import com.madsi.marketing.digital.model.domain.dto.SegmentoDTO;
-import com.madsi.marketing.digital.service.SegmentoService;
+import com.madsi.marketing.digital.service.impl.SegmentoServiceImpl;
 import com.madsi.marketing.digital.data.repository.SegmentoRepository;
 
 
@@ -31,7 +31,7 @@ import com.madsi.marketing.digital.data.repository.SegmentoRepository;
 public class SegmentoController {
 
 	@Autowired
-	private SegmentoService<SegmentoDTO, Segmento, Long> service;
+	private SegmentoServiceImpl service;
 
 	@Autowired
     private SegmentoRepository dataRepository;

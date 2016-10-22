@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.madsi.marketing.digital.data.repository.PlataformaFacebookRepository;
 import com.madsi.marketing.digital.model.domain.PlataformaFacebook;
 import com.madsi.marketing.digital.model.domain.dto.PlataformaFacebookDTO;
-import com.madsi.marketing.digital.service.PlataformaFacebookService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.madsi.marketing.digital.service.PlataformaFacebookService;
  * 
  */
 @Service
-public class PlataformaFacebookServiceImpl extends AbstractService implements PlataformaFacebookService<PlataformaFacebookDTO, PlataformaFacebook, Long> {
+public class PlataformaFacebookServiceImpl extends AbstractService<PlataformaFacebookDTO, PlataformaFacebook, Long>  {
     
     @Autowired
     private PlataformaFacebookRepository dataRepository;

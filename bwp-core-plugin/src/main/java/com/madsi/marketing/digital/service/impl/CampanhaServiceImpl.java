@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.madsi.marketing.digital.data.repository.CampanhaRepository;
 import com.madsi.marketing.digital.model.domain.Campanha;
 import com.madsi.marketing.digital.model.domain.dto.CampanhaDTO;
-import com.madsi.marketing.digital.service.CampanhaService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.madsi.marketing.digital.service.CampanhaService;
  * 
  */
 @Service
-public class CampanhaServiceImpl extends AbstractService implements CampanhaService<CampanhaDTO, Campanha, Long> {
+public class CampanhaServiceImpl extends AbstractService<CampanhaDTO, Campanha, Long>  {
     
     @Autowired
     private CampanhaRepository dataRepository;

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.madsi.marketing.digital.model.domain.Metrica;
 import com.madsi.marketing.digital.model.domain.dto.MetricaDTO;
-import com.madsi.marketing.digital.service.MetricaService;
+import com.madsi.marketing.digital.service.impl.MetricaServiceImpl;
 import com.madsi.marketing.digital.data.repository.MetricaRepository;
 
 
@@ -31,7 +31,7 @@ import com.madsi.marketing.digital.data.repository.MetricaRepository;
 public class MetricaController {
 
 	@Autowired
-	private MetricaService<MetricaDTO, Metrica, Long> service;
+	private MetricaServiceImpl service;
 
 	@Autowired
     private MetricaRepository dataRepository;

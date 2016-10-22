@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.madsi.marketing.digital.data.repository.EmpresaRepository;
 import com.madsi.marketing.digital.model.domain.Empresa;
 import com.madsi.marketing.digital.model.domain.dto.EmpresaDTO;
-import com.madsi.marketing.digital.service.EmpresaService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.madsi.marketing.digital.service.EmpresaService;
  * 
  */
 @Service
-public class EmpresaServiceImpl extends AbstractService implements EmpresaService<EmpresaDTO, Empresa, Long> {
+public class EmpresaServiceImpl extends AbstractService<EmpresaDTO, Empresa, Long>  {
     
     @Autowired
     private EmpresaRepository dataRepository;

@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.madsi.marketing.digital.data.repository.FaixaEtariaRepository;
 import com.madsi.marketing.digital.model.domain.FaixaEtaria;
 import com.madsi.marketing.digital.model.domain.dto.FaixaEtariaDTO;
-import com.madsi.marketing.digital.service.FaixaEtariaService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.madsi.marketing.digital.service.FaixaEtariaService;
  * 
  */
 @Service
-public class FaixaEtariaServiceImpl extends AbstractService implements FaixaEtariaService<FaixaEtariaDTO, FaixaEtaria, Long> {
+public class FaixaEtariaServiceImpl extends AbstractService<FaixaEtariaDTO, FaixaEtaria, Long>  {
     
     @Autowired
     private FaixaEtariaRepository dataRepository;

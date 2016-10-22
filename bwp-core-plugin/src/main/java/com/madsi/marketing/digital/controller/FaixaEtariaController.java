@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.madsi.marketing.digital.model.domain.FaixaEtaria;
 import com.madsi.marketing.digital.model.domain.dto.FaixaEtariaDTO;
-import com.madsi.marketing.digital.service.FaixaEtariaService;
+import com.madsi.marketing.digital.service.impl.FaixaEtariaServiceImpl;
 import com.madsi.marketing.digital.data.repository.FaixaEtariaRepository;
 
 
@@ -31,7 +31,7 @@ import com.madsi.marketing.digital.data.repository.FaixaEtariaRepository;
 public class FaixaEtariaController {
 
 	@Autowired
-	private FaixaEtariaService<FaixaEtariaDTO, FaixaEtaria, Long> service;
+	private FaixaEtariaServiceImpl service;
 
 	@Autowired
     private FaixaEtariaRepository dataRepository;

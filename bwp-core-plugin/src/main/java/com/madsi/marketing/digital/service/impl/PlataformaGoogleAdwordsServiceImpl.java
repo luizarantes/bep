@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.madsi.marketing.digital.data.repository.PlataformaGoogleAdwordsRepository;
 import com.madsi.marketing.digital.model.domain.PlataformaGoogleAdwords;
 import com.madsi.marketing.digital.model.domain.dto.PlataformaGoogleAdwordsDTO;
-import com.madsi.marketing.digital.service.PlataformaGoogleAdwordsService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.madsi.marketing.digital.service.PlataformaGoogleAdwordsService;
  * 
  */
 @Service
-public class PlataformaGoogleAdwordsServiceImpl extends AbstractService implements PlataformaGoogleAdwordsService<PlataformaGoogleAdwordsDTO, PlataformaGoogleAdwords, Long> {
+public class PlataformaGoogleAdwordsServiceImpl extends AbstractService<PlataformaGoogleAdwordsDTO, PlataformaGoogleAdwords, Long>  {
     
     @Autowired
     private PlataformaGoogleAdwordsRepository dataRepository;

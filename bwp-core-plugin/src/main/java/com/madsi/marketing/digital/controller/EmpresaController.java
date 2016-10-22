@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.madsi.marketing.digital.model.domain.Empresa;
 import com.madsi.marketing.digital.model.domain.dto.EmpresaDTO;
-import com.madsi.marketing.digital.service.EmpresaService;
+import com.madsi.marketing.digital.service.impl.EmpresaServiceImpl;
 import com.madsi.marketing.digital.data.repository.EmpresaRepository;
 
 
@@ -31,7 +31,7 @@ import com.madsi.marketing.digital.data.repository.EmpresaRepository;
 public class EmpresaController {
 
 	@Autowired
-	private EmpresaService<EmpresaDTO, Empresa, Long> service;
+	private EmpresaServiceImpl service;
 
 	@Autowired
     private EmpresaRepository dataRepository;
