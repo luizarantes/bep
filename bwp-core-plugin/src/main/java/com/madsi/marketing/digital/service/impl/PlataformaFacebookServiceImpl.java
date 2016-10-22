@@ -7,6 +7,7 @@
 package com.madsi.marketing.digital.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class PlataformaFacebookServiceImpl extends AbstractService<PlataformaFac
 		if(iterableFindAll != null) {
 		
 			List<PlataformaFacebookDTO> listResult = new ArrayList<PlataformaFacebookDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<PlataformaFacebook> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				PlataformaFacebookDTO dto = new PlataformaFacebookDTO();

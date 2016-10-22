@@ -7,6 +7,7 @@
 package com.bep.startup.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class UserServiceImpl extends AbstractService<UserDTO, User, Long>  {
 		if(iterableFindAll != null) {
 		
 			List<UserDTO> listResult = new ArrayList<UserDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<User> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				UserDTO dto = new UserDTO();

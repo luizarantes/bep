@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bep.startup.model.domain.User;
+import com.bep.startup.data.repository.UserRepository;
 import com.bep.startup.model.domain.dto.UserDTO;
 import com.bep.startup.service.impl.UserServiceImpl;
-import com.bep.startup.data.repository.UserRepository;
 
 
 /** 

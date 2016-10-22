@@ -7,6 +7,7 @@
 package com.bep.startup.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class ContactPersonServiceImpl extends AbstractService<ContactPersonDTO, 
 		if(iterableFindAll != null) {
 		
 			List<ContactPersonDTO> listResult = new ArrayList<ContactPersonDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<ContactPerson> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				ContactPersonDTO dto = new ContactPersonDTO();

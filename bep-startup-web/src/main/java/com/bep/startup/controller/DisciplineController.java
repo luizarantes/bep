@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bep.startup.model.domain.Discipline;
+import com.bep.startup.data.repository.DisciplineRepository;
 import com.bep.startup.model.domain.dto.DisciplineDTO;
 import com.bep.startup.service.impl.DisciplineServiceImpl;
-import com.bep.startup.data.repository.DisciplineRepository;
 
 
 /** 

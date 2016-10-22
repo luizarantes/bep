@@ -7,6 +7,7 @@
 package com.bep.startup.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class DisciplineServiceImpl extends AbstractService<DisciplineDTO, Discip
 		if(iterableFindAll != null) {
 		
 			List<DisciplineDTO> listResult = new ArrayList<DisciplineDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<Discipline> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				DisciplineDTO dto = new DisciplineDTO();

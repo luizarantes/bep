@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bep.startup.model.domain.Project;
+import com.bep.startup.data.repository.ProjectRepository;
 import com.bep.startup.model.domain.dto.ProjectDTO;
 import com.bep.startup.service.impl.ProjectServiceImpl;
-import com.bep.startup.data.repository.ProjectRepository;
 
 
 /** 

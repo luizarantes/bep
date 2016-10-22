@@ -7,6 +7,7 @@
 package com.madsi.marketing.digital.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class SegmentoServiceImpl extends AbstractService<SegmentoDTO, Segmento, 
 		if(iterableFindAll != null) {
 		
 			List<SegmentoDTO> listResult = new ArrayList<SegmentoDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<Segmento> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				SegmentoDTO dto = new SegmentoDTO();

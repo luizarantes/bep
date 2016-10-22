@@ -7,6 +7,7 @@
 package com.madsi.marketing.digital.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class CampanhaServiceImpl extends AbstractService<CampanhaDTO, Campanha, 
 		if(iterableFindAll != null) {
 		
 			List<CampanhaDTO> listResult = new ArrayList<CampanhaDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<Campanha> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				CampanhaDTO dto = new CampanhaDTO();

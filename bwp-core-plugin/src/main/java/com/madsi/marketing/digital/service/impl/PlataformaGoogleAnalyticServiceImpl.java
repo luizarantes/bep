@@ -7,6 +7,7 @@
 package com.madsi.marketing.digital.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class PlataformaGoogleAnalyticServiceImpl extends AbstractService<Platafo
 		if(iterableFindAll != null) {
 		
 			List<PlataformaGoogleAnalyticDTO> listResult = new ArrayList<PlataformaGoogleAnalyticDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<PlataformaGoogleAnalytic> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				PlataformaGoogleAnalyticDTO dto = new PlataformaGoogleAnalyticDTO();

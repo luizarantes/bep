@@ -7,6 +7,7 @@
 package com.madsi.marketing.digital.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class MetricaServiceImpl extends AbstractService<MetricaDTO, Metrica, Lon
 		if(iterableFindAll != null) {
 		
 			List<MetricaDTO> listResult = new ArrayList<MetricaDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<Metrica> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				MetricaDTO dto = new MetricaDTO();

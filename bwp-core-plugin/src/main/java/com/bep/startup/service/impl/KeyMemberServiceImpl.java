@@ -7,6 +7,7 @@
 package com.bep.startup.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class KeyMemberServiceImpl extends AbstractService<KeyMemberDTO, KeyMembe
 		if(iterableFindAll != null) {
 		
 			List<KeyMemberDTO> listResult = new ArrayList<KeyMemberDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<KeyMember> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				KeyMemberDTO dto = new KeyMemberDTO();

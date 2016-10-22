@@ -2,7 +2,7 @@ package com.bep.startup.model.domain.dto;
 
 import java.io.Serializable;
 
-public abstract class DataTransferObject implements Serializable {
+public class DataTransferObject implements Serializable {
 
 	/**
 	 * 
