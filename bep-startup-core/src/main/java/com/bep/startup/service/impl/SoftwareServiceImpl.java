@@ -7,6 +7,7 @@
 package com.bep.startup.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class SoftwareServiceImpl extends AbstractService<SoftwareDTO, Software, 
 		if(iterableFindAll != null) {
 		
 			List<SoftwareDTO> listResult = new ArrayList<SoftwareDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<Software> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				SoftwareDTO dto = new SoftwareDTO();

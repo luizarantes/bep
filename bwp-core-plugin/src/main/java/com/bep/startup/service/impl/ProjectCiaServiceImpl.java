@@ -7,6 +7,7 @@
 package com.bep.startup.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class ProjectCiaServiceImpl extends AbstractService<ProjectCiaDTO, Projec
 		if(iterableFindAll != null) {
 		
 			List<ProjectCiaDTO> listResult = new ArrayList<ProjectCiaDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<ProjectCia> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				ProjectCiaDTO dto = new ProjectCiaDTO();

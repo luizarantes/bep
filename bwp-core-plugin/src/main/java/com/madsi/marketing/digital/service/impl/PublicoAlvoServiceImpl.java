@@ -7,6 +7,7 @@
 package com.madsi.marketing.digital.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class PublicoAlvoServiceImpl extends AbstractService<PublicoAlvoDTO, Publ
 		if(iterableFindAll != null) {
 		
 			List<PublicoAlvoDTO> listResult = new ArrayList<PublicoAlvoDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<PublicoAlvo> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				PublicoAlvoDTO dto = new PublicoAlvoDTO();

@@ -7,6 +7,7 @@
 package com.madsi.marketing.digital.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class FaixaEtariaServiceImpl extends AbstractService<FaixaEtariaDTO, Faix
 		if(iterableFindAll != null) {
 		
 			List<FaixaEtariaDTO> listResult = new ArrayList<FaixaEtariaDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<FaixaEtaria> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				FaixaEtariaDTO dto = new FaixaEtariaDTO();

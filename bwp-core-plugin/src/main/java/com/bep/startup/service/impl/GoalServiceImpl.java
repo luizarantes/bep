@@ -7,6 +7,7 @@
 package com.bep.startup.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class GoalServiceImpl extends AbstractService<GoalDTO, Goal, Long>  {
 		if(iterableFindAll != null) {
 		
 			List<GoalDTO> listResult = new ArrayList<GoalDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<Goal> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				GoalDTO dto = new GoalDTO();

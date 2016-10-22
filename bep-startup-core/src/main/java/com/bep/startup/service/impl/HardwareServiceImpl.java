@@ -7,6 +7,7 @@
 package com.bep.startup.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class HardwareServiceImpl extends AbstractService<HardwareDTO, Hardware, 
 		if(iterableFindAll != null) {
 		
 			List<HardwareDTO> listResult = new ArrayList<HardwareDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<Hardware> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				HardwareDTO dto = new HardwareDTO();

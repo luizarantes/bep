@@ -7,6 +7,7 @@
 package com.bep.startup.service.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class InviteServiceImpl extends AbstractService<InviteDTO, Invite, Long> 
 		if(iterableFindAll != null) {
 		
 			List<InviteDTO> listResult = new ArrayList<InviteDTO>(); 
-			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
+			Iterator<Invite> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				InviteDTO dto = new InviteDTO();

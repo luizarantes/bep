@@ -68,7 +68,7 @@ public class CiaServiceImpl extends AbstractService<CiaDTO, Cia, Long>  {
 		if(iterableFindAll != null) {
 		
 			List<CiaDTO> listResult = new ArrayList<CiaDTO>(); 
-			Iterator<Cia> iterator   = iterableFindAll.iterator();
+			Iterator<Cia> iterator  = iterableFindAll.iterator();
 
 			while(iterator.hasNext()) {
 				CiaDTO dto = new CiaDTO();
