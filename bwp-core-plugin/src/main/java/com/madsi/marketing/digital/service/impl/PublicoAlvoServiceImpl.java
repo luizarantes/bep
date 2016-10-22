@@ -67,10 +67,11 @@ public class PublicoAlvoServiceImpl extends AbstractService<PublicoAlvoDTO, Publ
 		if(iterableFindAll != null) {
 		
 			List<PublicoAlvoDTO> listResult = new ArrayList<PublicoAlvoDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				PublicoAlvoDTO dto = new PublicoAlvoDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

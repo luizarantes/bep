@@ -14,7 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
@@ -34,8 +33,7 @@ public class SoftwareType extends DomainEntity<Long> {
 
     @Id
     @Column(name = "ID_SOFTWARE_TYPE", nullable = false, updatable = false, precision = 12)
-    @SequenceGenerator(name = "sqSoftwareType", sequenceName = "SQ_SOFTWARE_TYPE", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "sqSoftwareType", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
                                                     
     /*

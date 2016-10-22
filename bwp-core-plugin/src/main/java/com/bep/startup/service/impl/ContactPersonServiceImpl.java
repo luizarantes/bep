@@ -67,10 +67,11 @@ public class ContactPersonServiceImpl extends AbstractService<ContactPersonDTO, 
 		if(iterableFindAll != null) {
 		
 			List<ContactPersonDTO> listResult = new ArrayList<ContactPersonDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				ContactPersonDTO dto = new ContactPersonDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

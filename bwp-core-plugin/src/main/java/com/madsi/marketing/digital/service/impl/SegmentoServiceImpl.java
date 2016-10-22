@@ -67,10 +67,11 @@ public class SegmentoServiceImpl extends AbstractService<SegmentoDTO, Segmento, 
 		if(iterableFindAll != null) {
 		
 			List<SegmentoDTO> listResult = new ArrayList<SegmentoDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				SegmentoDTO dto = new SegmentoDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

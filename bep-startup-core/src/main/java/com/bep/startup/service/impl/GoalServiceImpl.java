@@ -67,10 +67,11 @@ public class GoalServiceImpl extends AbstractService<GoalDTO, Goal, Long>  {
 		if(iterableFindAll != null) {
 		
 			List<GoalDTO> listResult = new ArrayList<GoalDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				GoalDTO dto = new GoalDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

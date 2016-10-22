@@ -67,10 +67,11 @@ public class PlataformaGoogleAnalyticServiceImpl extends AbstractService<Platafo
 		if(iterableFindAll != null) {
 		
 			List<PlataformaGoogleAnalyticDTO> listResult = new ArrayList<PlataformaGoogleAnalyticDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				PlataformaGoogleAnalyticDTO dto = new PlataformaGoogleAnalyticDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

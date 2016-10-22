@@ -67,10 +67,11 @@ public class MetricaServiceImpl extends AbstractService<MetricaDTO, Metrica, Lon
 		if(iterableFindAll != null) {
 		
 			List<MetricaDTO> listResult = new ArrayList<MetricaDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				MetricaDTO dto = new MetricaDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

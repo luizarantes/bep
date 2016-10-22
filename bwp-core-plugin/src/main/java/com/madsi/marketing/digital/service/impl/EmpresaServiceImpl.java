@@ -67,10 +67,11 @@ public class EmpresaServiceImpl extends AbstractService<EmpresaDTO, Empresa, Lon
 		if(iterableFindAll != null) {
 		
 			List<EmpresaDTO> listResult = new ArrayList<EmpresaDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				EmpresaDTO dto = new EmpresaDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

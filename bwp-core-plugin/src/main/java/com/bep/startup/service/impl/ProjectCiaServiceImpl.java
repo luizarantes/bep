@@ -67,10 +67,11 @@ public class ProjectCiaServiceImpl extends AbstractService<ProjectCiaDTO, Projec
 		if(iterableFindAll != null) {
 		
 			List<ProjectCiaDTO> listResult = new ArrayList<ProjectCiaDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				ProjectCiaDTO dto = new ProjectCiaDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

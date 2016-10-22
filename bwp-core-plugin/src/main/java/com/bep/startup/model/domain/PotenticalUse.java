@@ -14,7 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -35,8 +34,7 @@ public class PotenticalUse extends DomainEntity<Long> {
 
     @Id
     @Column(name = "ID_POTENCIAL_USE", nullable = false, updatable = false, precision = 12)
-    @SequenceGenerator(name = "sqPotenticalUse", sequenceName = "SQ_POTENTICAL_USE", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "sqPotenticalUse", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
                                                     
     /*

@@ -67,10 +67,11 @@ public class CampanhaServiceImpl extends AbstractService<CampanhaDTO, Campanha, 
 		if(iterableFindAll != null) {
 		
 			List<CampanhaDTO> listResult = new ArrayList<CampanhaDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				CampanhaDTO dto = new CampanhaDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

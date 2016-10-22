@@ -67,10 +67,11 @@ public class FaixaEtariaServiceImpl extends AbstractService<FaixaEtariaDTO, Faix
 		if(iterableFindAll != null) {
 		
 			List<FaixaEtariaDTO> listResult = new ArrayList<FaixaEtariaDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				FaixaEtariaDTO dto = new FaixaEtariaDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

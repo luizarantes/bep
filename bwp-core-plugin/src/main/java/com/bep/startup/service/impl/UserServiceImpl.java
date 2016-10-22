@@ -67,10 +67,11 @@ public class UserServiceImpl extends AbstractService<UserDTO, User, Long>  {
 		if(iterableFindAll != null) {
 		
 			List<UserDTO> listResult = new ArrayList<UserDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				UserDTO dto = new UserDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

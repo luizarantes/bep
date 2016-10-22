@@ -14,7 +14,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -35,8 +34,7 @@ public class Invite extends DomainEntity<Long> {
 
     @Id
     @Column(name = "ID_INVITE", nullable = false, updatable = false, precision = 12)
-    @SequenceGenerator(name = "sqInvite", sequenceName = "SQ_INVITE", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "sqInvite", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
             
     /*

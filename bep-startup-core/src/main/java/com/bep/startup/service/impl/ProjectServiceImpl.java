@@ -67,10 +67,11 @@ public class ProjectServiceImpl extends AbstractService<ProjectDTO, Project, Lon
 		if(iterableFindAll != null) {
 		
 			List<ProjectDTO> listResult = new ArrayList<ProjectDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				ProjectDTO dto = new ProjectDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

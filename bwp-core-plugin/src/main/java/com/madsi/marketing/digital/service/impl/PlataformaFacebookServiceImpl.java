@@ -67,10 +67,11 @@ public class PlataformaFacebookServiceImpl extends AbstractService<PlataformaFac
 		if(iterableFindAll != null) {
 		
 			List<PlataformaFacebookDTO> listResult = new ArrayList<PlataformaFacebookDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				PlataformaFacebookDTO dto = new PlataformaFacebookDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

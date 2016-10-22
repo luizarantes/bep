@@ -14,7 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
@@ -34,8 +33,7 @@ public class PlataformaGoogleAdwords extends DomainEntity<Long> {
 
     @Id
     @Column(name = "ID_PLATAFORMA_GOOGLE_ADWORDS", nullable = false, updatable = false, precision = 12)
-    @SequenceGenerator(name = "sqPlataformaGoogleAdwords", sequenceName = "SQ_PLATAFORMA_GOOGLE_ADWORDS", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "sqPlataformaGoogleAdwords", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
                                                                                                     
     /*

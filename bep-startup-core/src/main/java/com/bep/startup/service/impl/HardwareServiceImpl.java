@@ -67,10 +67,11 @@ public class HardwareServiceImpl extends AbstractService<HardwareDTO, Hardware, 
 		if(iterableFindAll != null) {
 		
 			List<HardwareDTO> listResult = new ArrayList<HardwareDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				HardwareDTO dto = new HardwareDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

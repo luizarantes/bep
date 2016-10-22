@@ -17,7 +17,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -40,8 +39,7 @@ public class Project extends DomainEntity<Long> {
 
     @Id
     @Column(name = "ID_PROJECT", nullable = false, updatable = false, precision = 12)
-    @SequenceGenerator(name = "sqProject", sequenceName = "SQ_PROJECT", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "sqProject", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
                     
     /*

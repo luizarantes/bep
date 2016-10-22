@@ -67,10 +67,11 @@ public class DisciplineServiceImpl extends AbstractService<DisciplineDTO, Discip
 		if(iterableFindAll != null) {
 		
 			List<DisciplineDTO> listResult = new ArrayList<DisciplineDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				DisciplineDTO dto = new DisciplineDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

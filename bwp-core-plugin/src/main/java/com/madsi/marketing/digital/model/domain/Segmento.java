@@ -14,7 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -35,8 +34,7 @@ public class Segmento extends DomainEntity<Long> {
 
     @Id
     @Column(name = "ID_SEGMENTO", nullable = false, updatable = false, precision = 12)
-    @SequenceGenerator(name = "sqSegmento", sequenceName = "SQ_SEGMENTO", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "sqSegmento", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
                                                     
     /*

@@ -67,10 +67,11 @@ public class ObjetivoServiceImpl extends AbstractService<ObjetivoDTO, Objetivo, 
 		if(iterableFindAll != null) {
 		
 			List<ObjetivoDTO> listResult = new ArrayList<ObjetivoDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				ObjetivoDTO dto = new ObjetivoDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

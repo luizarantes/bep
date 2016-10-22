@@ -67,10 +67,11 @@ public class PotenticalUseServiceImpl extends AbstractService<PotenticalUseDTO, 
 		if(iterableFindAll != null) {
 		
 			List<PotenticalUseDTO> listResult = new ArrayList<PotenticalUseDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				PotenticalUseDTO dto = new PotenticalUseDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

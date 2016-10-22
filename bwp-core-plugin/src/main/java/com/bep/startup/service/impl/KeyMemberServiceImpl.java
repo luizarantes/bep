@@ -67,10 +67,11 @@ public class KeyMemberServiceImpl extends AbstractService<KeyMemberDTO, KeyMembe
 		if(iterableFindAll != null) {
 		
 			List<KeyMemberDTO> listResult = new ArrayList<KeyMemberDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				KeyMemberDTO dto = new KeyMemberDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

@@ -40,8 +40,8 @@
 				<artifactId>gsi-maven-plugin</artifactId>
 				<version>1.0.0-SNAPSHOT</version>
 				<configuration>
-					<pathPackage>com.madsi.marketing.digital</pathPackage>
-					<pathERwinXML>src/main/resources/madsi.xml</pathERwinXML>
+					<pathPackage>com.bep.startup</pathPackage>
+					<pathERwinXML>src/main/resources/bep.xml</pathERwinXML>
  					<typeTemplate>ENTITY,REPOSITORY,CUSTOM_REPOSITORY,SERVICE_SPRING,CONTROLLER</typeTemplate> 
 				</configuration>
 				<executions>

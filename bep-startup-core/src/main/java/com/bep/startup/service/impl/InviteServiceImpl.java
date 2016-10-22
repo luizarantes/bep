@@ -67,10 +67,11 @@ public class InviteServiceImpl extends AbstractService<InviteDTO, Invite, Long> 
 		if(iterableFindAll != null) {
 		
 			List<InviteDTO> listResult = new ArrayList<InviteDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				InviteDTO dto = new InviteDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

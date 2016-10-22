@@ -67,10 +67,11 @@ public class SoftwareServiceImpl extends AbstractService<SoftwareDTO, Software, 
 		if(iterableFindAll != null) {
 		
 			List<SoftwareDTO> listResult = new ArrayList<SoftwareDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				SoftwareDTO dto = new SoftwareDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 

@@ -16,7 +16,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -37,8 +36,7 @@ public class Empresa extends DomainEntity<Long> {
 
     @Id
     @Column(name = "ID_EMPRESA", nullable = false, updatable = false, precision = 12)
-    @SequenceGenerator(name = "sqEmpresa", sequenceName = "SQ_EMPRESA", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "sqEmpresa", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
                     
     /*

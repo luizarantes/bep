@@ -67,10 +67,11 @@ public class PlataformaGoogleAdwordsServiceImpl extends AbstractService<Platafor
 		if(iterableFindAll != null) {
 		
 			List<PlataformaGoogleAdwordsDTO> listResult = new ArrayList<PlataformaGoogleAdwordsDTO>(); 
+			Iterator<HardwareType> iterator   = iterableFindAll.iterator();
 
-			while(iterableFindAll.iterator().hasNext()) {
+			while(iterator.hasNext()) {
 				PlataformaGoogleAdwordsDTO dto = new PlataformaGoogleAdwordsDTO();
-				super.copyProperties(dto, iterableFindAll.iterator().next());
+				super.copyProperties(dto, iterator.next());
 				listResult.add(dto);
 			}
 
