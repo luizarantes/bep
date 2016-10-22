@@ -155,3 +155,15 @@
 	<enable-call-by-reference>true</enable-call-by-reference>
 	<jndi-name>SoftwareTypeServiceImpl#com.bep.startup.service.SoftwareTypeService</jndi-name>
 </weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>UserDaoImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>UserDaoImpl#com.bep.startup.dao.UserDao</jndi-name>
+</weblogic-enterprise-bean>
+<weblogic-enterprise-bean>
+	<ejb-name>UserServiceImpl</ejb-name>
+	<stateless-session-descriptor/>
+	<enable-call-by-reference>true</enable-call-by-reference>
+	<jndi-name>UserServiceImpl#com.bep.startup.service.UserService</jndi-name>
+</weblogic-enterprise-bean>

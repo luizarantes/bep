@@ -11,3 +11,4 @@
 <class>com.bep.startup.model.domain.ProjectCia</class>
 <class>com.bep.startup.model.domain.Software</class>
 <class>com.bep.startup.model.domain.SoftwareType</class>
+<class>com.bep.startup.model.domain.User</class>

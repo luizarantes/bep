@@ -4,10 +4,9 @@
 * No part of this Portal may be reproduced without GSI express consent.
 * 
 */
-package com.bep.startup.model.dto;
+package com.bep.startup.model.domain.dto;
 
 
-import com.btg.pactual.dto.DataTransferObject;
 
 /** 
  *
