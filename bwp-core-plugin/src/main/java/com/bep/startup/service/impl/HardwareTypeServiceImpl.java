@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.bep.startup.data.repository.HardwareTypeRepository;
 import com.bep.startup.model.domain.HardwareType;
 import com.bep.startup.model.domain.dto.HardwareTypeDTO;
-import com.bep.startup.service.HardwareTypeService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.bep.startup.service.HardwareTypeService;
  * 
  */
 @Service
-public class HardwareTypeServiceImpl extends AbstractService implements HardwareTypeService<HardwareTypeDTO, HardwareType, Long> {
+public class HardwareTypeServiceImpl extends AbstractService<T, E, ID>  {
     
     @Autowired
     private HardwareTypeRepository dataRepository;

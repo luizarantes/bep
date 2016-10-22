@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.bep.startup.data.repository.SoftwareTypeRepository;
 import com.bep.startup.model.domain.SoftwareType;
 import com.bep.startup.model.domain.dto.SoftwareTypeDTO;
-import com.bep.startup.service.SoftwareTypeService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.bep.startup.service.SoftwareTypeService;
  * 
  */
 @Service
-public class SoftwareTypeServiceImpl extends AbstractService implements SoftwareTypeService<SoftwareTypeDTO, SoftwareType, Long> {
+public class SoftwareTypeServiceImpl extends AbstractService<T, E, ID>  {
     
     @Autowired
     private SoftwareTypeRepository dataRepository;

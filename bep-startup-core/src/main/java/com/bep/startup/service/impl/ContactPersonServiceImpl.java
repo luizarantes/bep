@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.bep.startup.data.repository.ContactPersonRepository;
 import com.bep.startup.model.domain.ContactPerson;
 import com.bep.startup.model.domain.dto.ContactPersonDTO;
-import com.bep.startup.service.ContactPersonService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.bep.startup.service.ContactPersonService;
  * 
  */
 @Service
-public class ContactPersonServiceImpl extends AbstractService implements ContactPersonService<ContactPersonDTO, ContactPerson, Long> {
+public class ContactPersonServiceImpl extends AbstractService<T, E, ID>  {
     
     @Autowired
     private ContactPersonRepository dataRepository;

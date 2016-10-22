@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.bep.startup.data.repository.GoalRepository;
 import com.bep.startup.model.domain.Goal;
 import com.bep.startup.model.domain.dto.GoalDTO;
-import com.bep.startup.service.GoalService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.bep.startup.service.GoalService;
  * 
  */
 @Service
-public class GoalServiceImpl extends AbstractService implements GoalService<GoalDTO, Goal, Long> {
+public class GoalServiceImpl extends AbstractService<T, E, ID>  {
     
     @Autowired
     private GoalRepository dataRepository;

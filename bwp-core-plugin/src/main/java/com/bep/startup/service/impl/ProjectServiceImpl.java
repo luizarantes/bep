@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.bep.startup.data.repository.ProjectRepository;
 import com.bep.startup.model.domain.Project;
 import com.bep.startup.model.domain.dto.ProjectDTO;
-import com.bep.startup.service.ProjectService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.bep.startup.service.ProjectService;
  * 
  */
 @Service
-public class ProjectServiceImpl extends AbstractService implements ProjectService<ProjectDTO, Project, Long> {
+public class ProjectServiceImpl extends AbstractService<T, E, ID>  {
     
     @Autowired
     private ProjectRepository dataRepository;

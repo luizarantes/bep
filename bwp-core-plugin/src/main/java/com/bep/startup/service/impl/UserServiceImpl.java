@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.bep.startup.data.repository.UserRepository;
 import com.bep.startup.model.domain.User;
 import com.bep.startup.model.domain.dto.UserDTO;
-import com.bep.startup.service.UserService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.bep.startup.service.UserService;
  * 
  */
 @Service
-public class UserServiceImpl extends AbstractService implements UserService<UserDTO, User, Long> {
+public class UserServiceImpl extends AbstractService<T, E, ID>  {
     
     @Autowired
     private UserRepository dataRepository;

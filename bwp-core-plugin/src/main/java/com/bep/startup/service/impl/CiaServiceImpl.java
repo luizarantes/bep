@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.bep.startup.data.repository.CiaRepository;
 import com.bep.startup.model.domain.Cia;
 import com.bep.startup.model.domain.dto.CiaDTO;
-import com.bep.startup.service.CiaService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.bep.startup.service.CiaService;
  * 
  */
 @Service
-public class CiaServiceImpl extends AbstractService implements CiaService<CiaDTO, Cia, Long> {
+public class CiaServiceImpl extends AbstractService<T, E, ID>  {
     
     @Autowired
     private CiaRepository dataRepository;

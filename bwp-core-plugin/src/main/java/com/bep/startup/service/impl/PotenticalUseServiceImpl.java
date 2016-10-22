@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.bep.startup.data.repository.PotenticalUseRepository;
 import com.bep.startup.model.domain.PotenticalUse;
 import com.bep.startup.model.domain.dto.PotenticalUseDTO;
-import com.bep.startup.service.PotenticalUseService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.bep.startup.service.PotenticalUseService;
  * 
  */
 @Service
-public class PotenticalUseServiceImpl extends AbstractService implements PotenticalUseService<PotenticalUseDTO, PotenticalUse, Long> {
+public class PotenticalUseServiceImpl extends AbstractService<T, E, ID>  {
     
     @Autowired
     private PotenticalUseRepository dataRepository;

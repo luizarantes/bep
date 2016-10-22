@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.bep.startup.data.repository.InviteRepository;
 import com.bep.startup.model.domain.Invite;
 import com.bep.startup.model.domain.dto.InviteDTO;
-import com.bep.startup.service.InviteService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.bep.startup.service.InviteService;
  * 
  */
 @Service
-public class InviteServiceImpl extends AbstractService implements InviteService<InviteDTO, Invite, Long> {
+public class InviteServiceImpl extends AbstractService<T, E, ID>  {
     
     @Autowired
     private InviteRepository dataRepository;

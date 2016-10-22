@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import com.bep.startup.data.repository.DisciplineRepository;
 import com.bep.startup.model.domain.Discipline;
 import com.bep.startup.model.domain.dto.DisciplineDTO;
-import com.bep.startup.service.DisciplineService;
 
 /** 
  *
@@ -24,7 +23,7 @@ import com.bep.startup.service.DisciplineService;
  * 
  */
 @Service
-public class DisciplineServiceImpl extends AbstractService implements DisciplineService<DisciplineDTO, Discipline, Long> {
+public class DisciplineServiceImpl extends AbstractService<T, E, ID>  {
     
     @Autowired
     private DisciplineRepository dataRepository;
