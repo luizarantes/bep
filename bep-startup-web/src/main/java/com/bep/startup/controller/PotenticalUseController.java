@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bep.startup.model.domain.PotenticalUse;
+import com.bep.startup.data.repository.PotenticalUseRepository;
 import com.bep.startup.model.domain.dto.PotenticalUseDTO;
 import com.bep.startup.service.impl.PotenticalUseServiceImpl;
-import com.bep.startup.data.repository.PotenticalUseRepository;
 
 
 /** 

@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bep.startup.model.domain.ProjectCia;
+import com.bep.startup.data.repository.ProjectCiaRepository;
 import com.bep.startup.model.domain.dto.ProjectCiaDTO;
 import com.bep.startup.service.impl.ProjectCiaServiceImpl;
-import com.bep.startup.data.repository.ProjectCiaRepository;
 
 
 /** 
