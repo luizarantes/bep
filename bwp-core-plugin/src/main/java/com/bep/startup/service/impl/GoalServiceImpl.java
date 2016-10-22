@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.GoalDTO;
  * 
  */
 @Service
-public class GoalServiceImpl extends AbstractService<T, E, ID>  {
+public class GoalServiceImpl extends AbstractService<GoalDTO, Goal, Long>  {
     
     @Autowired
     private GoalRepository dataRepository;

@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.UserDTO;
  * 
  */
 @Service
-public class UserServiceImpl extends AbstractService<T, E, ID>  {
+public class UserServiceImpl extends AbstractService<UserDTO, User, Long>  {
     
     @Autowired
     private UserRepository dataRepository;

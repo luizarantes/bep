@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.ProjectCiaDTO;
  * 
  */
 @Service
-public class ProjectCiaServiceImpl extends AbstractService<T, E, ID>  {
+public class ProjectCiaServiceImpl extends AbstractService<ProjectCiaDTO, ProjectCia, Long>  {
     
     @Autowired
     private ProjectCiaRepository dataRepository;

@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.PotenticalUseDTO;
  * 
  */
 @Service
-public class PotenticalUseServiceImpl extends AbstractService<T, E, ID>  {
+public class PotenticalUseServiceImpl extends AbstractService<PotenticalUseDTO, PotenticalUse, Long>  {
     
     @Autowired
     private PotenticalUseRepository dataRepository;

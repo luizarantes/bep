@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.ContactPersonDTO;
  * 
  */
 @Service
-public class ContactPersonServiceImpl extends AbstractService<T, E, ID>  {
+public class ContactPersonServiceImpl extends AbstractService<ContactPersonDTO, ContactPerson, Long>  {
     
     @Autowired
     private ContactPersonRepository dataRepository;

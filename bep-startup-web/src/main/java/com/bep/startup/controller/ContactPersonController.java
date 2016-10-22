@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bep.startup.model.domain.ContactPerson;
+import com.bep.startup.data.repository.ContactPersonRepository;
 import com.bep.startup.model.domain.dto.ContactPersonDTO;
 import com.bep.startup.service.impl.ContactPersonServiceImpl;
-import com.bep.startup.data.repository.ContactPersonRepository;
 
 
 /** 
@@ -31,7 +30,7 @@ import com.bep.startup.data.repository.ContactPersonRepository;
 public class ContactPersonController {
 
 	@Autowired
-	private ContactPersonServiceImpl<ContactPersonDTO, ContactPerson, Long> service;
+	private ContactPersonServiceImpl service;
 
 	@Autowired
     private ContactPersonRepository dataRepository;

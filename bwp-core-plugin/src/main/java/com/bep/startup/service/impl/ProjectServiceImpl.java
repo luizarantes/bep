@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.ProjectDTO;
  * 
  */
 @Service
-public class ProjectServiceImpl extends AbstractService<T, E, ID>  {
+public class ProjectServiceImpl extends AbstractService<ProjectDTO, Project, Long>  {
     
     @Autowired
     private ProjectRepository dataRepository;

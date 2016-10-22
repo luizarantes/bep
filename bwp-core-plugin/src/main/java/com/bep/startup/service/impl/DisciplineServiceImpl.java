@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.DisciplineDTO;
  * 
  */
 @Service
-public class DisciplineServiceImpl extends AbstractService<T, E, ID>  {
+public class DisciplineServiceImpl extends AbstractService<DisciplineDTO, Discipline, Long>  {
     
     @Autowired
     private DisciplineRepository dataRepository;

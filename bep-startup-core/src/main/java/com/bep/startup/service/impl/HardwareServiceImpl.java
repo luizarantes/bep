@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.HardwareDTO;
  * 
  */
 @Service
-public class HardwareServiceImpl extends AbstractService<T, E, ID>  {
+public class HardwareServiceImpl extends AbstractService<HardwareDTO, Hardware, Long>  {
     
     @Autowired
     private HardwareRepository dataRepository;

@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bep.startup.model.domain.Cia;
+import com.bep.startup.data.repository.CiaRepository;
 import com.bep.startup.model.domain.dto.CiaDTO;
 import com.bep.startup.service.impl.CiaServiceImpl;
-import com.bep.startup.data.repository.CiaRepository;
 
 
 /** 
@@ -31,7 +30,7 @@ import com.bep.startup.data.repository.CiaRepository;
 public class CiaController {
 
 	@Autowired
-	private CiaServiceImpl<CiaDTO, Cia, Long> service;
+	private CiaServiceImpl service;
 
 	@Autowired
     private CiaRepository dataRepository;

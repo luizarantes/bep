@@ -1,6 +1,13 @@
 package com.bep.startup.service.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.BeanUtilsBean;
+import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.converters.DateConverter;
 
 public abstract class AbstractService<T, E, ID> {
 	
@@ -30,9 +37,6 @@ public abstract class AbstractService<T, E, ID> {
 	 * @return all entities and converted to DTO
 	 */
 	public abstract Iterable<T> findAll();
-
-	
-	
 	
 	/**
 	 * @param destiny
@@ -40,16 +44,16 @@ public abstract class AbstractService<T, E, ID> {
 	 */
 	protected static void copyProperties(Object destiny, Object origin) {
 		
-//		try {
-//			DateConverter converter = new DateConverter(null);
-//			ConvertUtils.register(converter, java.util.Date.class); 
-//			BeanUtilsBean.getInstance().getConvertUtils().register(false, false, 0);
-//			BeanUtils.copyProperties(destiny, origin);
-//		}catch (IllegalAccessException e) {
-//			LOGGER.log(Level.SEVERE, e.getMessage(), e);
-//		}catch (InvocationTargetException e) {
-//			LOGGER.log(Level.SEVERE, e.getMessage(), e);
-//		}
+		try {
+			DateConverter converter = new DateConverter(null);
+			ConvertUtils.register(converter, java.util.Date.class); 
+			BeanUtilsBean.getInstance().getConvertUtils().register(false, false, 0);
+			BeanUtils.copyProperties(destiny, origin);
+		}catch (IllegalAccessException e) {
+			LOGGER.log(Level.SEVERE, e.getMessage(), e);
+		}catch (InvocationTargetException e) {
+			LOGGER.log(Level.SEVERE, e.getMessage(), e);
+		}
 	}
 
 }

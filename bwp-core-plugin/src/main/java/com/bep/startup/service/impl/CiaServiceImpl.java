@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.CiaDTO;
  * 
  */
 @Service
-public class CiaServiceImpl extends AbstractService<T, E, ID>  {
+public class CiaServiceImpl extends AbstractService<CiaDTO, Cia, Long>  {
     
     @Autowired
     private CiaRepository dataRepository;

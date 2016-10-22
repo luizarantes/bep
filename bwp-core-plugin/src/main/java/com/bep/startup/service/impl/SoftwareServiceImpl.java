@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.SoftwareDTO;
  * 
  */
 @Service
-public class SoftwareServiceImpl extends AbstractService<T, E, ID>  {
+public class SoftwareServiceImpl extends AbstractService<SoftwareDTO, Software, Long>  {
     
     @Autowired
     private SoftwareRepository dataRepository;

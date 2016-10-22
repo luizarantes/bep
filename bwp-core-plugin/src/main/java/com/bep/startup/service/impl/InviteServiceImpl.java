@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.InviteDTO;
  * 
  */
 @Service
-public class InviteServiceImpl extends AbstractService<T, E, ID>  {
+public class InviteServiceImpl extends AbstractService<InviteDTO, Invite, Long>  {
     
     @Autowired
     private InviteRepository dataRepository;

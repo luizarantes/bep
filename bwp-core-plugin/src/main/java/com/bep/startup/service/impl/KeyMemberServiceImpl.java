@@ -23,7 +23,7 @@ import com.bep.startup.model.domain.dto.KeyMemberDTO;
  * 
  */
 @Service
-public class KeyMemberServiceImpl extends AbstractService<T, E, ID>  {
+public class KeyMemberServiceImpl extends AbstractService<KeyMemberDTO, KeyMember, Long>  {
     
     @Autowired
     private KeyMemberRepository dataRepository;
