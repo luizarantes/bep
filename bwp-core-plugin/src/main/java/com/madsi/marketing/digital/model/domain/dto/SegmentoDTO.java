@@ -23,7 +23,7 @@ public class SegmentoDTO extends DataTransferObject {
   	/*
      * NOME DO SEGMENTO
      */
-	private String nomeSegmento;
+	private String nameSegmento;
 
 
     /**
@@ -43,10 +43,10 @@ public class SegmentoDTO extends DataTransferObject {
          /**
      * NOME DO SEGMENTO
      *
-     * @param nomeSegmento
+     * @param nameSegmento
      */
-    public void setNomeSegmento(String nomeSegmento) {
-        this.nomeSegmento = nomeSegmento;
+    public void setNameSegmento(String nameSegmento) {
+        this.nameSegmento = nameSegmento;
     }
 
     /**
@@ -54,8 +54,8 @@ public class SegmentoDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNomeSegmento() {
-        return this.nomeSegmento;
+    public String getNameSegmento() {
+        return this.nameSegmento;
     }
      
 }

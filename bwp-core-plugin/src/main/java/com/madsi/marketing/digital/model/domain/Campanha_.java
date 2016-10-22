@@ -26,9 +26,9 @@ public class Campanha_ {
 	public static volatile SingularAttribute<Campanha, Objetivo> objetivo;
 	public static volatile SingularAttribute<Campanha, PublicoAlvo> publicoAlvo;
 	public static volatile SingularAttribute<Campanha, Empresa> empresa;
-	public static volatile SingularAttribute<Campanha, String> nomeCampanha;
-	public static volatile SingularAttribute<Campanha, String> descricaoProblema;
-	public static volatile SingularAttribute<Campanha, Date> dataInicio;
-	public static volatile SingularAttribute<Campanha, Date> dataFim;
+	public static volatile SingularAttribute<Campanha, String> nameCampanha;
+	public static volatile SingularAttribute<Campanha, String> descriptionProblema;
+	public static volatile SingularAttribute<Campanha, Date> dateInicio;
+	public static volatile SingularAttribute<Campanha, Date> dateFim;
 	
 }

@@ -23,12 +23,12 @@ public class EmpresaDTO extends DataTransferObject {
   	/*
      * ENDERECO DE EMAIL
      */
-	private String descricaoEmail;
+	private String descriptionEmail;
 
   	/*
      * NUMERO DO TELEFONE
      */
-	private String descricaoTelefone;
+	private String descriptionTelefone;
 
 
     /**
@@ -48,10 +48,10 @@ public class EmpresaDTO extends DataTransferObject {
          /**
      * ENDERECO DE EMAIL
      *
-     * @param descricaoEmail
+     * @param descriptionEmail
      */
-    public void setDescricaoEmail(String descricaoEmail) {
-        this.descricaoEmail = descricaoEmail;
+    public void setDescriptionEmail(String descriptionEmail) {
+        this.descriptionEmail = descriptionEmail;
     }
 
     /**
@@ -59,17 +59,17 @@ public class EmpresaDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescricaoEmail() {
-        return this.descricaoEmail;
+    public String getDescriptionEmail() {
+        return this.descriptionEmail;
     }
              
          /**
      * NUMERO DO TELEFONE
      *
-     * @param descricaoTelefone
+     * @param descriptionTelefone
      */
-    public void setDescricaoTelefone(String descricaoTelefone) {
-        this.descricaoTelefone = descricaoTelefone;
+    public void setDescriptionTelefone(String descriptionTelefone) {
+        this.descriptionTelefone = descriptionTelefone;
     }
 
     /**
@@ -77,8 +77,8 @@ public class EmpresaDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescricaoTelefone() {
-        return this.descricaoTelefone;
+    public String getDescriptionTelefone() {
+        return this.descriptionTelefone;
     }
      
 }

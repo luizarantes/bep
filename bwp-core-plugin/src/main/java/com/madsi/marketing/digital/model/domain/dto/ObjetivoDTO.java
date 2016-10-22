@@ -23,7 +23,7 @@ public class ObjetivoDTO extends DataTransferObject {
   	/*
      * NOME DO OBJETIVO
      */
-	private String nomeObjetivo;
+	private String nameObjetivo;
 
 
     /**
@@ -43,10 +43,10 @@ public class ObjetivoDTO extends DataTransferObject {
          /**
      * NOME DO OBJETIVO
      *
-     * @param nomeObjetivo
+     * @param nameObjetivo
      */
-    public void setNomeObjetivo(String nomeObjetivo) {
-        this.nomeObjetivo = nomeObjetivo;
+    public void setNameObjetivo(String nameObjetivo) {
+        this.nameObjetivo = nameObjetivo;
     }
 
     /**
@@ -54,8 +54,8 @@ public class ObjetivoDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNomeObjetivo() {
-        return this.nomeObjetivo;
+    public String getNameObjetivo() {
+        return this.nameObjetivo;
     }
      
 }

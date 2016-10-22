@@ -23,17 +23,17 @@ public class FaixaEtariaDTO extends DataTransferObject {
   	/*
      * NOME DA FAIXA ETARIA
      */
-	private String nomeFaixaEtaria;
+	private String nameFaixaEtaria;
 
   	/*
      * NUMERO DA FAIXA INICIAL
      */
-	private Short numeroFaixaInicial;
+	private Short numberFaixaInicial;
 
   	/*
      * NUMERO DA FAIXA FINAL
      */
-	private Short numeroFaixaFinal;
+	private Short numberFaixaFinal;
 
 
     /**
@@ -53,10 +53,10 @@ public class FaixaEtariaDTO extends DataTransferObject {
          /**
      * NOME DA FAIXA ETARIA
      *
-     * @param nomeFaixaEtaria
+     * @param nameFaixaEtaria
      */
-    public void setNomeFaixaEtaria(String nomeFaixaEtaria) {
-        this.nomeFaixaEtaria = nomeFaixaEtaria;
+    public void setNameFaixaEtaria(String nameFaixaEtaria) {
+        this.nameFaixaEtaria = nameFaixaEtaria;
     }
 
     /**
@@ -64,17 +64,17 @@ public class FaixaEtariaDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNomeFaixaEtaria() {
-        return this.nomeFaixaEtaria;
+    public String getNameFaixaEtaria() {
+        return this.nameFaixaEtaria;
     }
              
          /**
      * NUMERO DA FAIXA INICIAL
      *
-     * @param numeroFaixaInicial
+     * @param numberFaixaInicial
      */
-    public void setNumeroFaixaInicial(Short numeroFaixaInicial) {
-        this.numeroFaixaInicial = numeroFaixaInicial;
+    public void setNumberFaixaInicial(Short numberFaixaInicial) {
+        this.numberFaixaInicial = numberFaixaInicial;
     }
 
     /**
@@ -82,17 +82,17 @@ public class FaixaEtariaDTO extends DataTransferObject {
      *
      * @return Short
      */
-    public Short getNumeroFaixaInicial() {
-        return this.numeroFaixaInicial;
+    public Short getNumberFaixaInicial() {
+        return this.numberFaixaInicial;
     }
              
          /**
      * NUMERO DA FAIXA FINAL
      *
-     * @param numeroFaixaFinal
+     * @param numberFaixaFinal
      */
-    public void setNumeroFaixaFinal(Short numeroFaixaFinal) {
-        this.numeroFaixaFinal = numeroFaixaFinal;
+    public void setNumberFaixaFinal(Short numberFaixaFinal) {
+        this.numberFaixaFinal = numberFaixaFinal;
     }
 
     /**
@@ -100,8 +100,8 @@ public class FaixaEtariaDTO extends DataTransferObject {
      *
      * @return Short
      */
-    public Short getNumeroFaixaFinal() {
-        return this.numeroFaixaFinal;
+    public Short getNumberFaixaFinal() {
+        return this.numberFaixaFinal;
     }
      
 }

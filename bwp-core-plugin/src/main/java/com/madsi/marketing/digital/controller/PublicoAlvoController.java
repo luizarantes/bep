@@ -8,13 +8,15 @@ package com.madsi.marketing.digital.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.madsi.marketing.digital.model.domain.PublicoAlvo;
 import com.madsi.marketing.digital.model.domain.dto.PublicoAlvoDTO;
 import com.madsi.marketing.digital.service.impl.PublicoAlvoServiceImpl;
 import com.madsi.marketing.digital.data.repository.PublicoAlvoRepository;
@@ -26,7 +28,7 @@ import com.madsi.marketing.digital.data.repository.PublicoAlvoRepository;
  * @since 1.0
  * 
  */
-@Controller
+@RestController
 @RequestMapping("/api/v1/publicoAlvo")
 public class PublicoAlvoController {
 
@@ -44,20 +46,20 @@ public class PublicoAlvoController {
 	
 	@ResponseBody
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
-	public ResponseEntity<PublicoAlvoDTO> save(PublicoAlvoDTO dto) {
+	public ResponseEntity<PublicoAlvoDTO> save(@RequestBody PublicoAlvoDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<PublicoAlvoDTO>(HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one", method = RequestMethod.GET)
-	public ResponseEntity<PublicoAlvoDTO> findOne(Long id) {
+	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	public ResponseEntity<PublicoAlvoDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<PublicoAlvoDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(Long id) {
+	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
 		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}

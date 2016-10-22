@@ -23,22 +23,22 @@ public class PlataformaGoogleAnalyticDTO extends DataTransferObject {
   	/*
      * PERCENTUAL DE VISITA
      */
-	private Double percentualVisita;
+	private Double percentVisita;
 
   	/*
      * PERCENTUAL DE TRAFICO
      */
-	private Double percentualTrafico;
+	private Double percentTrafico;
 
   	/*
      * PERCENTUAL DE VISITA UNICA
      */
-	private Double percentualVisitaUnica;
+	private Double percentVisitaUnica;
 
   	/*
      * PERCENTUAL DE RANK PAGINA
      */
-	private Double percentualRankPagina;
+	private Double percentRankPagina;
 
 
     /**
@@ -58,10 +58,10 @@ public class PlataformaGoogleAnalyticDTO extends DataTransferObject {
          /**
      * PERCENTUAL DE VISITA
      *
-     * @param percentualVisita
+     * @param percentVisita
      */
-    public void setPercentualVisita(Double percentualVisita) {
-        this.percentualVisita = percentualVisita;
+    public void setPercentVisita(Double percentVisita) {
+        this.percentVisita = percentVisita;
     }
 
     /**
@@ -69,17 +69,17 @@ public class PlataformaGoogleAnalyticDTO extends DataTransferObject {
      *
      * @return Double
      */
-    public Double getPercentualVisita() {
-        return this.percentualVisita;
+    public Double getPercentVisita() {
+        return this.percentVisita;
     }
              
          /**
      * PERCENTUAL DE TRAFICO
      *
-     * @param percentualTrafico
+     * @param percentTrafico
      */
-    public void setPercentualTrafico(Double percentualTrafico) {
-        this.percentualTrafico = percentualTrafico;
+    public void setPercentTrafico(Double percentTrafico) {
+        this.percentTrafico = percentTrafico;
     }
 
     /**
@@ -87,17 +87,17 @@ public class PlataformaGoogleAnalyticDTO extends DataTransferObject {
      *
      * @return Double
      */
-    public Double getPercentualTrafico() {
-        return this.percentualTrafico;
+    public Double getPercentTrafico() {
+        return this.percentTrafico;
     }
              
          /**
      * PERCENTUAL DE VISITA UNICA
      *
-     * @param percentualVisitaUnica
+     * @param percentVisitaUnica
      */
-    public void setPercentualVisitaUnica(Double percentualVisitaUnica) {
-        this.percentualVisitaUnica = percentualVisitaUnica;
+    public void setPercentVisitaUnica(Double percentVisitaUnica) {
+        this.percentVisitaUnica = percentVisitaUnica;
     }
 
     /**
@@ -105,17 +105,17 @@ public class PlataformaGoogleAnalyticDTO extends DataTransferObject {
      *
      * @return Double
      */
-    public Double getPercentualVisitaUnica() {
-        return this.percentualVisitaUnica;
+    public Double getPercentVisitaUnica() {
+        return this.percentVisitaUnica;
     }
              
          /**
      * PERCENTUAL DE RANK PAGINA
      *
-     * @param percentualRankPagina
+     * @param percentRankPagina
      */
-    public void setPercentualRankPagina(Double percentualRankPagina) {
-        this.percentualRankPagina = percentualRankPagina;
+    public void setPercentRankPagina(Double percentRankPagina) {
+        this.percentRankPagina = percentRankPagina;
     }
 
     /**
@@ -123,8 +123,8 @@ public class PlataformaGoogleAnalyticDTO extends DataTransferObject {
      *
      * @return Double
      */
-    public Double getPercentualRankPagina() {
-        return this.percentualRankPagina;
+    public Double getPercentRankPagina() {
+        return this.percentRankPagina;
     }
      
 }

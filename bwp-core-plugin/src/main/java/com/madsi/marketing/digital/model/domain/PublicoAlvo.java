@@ -67,21 +67,21 @@ public class PublicoAlvo extends DomainEntity<Long> {
      */
     
 	@Column(name = "NM_CLASSE_SOCIAL", length = 255)
-    private String nomeClasseSocial;
+    private String nameClasseSocial;
                         
     /*
      * TEXTO DA LOCALIZACAO
      */
     
 	@Column(name = "TX_LOCALIZACAO", length = 255)
-    private String descricaoLocalizacao;
+    private String descriptionLocalizacao;
                         
     /*
      * TEXTO DO INTERESSE
      */
     
 	@Column(name = "TX_INTERESSE", length = 255)
-    private String descricaoInteresse;
+    private String descriptionInteresse;
             
     /**
      * @param id
@@ -171,10 +171,10 @@ public class PublicoAlvo extends DomainEntity<Long> {
     /**
      * NOME DA CLASSE SOCIAL
      *
-     * @param nomeClasseSocial
+     * @param nameClasseSocial
      */
-    public void setNomeClasseSocial(String nomeClasseSocial) {
-        this.nomeClasseSocial = nomeClasseSocial;
+    public void setNameClasseSocial(String nameClasseSocial) {
+        this.nameClasseSocial = nameClasseSocial;
     }
 
     /**
@@ -182,18 +182,18 @@ public class PublicoAlvo extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNomeClasseSocial() {
-        return this.nomeClasseSocial;
+    public String getNameClasseSocial() {
+        return this.nameClasseSocial;
     }
                     
      
     /**
      * TEXTO DA LOCALIZACAO
      *
-     * @param descricaoLocalizacao
+     * @param descriptionLocalizacao
      */
-    public void setDescricaoLocalizacao(String descricaoLocalizacao) {
-        this.descricaoLocalizacao = descricaoLocalizacao;
+    public void setDescriptionLocalizacao(String descriptionLocalizacao) {
+        this.descriptionLocalizacao = descriptionLocalizacao;
     }
 
     /**
@@ -201,18 +201,18 @@ public class PublicoAlvo extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoLocalizacao() {
-        return this.descricaoLocalizacao;
+    public String getDescriptionLocalizacao() {
+        return this.descriptionLocalizacao;
     }
                     
      
     /**
      * TEXTO DO INTERESSE
      *
-     * @param descricaoInteresse
+     * @param descriptionInteresse
      */
-    public void setDescricaoInteresse(String descricaoInteresse) {
-        this.descricaoInteresse = descricaoInteresse;
+    public void setDescriptionInteresse(String descriptionInteresse) {
+        this.descriptionInteresse = descriptionInteresse;
     }
 
     /**
@@ -220,8 +220,8 @@ public class PublicoAlvo extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoInteresse() {
-        return this.descricaoInteresse;
+    public String getDescriptionInteresse() {
+        return this.descriptionInteresse;
     }
     
 }

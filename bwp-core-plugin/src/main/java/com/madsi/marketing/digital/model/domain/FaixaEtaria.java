@@ -47,21 +47,21 @@ public class FaixaEtaria extends DomainEntity<Long> {
      */
     
 	@Column(name = "NM_FAIXA_ETARIA", length = 255)
-    private String nomeFaixaEtaria;
+    private String nameFaixaEtaria;
                         
     /*
      * NUMERO DA FAIXA INICIAL
      */
     
 	@Column(name = "NR_FAIXA_INICIAL", precision = 3, nullable = false)
-    private Short numeroFaixaInicial;
+    private Short numberFaixaInicial;
                         
     /*
      * NUMERO DA FAIXA FINAL
      */
     
 	@Column(name = "NR_FAIXA_FINAL", precision = 3, nullable = false)
-    private Short numeroFaixaFinal;
+    private Short numberFaixaFinal;
             
     /**
      * @param id
@@ -113,10 +113,10 @@ public class FaixaEtaria extends DomainEntity<Long> {
     /**
      * NOME DA FAIXA ETARIA
      *
-     * @param nomeFaixaEtaria
+     * @param nameFaixaEtaria
      */
-    public void setNomeFaixaEtaria(String nomeFaixaEtaria) {
-        this.nomeFaixaEtaria = nomeFaixaEtaria;
+    public void setNameFaixaEtaria(String nameFaixaEtaria) {
+        this.nameFaixaEtaria = nameFaixaEtaria;
     }
 
     /**
@@ -124,18 +124,18 @@ public class FaixaEtaria extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNomeFaixaEtaria() {
-        return this.nomeFaixaEtaria;
+    public String getNameFaixaEtaria() {
+        return this.nameFaixaEtaria;
     }
                     
      
     /**
      * NUMERO DA FAIXA INICIAL
      *
-     * @param numeroFaixaInicial
+     * @param numberFaixaInicial
      */
-    public void setNumeroFaixaInicial(Short numeroFaixaInicial) {
-        this.numeroFaixaInicial = numeroFaixaInicial;
+    public void setNumberFaixaInicial(Short numberFaixaInicial) {
+        this.numberFaixaInicial = numberFaixaInicial;
     }
 
     /**
@@ -143,18 +143,18 @@ public class FaixaEtaria extends DomainEntity<Long> {
      *
      * @return Short
      */
-    public Short getNumeroFaixaInicial() {
-        return this.numeroFaixaInicial;
+    public Short getNumberFaixaInicial() {
+        return this.numberFaixaInicial;
     }
                     
      
     /**
      * NUMERO DA FAIXA FINAL
      *
-     * @param numeroFaixaFinal
+     * @param numberFaixaFinal
      */
-    public void setNumeroFaixaFinal(Short numeroFaixaFinal) {
-        this.numeroFaixaFinal = numeroFaixaFinal;
+    public void setNumberFaixaFinal(Short numberFaixaFinal) {
+        this.numberFaixaFinal = numberFaixaFinal;
     }
 
     /**
@@ -162,8 +162,8 @@ public class FaixaEtaria extends DomainEntity<Long> {
      *
      * @return Short
      */
-    public Short getNumeroFaixaFinal() {
-        return this.numeroFaixaFinal;
+    public Short getNumberFaixaFinal() {
+        return this.numberFaixaFinal;
     }
     
 }

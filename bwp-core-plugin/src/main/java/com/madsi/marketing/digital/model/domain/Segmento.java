@@ -50,7 +50,7 @@ public class Segmento extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "NM_SEGMENTO", length = 60, nullable = false)
-    private String nomeSegmento;
+    private String nameSegmento;
             
     /**
      * @param id
@@ -102,10 +102,10 @@ public class Segmento extends DomainEntity<Long> {
     /**
      * NOME DO SEGMENTO
      *
-     * @param nomeSegmento
+     * @param nameSegmento
      */
-    public void setNomeSegmento(String nomeSegmento) {
-        this.nomeSegmento = nomeSegmento;
+    public void setNameSegmento(String nameSegmento) {
+        this.nameSegmento = nameSegmento;
     }
 
     /**
@@ -113,8 +113,8 @@ public class Segmento extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNomeSegmento() {
-        return this.nomeSegmento;
+    public String getNameSegmento() {
+        return this.nameSegmento;
     }
     
 }

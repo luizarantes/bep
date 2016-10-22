@@ -23,6 +23,6 @@ public class Objetivo_ {
 
 	public static volatile SingularAttribute<Objetivo, Long> id;	
 	public static volatile ListAttribute<Objetivo, Campanha> campanhas;
-	public static volatile SingularAttribute<Objetivo, String> nomeObjetivo;
+	public static volatile SingularAttribute<Objetivo, String> nameObjetivo;
 	
 }

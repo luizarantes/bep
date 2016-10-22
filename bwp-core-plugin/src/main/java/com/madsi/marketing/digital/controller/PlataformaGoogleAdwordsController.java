@@ -8,13 +8,15 @@ package com.madsi.marketing.digital.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.madsi.marketing.digital.model.domain.PlataformaGoogleAdwords;
 import com.madsi.marketing.digital.model.domain.dto.PlataformaGoogleAdwordsDTO;
 import com.madsi.marketing.digital.service.impl.PlataformaGoogleAdwordsServiceImpl;
 import com.madsi.marketing.digital.data.repository.PlataformaGoogleAdwordsRepository;
@@ -26,7 +28,7 @@ import com.madsi.marketing.digital.data.repository.PlataformaGoogleAdwordsReposi
  * @since 1.0
  * 
  */
-@Controller
+@RestController
 @RequestMapping("/api/v1/plataformaGoogleAdwords")
 public class PlataformaGoogleAdwordsController {
 
@@ -44,20 +46,20 @@ public class PlataformaGoogleAdwordsController {
 	
 	@ResponseBody
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
-	public ResponseEntity<PlataformaGoogleAdwordsDTO> save(PlataformaGoogleAdwordsDTO dto) {
+	public ResponseEntity<PlataformaGoogleAdwordsDTO> save(@RequestBody PlataformaGoogleAdwordsDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<PlataformaGoogleAdwordsDTO>(HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one", method = RequestMethod.GET)
-	public ResponseEntity<PlataformaGoogleAdwordsDTO> findOne(Long id) {
+	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	public ResponseEntity<PlataformaGoogleAdwordsDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<PlataformaGoogleAdwordsDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(Long id) {
+	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
 		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}

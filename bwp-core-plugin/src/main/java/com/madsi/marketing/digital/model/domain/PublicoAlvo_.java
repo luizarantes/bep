@@ -25,8 +25,8 @@ public class PublicoAlvo_ {
 	public static volatile ListAttribute<PublicoAlvo, Campanha> campanhas;
 	public static volatile SingularAttribute<PublicoAlvo, FaixaEtaria> faixaEtaria;
 	public static volatile SingularAttribute<PublicoAlvo, String> inSexo;
-	public static volatile SingularAttribute<PublicoAlvo, String> nomeClasseSocial;
-	public static volatile SingularAttribute<PublicoAlvo, String> descricaoLocalizacao;
-	public static volatile SingularAttribute<PublicoAlvo, String> descricaoInteresse;
+	public static volatile SingularAttribute<PublicoAlvo, String> nameClasseSocial;
+	public static volatile SingularAttribute<PublicoAlvo, String> descriptionLocalizacao;
+	public static volatile SingularAttribute<PublicoAlvo, String> descriptionInteresse;
 	
 }

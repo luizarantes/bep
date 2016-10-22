@@ -23,9 +23,9 @@ public class PlataformaGoogleAnalytic_ {
 
 	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Long> id;	
 	public static volatile ListAttribute<PlataformaGoogleAnalytic, Metrica> metricas;
-	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Double> percentualVisita;
-	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Double> percentualTrafico;
-	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Double> percentualVisitaUnica;
-	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Double> percentualRankPagina;
+	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Double> percentVisita;
+	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Double> percentTrafico;
+	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Double> percentVisitaUnica;
+	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Double> percentRankPagina;
 	
 }

@@ -8,13 +8,15 @@ package com.madsi.marketing.digital.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.madsi.marketing.digital.model.domain.PlataformaGoogleAnalytic;
 import com.madsi.marketing.digital.model.domain.dto.PlataformaGoogleAnalyticDTO;
 import com.madsi.marketing.digital.service.impl.PlataformaGoogleAnalyticServiceImpl;
 import com.madsi.marketing.digital.data.repository.PlataformaGoogleAnalyticRepository;
@@ -26,7 +28,7 @@ import com.madsi.marketing.digital.data.repository.PlataformaGoogleAnalyticRepos
  * @since 1.0
  * 
  */
-@Controller
+@RestController
 @RequestMapping("/api/v1/plataformaGoogleAnalytic")
 public class PlataformaGoogleAnalyticController {
 
@@ -44,20 +46,20 @@ public class PlataformaGoogleAnalyticController {
 	
 	@ResponseBody
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
-	public ResponseEntity<PlataformaGoogleAnalyticDTO> save(PlataformaGoogleAnalyticDTO dto) {
+	public ResponseEntity<PlataformaGoogleAnalyticDTO> save(@RequestBody PlataformaGoogleAnalyticDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<PlataformaGoogleAnalyticDTO>(HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one", method = RequestMethod.GET)
-	public ResponseEntity<PlataformaGoogleAnalyticDTO> findOne(Long id) {
+	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	public ResponseEntity<PlataformaGoogleAnalyticDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<PlataformaGoogleAnalyticDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(Long id) {
+	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
 		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}

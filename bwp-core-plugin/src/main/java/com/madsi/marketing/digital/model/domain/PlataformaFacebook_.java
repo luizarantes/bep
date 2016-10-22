@@ -23,8 +23,8 @@ public class PlataformaFacebook_ {
 
 	public static volatile SingularAttribute<PlataformaFacebook, Long> id;	
 	public static volatile ListAttribute<PlataformaFacebook, Metrica> metricas;
-	public static volatile SingularAttribute<PlataformaFacebook, Double> percentualCompartilhamento;
-	public static volatile SingularAttribute<PlataformaFacebook, Double> percentualCurtidaPagina;
-	public static volatile SingularAttribute<PlataformaFacebook, Double> percentualCurtidaPost;
+	public static volatile SingularAttribute<PlataformaFacebook, Double> percentCompartilhamento;
+	public static volatile SingularAttribute<PlataformaFacebook, Double> percentCurtidaPagina;
+	public static volatile SingularAttribute<PlataformaFacebook, Double> percentCurtidaPost;
 	
 }

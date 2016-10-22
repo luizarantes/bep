@@ -82,7 +82,7 @@ public class Metrica extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "NM_METRICA", length = 255, nullable = false)
-    private String nomeMetrica;
+    private String nameMetrica;
                                     
     /**
      * @param id
@@ -134,10 +134,10 @@ public class Metrica extends DomainEntity<Long> {
     /**
      * NOME DA METRICA
      *
-     * @param nomeMetrica
+     * @param nameMetrica
      */
-    public void setNomeMetrica(String nomeMetrica) {
-        this.nomeMetrica = nomeMetrica;
+    public void setNameMetrica(String nameMetrica) {
+        this.nameMetrica = nameMetrica;
     }
 
     /**
@@ -145,8 +145,8 @@ public class Metrica extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNomeMetrica() {
-        return this.nomeMetrica;
+    public String getNameMetrica() {
+        return this.nameMetrica;
     }
                     
      

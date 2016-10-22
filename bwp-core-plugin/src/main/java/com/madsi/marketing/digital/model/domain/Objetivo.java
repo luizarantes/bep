@@ -50,7 +50,7 @@ public class Objetivo extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "NM_OBJETIVO", length = 255, nullable = false)
-    private String nomeObjetivo;
+    private String nameObjetivo;
             
     /**
      * @param id
@@ -102,10 +102,10 @@ public class Objetivo extends DomainEntity<Long> {
     /**
      * NOME DO OBJETIVO
      *
-     * @param nomeObjetivo
+     * @param nameObjetivo
      */
-    public void setNomeObjetivo(String nomeObjetivo) {
-        this.nomeObjetivo = nomeObjetivo;
+    public void setNameObjetivo(String nameObjetivo) {
+        this.nameObjetivo = nameObjetivo;
     }
 
     /**
@@ -113,8 +113,8 @@ public class Objetivo extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNomeObjetivo() {
-        return this.nomeObjetivo;
+    public String getNameObjetivo() {
+        return this.nameObjetivo;
     }
     
 }

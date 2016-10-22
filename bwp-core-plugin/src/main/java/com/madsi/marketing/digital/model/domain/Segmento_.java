@@ -23,6 +23,6 @@ public class Segmento_ {
 
 	public static volatile SingularAttribute<Segmento, Long> id;	
 	public static volatile ListAttribute<Segmento, Empresa> empresas;
-	public static volatile SingularAttribute<Segmento, String> nomeSegmento;
+	public static volatile SingularAttribute<Segmento, String> nameSegmento;
 	
 }

@@ -62,7 +62,7 @@ public class Empresa extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "TX_EMAIL", length = 60, nullable = false)
-    private String descricaoEmail;
+    private String descriptionEmail;
                         
     /*
      * NUMERO DO TELEFONE
@@ -71,7 +71,7 @@ public class Empresa extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "TX_TELEFONE", length = 11, nullable = false)
-    private String descricaoTelefone;
+    private String descriptionTelefone;
             
     /**
      * @param id
@@ -142,10 +142,10 @@ public class Empresa extends DomainEntity<Long> {
     /**
      * ENDERECO DE EMAIL
      *
-     * @param descricaoEmail
+     * @param descriptionEmail
      */
-    public void setDescricaoEmail(String descricaoEmail) {
-        this.descricaoEmail = descricaoEmail;
+    public void setDescriptionEmail(String descriptionEmail) {
+        this.descriptionEmail = descriptionEmail;
     }
 
     /**
@@ -153,18 +153,18 @@ public class Empresa extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoEmail() {
-        return this.descricaoEmail;
+    public String getDescriptionEmail() {
+        return this.descriptionEmail;
     }
                     
      
     /**
      * NUMERO DO TELEFONE
      *
-     * @param descricaoTelefone
+     * @param descriptionTelefone
      */
-    public void setDescricaoTelefone(String descricaoTelefone) {
-        this.descricaoTelefone = descricaoTelefone;
+    public void setDescriptionTelefone(String descriptionTelefone) {
+        this.descriptionTelefone = descriptionTelefone;
     }
 
     /**
@@ -172,8 +172,8 @@ public class Empresa extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoTelefone() {
-        return this.descricaoTelefone;
+    public String getDescriptionTelefone() {
+        return this.descriptionTelefone;
     }
     
 }

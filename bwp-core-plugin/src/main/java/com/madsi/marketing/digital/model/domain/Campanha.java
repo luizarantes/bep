@@ -87,14 +87,14 @@ public class Campanha extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "NM_CAMPANHA", length = 255, nullable = false)
-    private String nomeCampanha;
+    private String nameCampanha;
                         
     /*
      * DESCRICACAO DO PROBLEMA
      */
     
 	@Column(name = "DS_PROBLEMA", length = 4000)
-    private String descricaoProblema;
+    private String descriptionProblema;
                         
     /*
      * DATA DE INICIO DA CAMPANHA
@@ -104,7 +104,7 @@ public class Campanha extends DomainEntity<Long> {
         
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DH_INICIO", nullable = false)
-    private Date dataInicio;
+    private Date dateInicio;
                         
     /*
      * DATA DO FIM DA CAMPANHA
@@ -114,7 +114,7 @@ public class Campanha extends DomainEntity<Long> {
         
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DH_FIM")
-    private Date dataFim;
+    private Date dateFim;
             
     /**
      * @param id
@@ -223,10 +223,10 @@ public class Campanha extends DomainEntity<Long> {
     /**
      * NOME DA CAMPANHA
      *
-     * @param nomeCampanha
+     * @param nameCampanha
      */
-    public void setNomeCampanha(String nomeCampanha) {
-        this.nomeCampanha = nomeCampanha;
+    public void setNameCampanha(String nameCampanha) {
+        this.nameCampanha = nameCampanha;
     }
 
     /**
@@ -234,18 +234,18 @@ public class Campanha extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNomeCampanha() {
-        return this.nomeCampanha;
+    public String getNameCampanha() {
+        return this.nameCampanha;
     }
                     
      
     /**
      * DESCRICACAO DO PROBLEMA
      *
-     * @param descricaoProblema
+     * @param descriptionProblema
      */
-    public void setDescricaoProblema(String descricaoProblema) {
-        this.descricaoProblema = descricaoProblema;
+    public void setDescriptionProblema(String descriptionProblema) {
+        this.descriptionProblema = descriptionProblema;
     }
 
     /**
@@ -253,18 +253,18 @@ public class Campanha extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescricaoProblema() {
-        return this.descricaoProblema;
+    public String getDescriptionProblema() {
+        return this.descriptionProblema;
     }
                     
      
     /**
      * DATA DE INICIO DA CAMPANHA
      *
-     * @param dataInicio
+     * @param dateInicio
      */
-    public void setDataInicio(Date dataInicio) {
-        this.dataInicio = dataInicio;
+    public void setDateInicio(Date dateInicio) {
+        this.dateInicio = dateInicio;
     }
 
     /**
@@ -272,18 +272,18 @@ public class Campanha extends DomainEntity<Long> {
      *
      * @return Date
      */
-    public Date getDataInicio() {
-        return this.dataInicio;
+    public Date getDateInicio() {
+        return this.dateInicio;
     }
                     
      
     /**
      * DATA DO FIM DA CAMPANHA
      *
-     * @param dataFim
+     * @param dateFim
      */
-    public void setDataFim(Date dataFim) {
-        this.dataFim = dataFim;
+    public void setDateFim(Date dateFim) {
+        this.dateFim = dateFim;
     }
 
     /**
@@ -291,8 +291,8 @@ public class Campanha extends DomainEntity<Long> {
      *
      * @return Date
      */
-    public Date getDataFim() {
-        return this.dataFim;
+    public Date getDateFim() {
+        return this.dateFim;
     }
     
 }

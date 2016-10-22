@@ -47,21 +47,21 @@ public class PlataformaFacebook extends DomainEntity<Long> {
      */
     
 	@Column(name = "PC_COMPARTILHAMENTO", precision = 3, scale = 2)
-    private Double percentualCompartilhamento;
+    private Double percentCompartilhamento;
                         
     /*
      * PERCENTUAL DE CURTIDA DE PAGINA
      */
     
 	@Column(name = "PC_CURTIDA_PAGINA", precision = 3, scale = 2)
-    private Double percentualCurtidaPagina;
+    private Double percentCurtidaPagina;
                         
     /*
      * PERCENTUAL DE CURTIDA DE POST
      */
     
 	@Column(name = "PC_CURTIDA_POST", precision = 3, scale = 2)
-    private Double percentualCurtidaPost;
+    private Double percentCurtidaPost;
             
     /**
      * @param id
@@ -113,10 +113,10 @@ public class PlataformaFacebook extends DomainEntity<Long> {
     /**
      * PERCENTUAL DE COMPARTILHAMENTO
      *
-     * @param percentualCompartilhamento
+     * @param percentCompartilhamento
      */
-    public void setPercentualCompartilhamento(Double percentualCompartilhamento) {
-        this.percentualCompartilhamento = percentualCompartilhamento;
+    public void setPercentCompartilhamento(Double percentCompartilhamento) {
+        this.percentCompartilhamento = percentCompartilhamento;
     }
 
     /**
@@ -124,18 +124,18 @@ public class PlataformaFacebook extends DomainEntity<Long> {
      *
      * @return Double
      */
-    public Double getPercentualCompartilhamento() {
-        return this.percentualCompartilhamento;
+    public Double getPercentCompartilhamento() {
+        return this.percentCompartilhamento;
     }
                     
      
     /**
      * PERCENTUAL DE CURTIDA DE PAGINA
      *
-     * @param percentualCurtidaPagina
+     * @param percentCurtidaPagina
      */
-    public void setPercentualCurtidaPagina(Double percentualCurtidaPagina) {
-        this.percentualCurtidaPagina = percentualCurtidaPagina;
+    public void setPercentCurtidaPagina(Double percentCurtidaPagina) {
+        this.percentCurtidaPagina = percentCurtidaPagina;
     }
 
     /**
@@ -143,18 +143,18 @@ public class PlataformaFacebook extends DomainEntity<Long> {
      *
      * @return Double
      */
-    public Double getPercentualCurtidaPagina() {
-        return this.percentualCurtidaPagina;
+    public Double getPercentCurtidaPagina() {
+        return this.percentCurtidaPagina;
     }
                     
      
     /**
      * PERCENTUAL DE CURTIDA DE POST
      *
-     * @param percentualCurtidaPost
+     * @param percentCurtidaPost
      */
-    public void setPercentualCurtidaPost(Double percentualCurtidaPost) {
-        this.percentualCurtidaPost = percentualCurtidaPost;
+    public void setPercentCurtidaPost(Double percentCurtidaPost) {
+        this.percentCurtidaPost = percentCurtidaPost;
     }
 
     /**
@@ -162,8 +162,8 @@ public class PlataformaFacebook extends DomainEntity<Long> {
      *
      * @return Double
      */
-    public Double getPercentualCurtidaPost() {
-        return this.percentualCurtidaPost;
+    public Double getPercentCurtidaPost() {
+        return this.percentCurtidaPost;
     }
     
 }

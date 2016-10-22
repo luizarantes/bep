@@ -47,28 +47,28 @@ public class PlataformaGoogleAdwords extends DomainEntity<Long> {
      */
     
 	@Column(name = "PC_CTR", precision = 3, scale = 2, nullable = false)
-    private Double percentualCtr;
+    private Double percentCtr;
                         
     /*
      * PERCENTUAL DE CLIQUE
      */
     
 	@Column(name = "PC_CLIQUE", precision = 3, scale = 2)
-    private Double percentualClique;
+    private Double percentClique;
                         
     /*
      * PERCENTUAL DE ALCANCE
      */
     
 	@Column(name = "PC_ALCANCE", precision = 3, scale = 2)
-    private Double percentualAlcance;
+    private Double percentAlcance;
                         
     /*
      * PERCENTUAL DE CLIQUE CONVERTIDO
      */
     
 	@Column(name = "PC_CLIQUE_CONVERTIDO", precision = 3, scale = 2)
-    private Double percentualCliqueConvertido;
+    private Double percentCliqueConvertido;
             
     /**
      * @param id
@@ -120,10 +120,10 @@ public class PlataformaGoogleAdwords extends DomainEntity<Long> {
     /**
      * PERCENTUAL DE CLIQUE IMPRESSO E CLICADO
      *
-     * @param percentualCtr
+     * @param percentCtr
      */
-    public void setPercentualCtr(Double percentualCtr) {
-        this.percentualCtr = percentualCtr;
+    public void setPercentCtr(Double percentCtr) {
+        this.percentCtr = percentCtr;
     }
 
     /**
@@ -131,18 +131,18 @@ public class PlataformaGoogleAdwords extends DomainEntity<Long> {
      *
      * @return Double
      */
-    public Double getPercentualCtr() {
-        return this.percentualCtr;
+    public Double getPercentCtr() {
+        return this.percentCtr;
     }
                     
      
     /**
      * PERCENTUAL DE CLIQUE
      *
-     * @param percentualClique
+     * @param percentClique
      */
-    public void setPercentualClique(Double percentualClique) {
-        this.percentualClique = percentualClique;
+    public void setPercentClique(Double percentClique) {
+        this.percentClique = percentClique;
     }
 
     /**
@@ -150,18 +150,18 @@ public class PlataformaGoogleAdwords extends DomainEntity<Long> {
      *
      * @return Double
      */
-    public Double getPercentualClique() {
-        return this.percentualClique;
+    public Double getPercentClique() {
+        return this.percentClique;
     }
                     
      
     /**
      * PERCENTUAL DE ALCANCE
      *
-     * @param percentualAlcance
+     * @param percentAlcance
      */
-    public void setPercentualAlcance(Double percentualAlcance) {
-        this.percentualAlcance = percentualAlcance;
+    public void setPercentAlcance(Double percentAlcance) {
+        this.percentAlcance = percentAlcance;
     }
 
     /**
@@ -169,18 +169,18 @@ public class PlataformaGoogleAdwords extends DomainEntity<Long> {
      *
      * @return Double
      */
-    public Double getPercentualAlcance() {
-        return this.percentualAlcance;
+    public Double getPercentAlcance() {
+        return this.percentAlcance;
     }
                     
      
     /**
      * PERCENTUAL DE CLIQUE CONVERTIDO
      *
-     * @param percentualCliqueConvertido
+     * @param percentCliqueConvertido
      */
-    public void setPercentualCliqueConvertido(Double percentualCliqueConvertido) {
-        this.percentualCliqueConvertido = percentualCliqueConvertido;
+    public void setPercentCliqueConvertido(Double percentCliqueConvertido) {
+        this.percentCliqueConvertido = percentCliqueConvertido;
     }
 
     /**
@@ -188,8 +188,8 @@ public class PlataformaGoogleAdwords extends DomainEntity<Long> {
      *
      * @return Double
      */
-    public Double getPercentualCliqueConvertido() {
-        return this.percentualCliqueConvertido;
+    public Double getPercentCliqueConvertido() {
+        return this.percentCliqueConvertido;
     }
     
 }

@@ -23,17 +23,17 @@ public class PlataformaFacebookDTO extends DataTransferObject {
   	/*
      * PERCENTUAL DE COMPARTILHAMENTO
      */
-	private Double percentualCompartilhamento;
+	private Double percentCompartilhamento;
 
   	/*
      * PERCENTUAL DE CURTIDA DE PAGINA
      */
-	private Double percentualCurtidaPagina;
+	private Double percentCurtidaPagina;
 
   	/*
      * PERCENTUAL DE CURTIDA DE POST
      */
-	private Double percentualCurtidaPost;
+	private Double percentCurtidaPost;
 
 
     /**
@@ -53,10 +53,10 @@ public class PlataformaFacebookDTO extends DataTransferObject {
          /**
      * PERCENTUAL DE COMPARTILHAMENTO
      *
-     * @param percentualCompartilhamento
+     * @param percentCompartilhamento
      */
-    public void setPercentualCompartilhamento(Double percentualCompartilhamento) {
-        this.percentualCompartilhamento = percentualCompartilhamento;
+    public void setPercentCompartilhamento(Double percentCompartilhamento) {
+        this.percentCompartilhamento = percentCompartilhamento;
     }
 
     /**
@@ -64,17 +64,17 @@ public class PlataformaFacebookDTO extends DataTransferObject {
      *
      * @return Double
      */
-    public Double getPercentualCompartilhamento() {
-        return this.percentualCompartilhamento;
+    public Double getPercentCompartilhamento() {
+        return this.percentCompartilhamento;
     }
              
          /**
      * PERCENTUAL DE CURTIDA DE PAGINA
      *
-     * @param percentualCurtidaPagina
+     * @param percentCurtidaPagina
      */
-    public void setPercentualCurtidaPagina(Double percentualCurtidaPagina) {
-        this.percentualCurtidaPagina = percentualCurtidaPagina;
+    public void setPercentCurtidaPagina(Double percentCurtidaPagina) {
+        this.percentCurtidaPagina = percentCurtidaPagina;
     }
 
     /**
@@ -82,17 +82,17 @@ public class PlataformaFacebookDTO extends DataTransferObject {
      *
      * @return Double
      */
-    public Double getPercentualCurtidaPagina() {
-        return this.percentualCurtidaPagina;
+    public Double getPercentCurtidaPagina() {
+        return this.percentCurtidaPagina;
     }
              
          /**
      * PERCENTUAL DE CURTIDA DE POST
      *
-     * @param percentualCurtidaPost
+     * @param percentCurtidaPost
      */
-    public void setPercentualCurtidaPost(Double percentualCurtidaPost) {
-        this.percentualCurtidaPost = percentualCurtidaPost;
+    public void setPercentCurtidaPost(Double percentCurtidaPost) {
+        this.percentCurtidaPost = percentCurtidaPost;
     }
 
     /**
@@ -100,8 +100,8 @@ public class PlataformaFacebookDTO extends DataTransferObject {
      *
      * @return Double
      */
-    public Double getPercentualCurtidaPost() {
-        return this.percentualCurtidaPost;
+    public Double getPercentCurtidaPost() {
+        return this.percentCurtidaPost;
     }
      
 }

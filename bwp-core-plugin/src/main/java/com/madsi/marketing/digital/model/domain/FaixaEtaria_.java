@@ -23,8 +23,8 @@ public class FaixaEtaria_ {
 
 	public static volatile SingularAttribute<FaixaEtaria, Long> id;	
 	public static volatile ListAttribute<FaixaEtaria, PublicoAlvo> publicoAlvos;
-	public static volatile SingularAttribute<FaixaEtaria, String> nomeFaixaEtaria;
-	public static volatile SingularAttribute<FaixaEtaria, Short> numeroFaixaInicial;
-	public static volatile SingularAttribute<FaixaEtaria, Short> numeroFaixaFinal;
+	public static volatile SingularAttribute<FaixaEtaria, String> nameFaixaEtaria;
+	public static volatile SingularAttribute<FaixaEtaria, Short> numberFaixaInicial;
+	public static volatile SingularAttribute<FaixaEtaria, Short> numberFaixaFinal;
 	
 }

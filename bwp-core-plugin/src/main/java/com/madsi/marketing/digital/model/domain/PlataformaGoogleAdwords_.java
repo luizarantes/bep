@@ -23,9 +23,9 @@ public class PlataformaGoogleAdwords_ {
 
 	public static volatile SingularAttribute<PlataformaGoogleAdwords, Long> id;	
 	public static volatile ListAttribute<PlataformaGoogleAdwords, Metrica> metricas;
-	public static volatile SingularAttribute<PlataformaGoogleAdwords, Double> percentualCtr;
-	public static volatile SingularAttribute<PlataformaGoogleAdwords, Double> percentualClique;
-	public static volatile SingularAttribute<PlataformaGoogleAdwords, Double> percentualAlcance;
-	public static volatile SingularAttribute<PlataformaGoogleAdwords, Double> percentualCliqueConvertido;
+	public static volatile SingularAttribute<PlataformaGoogleAdwords, Double> percentCtr;
+	public static volatile SingularAttribute<PlataformaGoogleAdwords, Double> percentClique;
+	public static volatile SingularAttribute<PlataformaGoogleAdwords, Double> percentAlcance;
+	public static volatile SingularAttribute<PlataformaGoogleAdwords, Double> percentCliqueConvertido;
 	
 }
