@@ -51,6 +51,7 @@ public abstract class AbstractService<T extends DataTransferObject, E extends Do
 				E entity = e.newInstance();
 				BeanUtils.copyProperties(dto, entity);
 				entity = this.dataRepository.save(entity);
+				BeanUtils.copyProperties(entity, dto);
 			}catch (InstantiationException e) {
 				LOGGER.log(Level.SEVERE, e.getMessage(), e);
 			}catch (IllegalAccessException e) {
