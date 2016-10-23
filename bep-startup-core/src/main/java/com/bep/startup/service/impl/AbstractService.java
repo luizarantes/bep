@@ -1,7 +1,7 @@
 /**
 *
 * Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Portal may be reproduced without GSI express consent.
+* No part of this Application may be reproduced without express consent.
 * 
 */
 package com.bep.startup.service.impl;
@@ -39,11 +39,19 @@ public abstract class AbstractService<T extends DataTransferObject, E extends Do
 
 	}
 
+	/**
+	 * @param t
+	 * @param e
+	 */
 	public AbstractService(Class<T> t, Class<E> e) {
 		this.t = t;
 		this.e = e;
 	}
 
+	/**
+	 * @param dto
+	 * @return T
+	 */
 	public T save(T dto) {
 
 		if (dto != null) {
@@ -62,6 +70,10 @@ public abstract class AbstractService<T extends DataTransferObject, E extends Do
 		return dto;
 	}
 
+	/**
+	 * @param id
+	 * @return
+	 */
 	public T findOne(ID id) {
 
 		if (id != null) {
@@ -80,6 +92,9 @@ public abstract class AbstractService<T extends DataTransferObject, E extends Do
 	}
 
 	
+	/**
+	 * @return Iterable<T>
+	 */
 	public Iterable<T> findAll() {
 
 		Iterable<E> iterableFindAll = this.dataRepository.findAll();

@@ -1,7 +1,7 @@
 /**
 *
 * Copyright BEP STARTUP 2016 All Rights Reserved. 
-* No part of this Portal may be reproduced without GSI express consent.
+* No part of this Application may be reproduced without express consent.
 * 
 */
 package com.bep.startup.application;

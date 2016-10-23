@@ -1,7 +1,7 @@
 /**
 *
 * Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Portal may be reproduced without BTG Pactual's express consent.
+* No part of this Application may be reproduced without BTG Pactual's express consent.
 * 
 */
 
