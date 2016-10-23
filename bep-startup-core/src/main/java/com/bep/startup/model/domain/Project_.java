@@ -1,6 +1,6 @@
 /**
 *
-* Copyright MADSI 2016 All Rights Reserved. 
+* Copyright BEP STARTUP All Rights Reserved. 
 * No part of this Portal may be reproduced without GSI express consent.
 * 
 */
@@ -15,7 +15,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 
 /** 
  *
- * @author MADSI
+ * @author GSI
  * @since 1.0
  * 
  */
