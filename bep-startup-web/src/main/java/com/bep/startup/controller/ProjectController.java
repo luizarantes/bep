@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bep.startup.model.domain.dto.ProjectDTO;
-import com.bep.startup.service.impl.ProjectServiceImpl;
 import com.bep.startup.data.repository.ProjectRepository;
+import com.bep.startup.model.domain.Project;
+import com.bep.startup.model.domain.dto.ProjectDTO;
+import com.bep.startup.service.ProjectService;
 
 
 /** 
@@ -33,7 +34,7 @@ import com.bep.startup.data.repository.ProjectRepository;
 public class ProjectController {
 
 	@Autowired
-	private ProjectServiceImpl service;
+	private ProjectService<ProjectDTO, Project, Long> service;
 
 	@Autowired
     private ProjectRepository dataRepository;

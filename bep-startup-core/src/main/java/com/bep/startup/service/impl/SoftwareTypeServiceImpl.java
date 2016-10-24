@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.bep.startup.model.domain.SoftwareType;
 import com.bep.startup.model.domain.dto.SoftwareTypeDTO;
+import com.bep.startup.service.SoftwareTypeService;
 
 /** 
  *
@@ -18,7 +19,7 @@ import com.bep.startup.model.domain.dto.SoftwareTypeDTO;
  * 
  */
 @Service
-public class SoftwareTypeServiceImpl extends AbstractService<SoftwareTypeDTO, SoftwareType, Long>  {
+public class SoftwareTypeServiceImpl extends AbstractService<SoftwareTypeDTO, SoftwareType, Long> implements SoftwareTypeService<SoftwareTypeDTO, SoftwareType, Long> {
     
 	public SoftwareTypeServiceImpl() {
     	super(SoftwareTypeDTO.class, SoftwareType.class);

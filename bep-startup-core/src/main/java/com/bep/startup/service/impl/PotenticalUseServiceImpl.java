@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.bep.startup.model.domain.PotenticalUse;
 import com.bep.startup.model.domain.dto.PotenticalUseDTO;
+import com.bep.startup.service.PotenticalUseService;
 
 /** 
  *
@@ -18,7 +19,7 @@ import com.bep.startup.model.domain.dto.PotenticalUseDTO;
  * 
  */
 @Service
-public class PotenticalUseServiceImpl extends AbstractService<PotenticalUseDTO, PotenticalUse, Long>  {
+public class PotenticalUseServiceImpl extends AbstractService<PotenticalUseDTO, PotenticalUse, Long> implements PotenticalUseService<PotenticalUseDTO, PotenticalUse, Long> {
     
 	public PotenticalUseServiceImpl() {
     	super(PotenticalUseDTO.class, PotenticalUse.class);

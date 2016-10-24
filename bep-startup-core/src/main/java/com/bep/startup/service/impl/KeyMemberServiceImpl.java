@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.bep.startup.model.domain.KeyMember;
 import com.bep.startup.model.domain.dto.KeyMemberDTO;
+import com.bep.startup.service.KeyMemberService;
 
 /** 
  *
@@ -18,7 +19,7 @@ import com.bep.startup.model.domain.dto.KeyMemberDTO;
  * 
  */
 @Service
-public class KeyMemberServiceImpl extends AbstractService<KeyMemberDTO, KeyMember, Long>  {
+public class KeyMemberServiceImpl extends AbstractService<KeyMemberDTO, KeyMember, Long> implements KeyMemberService<KeyMemberDTO, KeyMember, Long> {
     
 	public KeyMemberServiceImpl() {
     	super(KeyMemberDTO.class, KeyMember.class);

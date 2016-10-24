@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.bep.startup.model.domain.Goal;
 import com.bep.startup.model.domain.dto.GoalDTO;
+import com.bep.startup.service.GoalService;
 
 /** 
  *
@@ -18,7 +19,7 @@ import com.bep.startup.model.domain.dto.GoalDTO;
  * 
  */
 @Service
-public class GoalServiceImpl extends AbstractService<GoalDTO, Goal, Long>  {
+public class GoalServiceImpl extends AbstractService<GoalDTO, Goal, Long> implements GoalService<GoalDTO, Goal, Long> {
     
 	public GoalServiceImpl() {
     	super(GoalDTO.class, Goal.class);

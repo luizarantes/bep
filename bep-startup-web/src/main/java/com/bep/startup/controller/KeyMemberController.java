@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bep.startup.model.domain.dto.KeyMemberDTO;
-import com.bep.startup.service.impl.KeyMemberServiceImpl;
 import com.bep.startup.data.repository.KeyMemberRepository;
+import com.bep.startup.model.domain.KeyMember;
+import com.bep.startup.model.domain.dto.KeyMemberDTO;
+import com.bep.startup.service.KeyMemberService;
 
 
 /** 
@@ -33,7 +34,7 @@ import com.bep.startup.data.repository.KeyMemberRepository;
 public class KeyMemberController {
 
 	@Autowired
-	private KeyMemberServiceImpl service;
+	private KeyMemberService<KeyMemberDTO, KeyMember, Long> service;
 
 	@Autowired
     private KeyMemberRepository dataRepository;

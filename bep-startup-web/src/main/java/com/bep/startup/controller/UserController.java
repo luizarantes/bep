@@ -18,8 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bep.startup.data.repository.UserRepository;
+import com.bep.startup.model.domain.User;
 import com.bep.startup.model.domain.dto.UserDTO;
-import com.bep.startup.service.impl.UserServiceImpl;
+import com.bep.startup.service.UserService;
 
 
 /** 
@@ -33,7 +34,7 @@ import com.bep.startup.service.impl.UserServiceImpl;
 public class UserController {
 
 	@Autowired
-	private UserServiceImpl service;
+	private UserService<UserDTO, User, Long> service;
 
 	@Autowired
     private UserRepository dataRepository;

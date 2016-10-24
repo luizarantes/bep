@@ -6,10 +6,9 @@
 */
 package com.bep.startup.data.repository;
 
-import com.bep.startup.model.domain.HardwareType;
-import com.bep.startup.data.repository.custom.HardwareTypeCustomRepository;
-
 import org.springframework.data.repository.CrudRepository;
+
+import com.bep.startup.model.domain.HardwareType;
 
 /** 
  *
@@ -17,6 +16,6 @@ import org.springframework.data.repository.CrudRepository;
  * @since 1.0
  * 
  */
-public abstract interface HardwareTypeRepository extends CrudRepository<HardwareType, Long>, HardwareTypeCustomRepository {
+public abstract interface HardwareTypeRepository extends CrudRepository<HardwareType, Long> {
 
 }

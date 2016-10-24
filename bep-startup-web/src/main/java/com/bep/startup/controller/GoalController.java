@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bep.startup.model.domain.dto.GoalDTO;
-import com.bep.startup.service.impl.GoalServiceImpl;
 import com.bep.startup.data.repository.GoalRepository;
+import com.bep.startup.model.domain.Goal;
+import com.bep.startup.model.domain.dto.GoalDTO;
+import com.bep.startup.service.GoalService;
 
 
 /** 
@@ -33,7 +34,7 @@ import com.bep.startup.data.repository.GoalRepository;
 public class GoalController {
 
 	@Autowired
-	private GoalServiceImpl service;
+	private GoalService<GoalDTO, Goal, Long> service;
 
 	@Autowired
     private GoalRepository dataRepository;

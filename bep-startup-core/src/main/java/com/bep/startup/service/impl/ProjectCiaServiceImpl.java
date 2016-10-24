@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.bep.startup.model.domain.ProjectCia;
 import com.bep.startup.model.domain.dto.ProjectCiaDTO;
+import com.bep.startup.service.ProjectCiaService;
 
 /** 
  *
@@ -18,7 +19,7 @@ import com.bep.startup.model.domain.dto.ProjectCiaDTO;
  * 
  */
 @Service
-public class ProjectCiaServiceImpl extends AbstractService<ProjectCiaDTO, ProjectCia, Long>  {
+public class ProjectCiaServiceImpl extends AbstractService<ProjectCiaDTO, ProjectCia, Long> implements ProjectCiaService<ProjectCiaDTO, ProjectCia, Long> {
     
 	public ProjectCiaServiceImpl() {
     	super(ProjectCiaDTO.class, ProjectCia.class);

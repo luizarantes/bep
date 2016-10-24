@@ -6,6 +6,8 @@
 */
 package com.bep.startup.data.repository.impl;
 
+import org.springframework.stereotype.Repository;
+
 import com.bep.startup.data.repository.custom.HardwareTypeCustomRepository;
 
 
@@ -15,6 +17,7 @@ import com.bep.startup.data.repository.custom.HardwareTypeCustomRepository;
  * @since 1.0
  * 
  */
+@Repository
 public class HardwareTypeRepositoryImpl implements HardwareTypeCustomRepository {
 
 }

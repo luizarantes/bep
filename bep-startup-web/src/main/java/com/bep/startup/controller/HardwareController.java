@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bep.startup.model.domain.dto.HardwareDTO;
-import com.bep.startup.service.impl.HardwareServiceImpl;
 import com.bep.startup.data.repository.HardwareRepository;
+import com.bep.startup.model.domain.Hardware;
+import com.bep.startup.model.domain.dto.HardwareDTO;
+import com.bep.startup.service.HardwareService;
 
 
 /** 
@@ -33,7 +34,7 @@ import com.bep.startup.data.repository.HardwareRepository;
 public class HardwareController {
 
 	@Autowired
-	private HardwareServiceImpl service;
+	private HardwareService<HardwareDTO, Hardware, Long> service;
 
 	@Autowired
     private HardwareRepository dataRepository;

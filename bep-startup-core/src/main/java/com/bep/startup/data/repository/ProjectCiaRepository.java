@@ -6,10 +6,9 @@
 */
 package com.bep.startup.data.repository;
 
-import com.bep.startup.model.domain.ProjectCia;
-import com.bep.startup.data.repository.custom.ProjectCiaCustomRepository;
-
 import org.springframework.data.repository.CrudRepository;
+
+import com.bep.startup.model.domain.ProjectCia;
 
 /** 
  *
@@ -17,6 +16,6 @@ import org.springframework.data.repository.CrudRepository;
  * @since 1.0
  * 
  */
-public abstract interface ProjectCiaRepository extends CrudRepository<ProjectCia, Long>, ProjectCiaCustomRepository {
+public abstract interface ProjectCiaRepository extends CrudRepository<ProjectCia, Long> {
 
 }

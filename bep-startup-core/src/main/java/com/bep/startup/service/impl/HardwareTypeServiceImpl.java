@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.bep.startup.model.domain.HardwareType;
 import com.bep.startup.model.domain.dto.HardwareTypeDTO;
+import com.bep.startup.service.HardwareTypeService;
 
 /** 
  *
@@ -18,7 +19,7 @@ import com.bep.startup.model.domain.dto.HardwareTypeDTO;
  * 
  */
 @Service
-public class HardwareTypeServiceImpl extends AbstractService<HardwareTypeDTO, HardwareType, Long>  {
+public class HardwareTypeServiceImpl extends AbstractService<HardwareTypeDTO, HardwareType, Long> implements HardwareTypeService<HardwareTypeDTO, HardwareType, Long> {
     
     public HardwareTypeServiceImpl() {
     	super(HardwareTypeDTO.class, HardwareType.class);

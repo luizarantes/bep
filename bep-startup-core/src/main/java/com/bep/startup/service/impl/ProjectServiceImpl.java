@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.bep.startup.model.domain.Project;
 import com.bep.startup.model.domain.dto.ProjectDTO;
+import com.bep.startup.service.ProjectService;
 
 /** 
  *
@@ -18,7 +19,7 @@ import com.bep.startup.model.domain.dto.ProjectDTO;
  * 
  */
 @Service
-public class ProjectServiceImpl extends AbstractService<ProjectDTO, Project, Long>  {
+public class ProjectServiceImpl extends AbstractService<ProjectDTO, Project, Long> implements ProjectService<ProjectDTO, Project, Long> {
     
 	public ProjectServiceImpl() {
     	super(ProjectDTO.class, Project.class);

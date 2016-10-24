@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bep.startup.model.domain.dto.SoftwareTypeDTO;
-import com.bep.startup.service.impl.SoftwareTypeServiceImpl;
 import com.bep.startup.data.repository.SoftwareTypeRepository;
+import com.bep.startup.model.domain.SoftwareType;
+import com.bep.startup.model.domain.dto.SoftwareTypeDTO;
+import com.bep.startup.service.SoftwareTypeService;
 
 
 /** 
@@ -33,7 +34,7 @@ import com.bep.startup.data.repository.SoftwareTypeRepository;
 public class SoftwareTypeController {
 
 	@Autowired
-	private SoftwareTypeServiceImpl service;
+	private SoftwareTypeService<SoftwareTypeDTO, SoftwareType, Long> service;
 
 	@Autowired
     private SoftwareTypeRepository dataRepository;

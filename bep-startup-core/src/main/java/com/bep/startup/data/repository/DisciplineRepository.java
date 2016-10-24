@@ -6,10 +6,9 @@
 */
 package com.bep.startup.data.repository;
 
-import com.bep.startup.model.domain.Discipline;
-import com.bep.startup.data.repository.custom.DisciplineCustomRepository;
-
 import org.springframework.data.repository.CrudRepository;
+
+import com.bep.startup.model.domain.Discipline;
 
 /** 
  *
@@ -17,6 +16,6 @@ import org.springframework.data.repository.CrudRepository;
  * @since 1.0
  * 
  */
-public abstract interface DisciplineRepository extends CrudRepository<Discipline, Long>, DisciplineCustomRepository {
+public abstract interface DisciplineRepository extends CrudRepository<Discipline, Long> {
 
 }

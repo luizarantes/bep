@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.bep.startup.model.domain.Invite;
 import com.bep.startup.model.domain.dto.InviteDTO;
+import com.bep.startup.service.InviteService;
 
 /** 
  *
@@ -18,7 +19,7 @@ import com.bep.startup.model.domain.dto.InviteDTO;
  * 
  */
 @Service
-public class InviteServiceImpl extends AbstractService<InviteDTO, Invite, Long>  {
+public class InviteServiceImpl extends AbstractService<InviteDTO, Invite, Long> implements InviteService<InviteDTO, Invite, Long> {
     
 	public InviteServiceImpl() {
     	super(InviteDTO.class, Invite.class);

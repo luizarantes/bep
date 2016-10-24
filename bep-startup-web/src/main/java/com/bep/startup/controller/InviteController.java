@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bep.startup.model.domain.dto.InviteDTO;
-import com.bep.startup.service.impl.InviteServiceImpl;
 import com.bep.startup.data.repository.InviteRepository;
+import com.bep.startup.model.domain.Invite;
+import com.bep.startup.model.domain.dto.InviteDTO;
+import com.bep.startup.service.InviteService;
 
 
 /** 
@@ -33,7 +34,7 @@ import com.bep.startup.data.repository.InviteRepository;
 public class InviteController {
 
 	@Autowired
-	private InviteServiceImpl service;
+	private InviteService<InviteDTO, Invite, Long> service;
 
 	@Autowired
     private InviteRepository dataRepository;

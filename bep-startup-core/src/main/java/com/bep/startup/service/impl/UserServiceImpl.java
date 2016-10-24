@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.bep.startup.model.domain.User;
 import com.bep.startup.model.domain.dto.UserDTO;
+import com.bep.startup.service.UserService;
 
 /** 
  *
@@ -18,7 +19,7 @@ import com.bep.startup.model.domain.dto.UserDTO;
  * 
  */
 @Service
-public class UserServiceImpl extends AbstractService<UserDTO, User, Long>  {
+public class UserServiceImpl extends AbstractService<UserDTO, User, Long> implements UserService<UserDTO, User, Long> {
     
 	public UserServiceImpl() {
     	super(UserDTO.class, User.class);
