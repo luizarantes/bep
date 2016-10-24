@@ -1,6 +1,6 @@
 #include("header.vm") 
 
-package ${package}.model.dto;
+package ${package}.model.domain.dto;
 
 #if($entity.useDate)
 import java.util.Date;
@@ -9,7 +9,6 @@ import java.util.Date;
 #foreach ($packageEnum in $entity.packageEnum)
 import $packageEnum;
 #end
-import com.btg.pactual.dto.DataTransferObject;
 
 #include("comments.vm")
 

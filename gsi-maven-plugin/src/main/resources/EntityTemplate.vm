@@ -64,9 +64,6 @@ import javax.persistence.OneToMany;
 #if($entity.useOneToOne)
 import javax.persistence.OneToOne;
 #end
-#if($idPK == "Y")
-import javax.persistence.SequenceGenerator;
-#end
 #if($entity.secondaryEntity && !$entity.entityHierarchy)
 import javax.persistence.PrimaryKeyJoinColumn;
 #end
@@ -117,8 +114,7 @@ public class ${entity.logicalName} extends DomainEntity<${entity.typePK.type}> {
 #if($idPK == "Y")
     @Id
     @Column(name = "${entity.physicalNamePK}", nullable = false, updatable = false, precision = ${entity.precisionPK})
-    @SequenceGenerator(name = "sq${entity.logicalName}", sequenceName = "${entity.sequenceName}", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "sq${entity.logicalName}", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private ${entity.typePK.type} id;
     #end
     #foreach ($field in $entity.columns)

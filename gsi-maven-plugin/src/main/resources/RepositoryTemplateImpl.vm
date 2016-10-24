@@ -2,11 +2,13 @@
 
 package ${package}.data.repository.impl;
 
-import ${package}.data.repository.custom.${entityName}CustomRepository;
+import org.springframework.stereotype.Repository;
 
+import ${package}.data.repository.custom.${entityName}CustomRepository;
 
 #include("comments.vm")
 
+@Repository
 public class ${entityName}RepositoryImpl implements ${entityName}CustomRepository {
 
 }
