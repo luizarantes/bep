@@ -27,7 +27,7 @@ import javax.validation.constraints.NotNull;
  * 
  */
 @Entity
-@Table(name = "DISCIPLINE")
+@Table(name = "TB_DISCIPLINE")
 public class Discipline extends DomainEntity<Long> {
 
     private static final long serialVersionUID = 1L;

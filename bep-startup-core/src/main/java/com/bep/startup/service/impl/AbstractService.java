@@ -72,7 +72,7 @@ public abstract class AbstractService<T extends DataTransferObject, E extends Do
 
 	/**
 	 * @param id
-	 * @return
+	 * @return T
 	 */
 	public T findOne(ID id) {
 
