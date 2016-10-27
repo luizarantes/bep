@@ -7,10 +7,6 @@
 
 package com.bep.startup.model.domain.validator;
 
-
-
-
-
 /** 
  *
  * @author GSI

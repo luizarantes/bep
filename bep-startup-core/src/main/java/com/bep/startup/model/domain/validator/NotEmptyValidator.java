@@ -7,11 +7,8 @@
 
 package com.bep.startup.model.domain.validator;
 
-
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-
-
 
 /** 
  *
