@@ -11,6 +11,8 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
+import com.madsi.marketing.digital.model.type.ClasseSocialIndicador;
+import com.madsi.marketing.digital.model.type.TipoPlataformaStatusIndicador;
 
 /** 
  *
@@ -24,8 +26,8 @@ public class PublicoAlvo_ {
 	public static volatile SingularAttribute<PublicoAlvo, Long> id;	
 	public static volatile ListAttribute<PublicoAlvo, Campanha> campanhas;
 	public static volatile SingularAttribute<PublicoAlvo, FaixaEtaria> faixaEtaria;
-	public static volatile SingularAttribute<PublicoAlvo, String> inSexo;
-	public static volatile SingularAttribute<PublicoAlvo, String> nameClasseSocial;
+	public static volatile SingularAttribute<PublicoAlvo, TipoPlataformaStatusIndicador> inSexo;
+	public static volatile SingularAttribute<PublicoAlvo, ClasseSocialIndicador> inClasseSocial;
 	public static volatile SingularAttribute<PublicoAlvo, String> descriptionLocalizacao;
 	public static volatile SingularAttribute<PublicoAlvo, String> descriptionInteresse;
 	

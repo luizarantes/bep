@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.madsi.marketing.digital.model.domain.PlataformaGoogleAnalytic;
 import com.madsi.marketing.digital.model.domain.dto.PlataformaGoogleAnalyticDTO;
-import com.madsi.marketing.digital.service.impl.PlataformaGoogleAnalyticServiceImpl;
+import com.madsi.marketing.digital.service.PlataformaGoogleAnalyticService;
 import com.madsi.marketing.digital.data.repository.PlataformaGoogleAnalyticRepository;
 
 
@@ -29,11 +30,11 @@ import com.madsi.marketing.digital.data.repository.PlataformaGoogleAnalyticRepos
  * 
  */
 @RestController
-@RequestMapping("/api/v1/plataformaGoogleAnalytic", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/plataformaGoogleAnalytic", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class PlataformaGoogleAnalyticController {
 
 	@Autowired
-	private PlataformaGoogleAnalyticServiceImpl service;
+	private PlataformaGoogleAnalyticService<PlataformaGoogleAnalyticDTO, PlataformaGoogleAnalytic, Long> service;
 
 	@Autowired
     private PlataformaGoogleAnalyticRepository dataRepository;
@@ -48,7 +49,7 @@ public class PlataformaGoogleAnalyticController {
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
 	public ResponseEntity<PlataformaGoogleAnalyticDTO> save(@RequestBody PlataformaGoogleAnalyticDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<PlataformaGoogleAnalyticDTO>(HttpStatus.OK);
+		return new ResponseEntity<PlataformaGoogleAnalyticDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
@@ -59,9 +60,8 @@ public class PlataformaGoogleAnalyticController {
 	
 	@ResponseBody	
 	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
+	public void delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}
 
 }

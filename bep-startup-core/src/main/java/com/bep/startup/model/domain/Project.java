@@ -121,7 +121,7 @@ public class Project extends DomainEntity<Long> {
     
     @NotNull
         
-	@Column(name = "DS_OVERVIEW", length = 4000, nullable = false)
+	@Column(name = "DS_OVERVIEW", length = 255, nullable = false)
     private String descriptionOverview;
                         
     /*

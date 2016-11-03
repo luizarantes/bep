@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.madsi.marketing.digital.model.domain.FaixaEtaria;
 import com.madsi.marketing.digital.model.domain.dto.FaixaEtariaDTO;
-import com.madsi.marketing.digital.service.impl.FaixaEtariaServiceImpl;
+import com.madsi.marketing.digital.service.FaixaEtariaService;
 import com.madsi.marketing.digital.data.repository.FaixaEtariaRepository;
 
 
@@ -29,11 +30,11 @@ import com.madsi.marketing.digital.data.repository.FaixaEtariaRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/faixaEtaria", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/faixaEtaria", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class FaixaEtariaController {
 
 	@Autowired
-	private FaixaEtariaServiceImpl service;
+	private FaixaEtariaService<FaixaEtariaDTO, FaixaEtaria, Long> service;
 
 	@Autowired
     private FaixaEtariaRepository dataRepository;
@@ -48,7 +49,7 @@ public class FaixaEtariaController {
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
 	public ResponseEntity<FaixaEtariaDTO> save(@RequestBody FaixaEtariaDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<FaixaEtariaDTO>(HttpStatus.OK);
+		return new ResponseEntity<FaixaEtariaDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
@@ -59,9 +60,8 @@ public class FaixaEtariaController {
 	
 	@ResponseBody	
 	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
+	public void delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}
 
 }

@@ -7,6 +7,8 @@
 package com.madsi.marketing.digital.model.domain.dto;
 
 
+import com.madsi.marketing.digital.model.type.ClasseSocialIndicador;
+import com.madsi.marketing.digital.model.type.TipoPlataformaStatusIndicador;
 
 /** 
  *
@@ -22,13 +24,13 @@ public class PublicoAlvoDTO extends DataTransferObject {
 
   	/*
      * INDICATIVO DO SEXO
-     */
-	private String inSexo;
+     */     
+	private TipoPlataformaStatusIndicador inSexo;
 
   	/*
-     * NOME DA CLASSE SOCIAL
-     */
-	private String nameClasseSocial;
+     * INDICATIVO DA CLASSE SOCIAL
+     */     
+	private ClasseSocialIndicador inClasseSocial;
 
   	/*
      * TEXTO DA LOCALIZACAO
@@ -55,42 +57,44 @@ public class PublicoAlvoDTO extends DataTransferObject {
         this.id = id;
     }    
         
-         /**
+     
+    /**
      * INDICATIVO DO SEXO
      *
      * @param inSexo
      */
-    public void setInSexo(String inSexo) {
+    public void setInSexo(TipoPlataformaStatusIndicador inSexo) {
         this.inSexo = inSexo;
     }
 
     /**
      * INDICATIVO DO SEXO
      *
-     * @return String
+     * @return TipoPlataformaStatusIndicador
      */
-    public String getInSexo() {
+    public TipoPlataformaStatusIndicador getInSexo() {
         return this.inSexo;
     }
-             
-         /**
-     * NOME DA CLASSE SOCIAL
+        
+     
+    /**
+     * INDICATIVO DA CLASSE SOCIAL
      *
-     * @param nameClasseSocial
+     * @param inClasseSocial
      */
-    public void setNameClasseSocial(String nameClasseSocial) {
-        this.nameClasseSocial = nameClasseSocial;
+    public void setInClasseSocial(ClasseSocialIndicador inClasseSocial) {
+        this.inClasseSocial = inClasseSocial;
     }
 
     /**
-     * NOME DA CLASSE SOCIAL
+     * INDICATIVO DA CLASSE SOCIAL
      *
-     * @return String
+     * @return ClasseSocialIndicador
      */
-    public String getNameClasseSocial() {
-        return this.nameClasseSocial;
+    public ClasseSocialIndicador getInClasseSocial() {
+        return this.inClasseSocial;
     }
-             
+        
          /**
      * TEXTO DA LOCALIZACAO
      *

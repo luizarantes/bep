@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.madsi.marketing.digital.model.domain.Objetivo;
 import com.madsi.marketing.digital.model.domain.dto.ObjetivoDTO;
-import com.madsi.marketing.digital.service.impl.ObjetivoServiceImpl;
+import com.madsi.marketing.digital.service.ObjetivoService;
 import com.madsi.marketing.digital.data.repository.ObjetivoRepository;
 
 
@@ -29,11 +30,11 @@ import com.madsi.marketing.digital.data.repository.ObjetivoRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/objetivo", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/objetivo", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class ObjetivoController {
 
 	@Autowired
-	private ObjetivoServiceImpl service;
+	private ObjetivoService<ObjetivoDTO, Objetivo, Long> service;
 
 	@Autowired
     private ObjetivoRepository dataRepository;
@@ -48,7 +49,7 @@ public class ObjetivoController {
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
 	public ResponseEntity<ObjetivoDTO> save(@RequestBody ObjetivoDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<ObjetivoDTO>(HttpStatus.OK);
+		return new ResponseEntity<ObjetivoDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
@@ -59,9 +60,8 @@ public class ObjetivoController {
 	
 	@ResponseBody	
 	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
+	public void delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}
 
 }

@@ -48,21 +48,21 @@ public class Empresa extends DomainEntity<Long> {
     @ManyToOne
     @JoinColumn(name   = "ID_SEGMENTO", referencedColumnName = "ID_SEGMENTO", nullable = false)
     private Segmento segmento;
-                                                                    
+                                                                                    
     /*
      * ENTIDADE CAMPANHA
      */
     @OneToMany(mappedBy = "empresa")
     private List<Campanha> campanhas;
-                                                                
+                                                                        
     /*
-     * ENDERECO DE EMAIL
+     * NOME DA EMPRESA
      */
     
     @NotNull
         
-	@Column(name = "TX_EMAIL", length = 60, nullable = false)
-    private String descriptionEmail;
+	@Column(name = "TX_EMPRESA", length = 60, nullable = false)
+    private String descriptionEmpresa;
                         
     /*
      * NUMERO DO TELEFONE
@@ -72,6 +72,15 @@ public class Empresa extends DomainEntity<Long> {
         
 	@Column(name = "TX_TELEFONE", length = 11, nullable = false)
     private String descriptionTelefone;
+                        
+    /*
+     * ENDERECO DE EMAIL
+     */
+    
+    @NotNull
+        
+	@Column(name = "TX_EMAIL", length = 60, nullable = false)
+    private String descriptionEmail;
             
     /**
      * @param id
@@ -140,21 +149,21 @@ public class Empresa extends DomainEntity<Long> {
                     
      
     /**
-     * ENDERECO DE EMAIL
+     * NOME DA EMPRESA
      *
-     * @param descriptionEmail
+     * @param descriptionEmpresa
      */
-    public void setDescriptionEmail(String descriptionEmail) {
-        this.descriptionEmail = descriptionEmail;
+    public void setDescriptionEmpresa(String descriptionEmpresa) {
+        this.descriptionEmpresa = descriptionEmpresa;
     }
 
     /**
-     * ENDERECO DE EMAIL
+     * NOME DA EMPRESA
      *
      * @return String
      */
-    public String getDescriptionEmail() {
-        return this.descriptionEmail;
+    public String getDescriptionEmpresa() {
+        return this.descriptionEmpresa;
     }
                     
      
@@ -174,6 +183,25 @@ public class Empresa extends DomainEntity<Long> {
      */
     public String getDescriptionTelefone() {
         return this.descriptionTelefone;
+    }
+                    
+     
+    /**
+     * ENDERECO DE EMAIL
+     *
+     * @param descriptionEmail
+     */
+    public void setDescriptionEmail(String descriptionEmail) {
+        this.descriptionEmail = descriptionEmail;
+    }
+
+    /**
+     * ENDERECO DE EMAIL
+     *
+     * @return String
+     */
+    public String getDescriptionEmail() {
+        return this.descriptionEmail;
     }
     
 }

@@ -6,8 +6,9 @@
 */
 package com.madsi.marketing.digital.data.repository.impl;
 
-import com.madsi.marketing.digital.data.repository.custom.CampanhaCustomRepository;
+import org.springframework.stereotype.Repository;
 
+import com.madsi.marketing.digital.data.repository.custom.CampanhaCustomRepository;
 
 /** 
  *
@@ -15,6 +16,7 @@ import com.madsi.marketing.digital.data.repository.custom.CampanhaCustomReposito
  * @since 1.0
  * 
  */
+@Repository
 public class CampanhaRepositoryImpl implements CampanhaCustomRepository {
 
 }

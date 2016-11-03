@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.madsi.marketing.digital.model.domain.Empresa;
 import com.madsi.marketing.digital.model.domain.dto.EmpresaDTO;
-import com.madsi.marketing.digital.service.impl.EmpresaServiceImpl;
+import com.madsi.marketing.digital.service.EmpresaService;
 import com.madsi.marketing.digital.data.repository.EmpresaRepository;
 
 
@@ -29,11 +30,11 @@ import com.madsi.marketing.digital.data.repository.EmpresaRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/empresa", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/empresa", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class EmpresaController {
 
 	@Autowired
-	private EmpresaServiceImpl service;
+	private EmpresaService<EmpresaDTO, Empresa, Long> service;
 
 	@Autowired
     private EmpresaRepository dataRepository;
@@ -48,7 +49,7 @@ public class EmpresaController {
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
 	public ResponseEntity<EmpresaDTO> save(@RequestBody EmpresaDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<EmpresaDTO>(HttpStatus.OK);
+		return new ResponseEntity<EmpresaDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
@@ -59,9 +60,8 @@ public class EmpresaController {
 	
 	@ResponseBody	
 	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
+	public void delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}
 
 }

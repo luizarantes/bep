@@ -8,6 +8,7 @@ package com.madsi.marketing.digital.model.domain;
 
 import java.util.Date;
 
+import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
@@ -22,7 +23,6 @@ import javax.persistence.metamodel.StaticMetamodel;
 public class Campanha_ {
 
 	public static volatile SingularAttribute<Campanha, Long> id;	
-	public static volatile SingularAttribute<Campanha, Metrica> metrica;
 	public static volatile SingularAttribute<Campanha, Objetivo> objetivo;
 	public static volatile SingularAttribute<Campanha, PublicoAlvo> publicoAlvo;
 	public static volatile SingularAttribute<Campanha, Empresa> empresa;
@@ -30,5 +30,6 @@ public class Campanha_ {
 	public static volatile SingularAttribute<Campanha, String> descriptionProblema;
 	public static volatile SingularAttribute<Campanha, Date> dateInicio;
 	public static volatile SingularAttribute<Campanha, Date> dateFim;
+	public static volatile ListAttribute<Campanha, CampanhaMetrica> campanhaMetricas;
 	
 }

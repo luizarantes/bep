@@ -10,6 +10,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.EnumType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,6 +21,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.madsi.marketing.digital.model.type.ClasseSocialIndicador;
+import com.madsi.marketing.digital.model.type.TipoPlataformaStatusIndicador;
 
 
 
@@ -59,16 +63,18 @@ public class PublicoAlvo extends DomainEntity<Long> {
      * INDICATIVO DO SEXO
      */
     
+	@Enumerated(EnumType.STRING)
 	@Column(name = "IN_SEXO", length = 1)
-    private String inSexo;
-                        
+    private TipoPlataformaStatusIndicador inSexo;
+	                    
     /*
-     * NOME DA CLASSE SOCIAL
+     * INDICATIVO DA CLASSE SOCIAL
      */
     
-	@Column(name = "NM_CLASSE_SOCIAL", length = 255)
-    private String nameClasseSocial;
-                        
+	@Enumerated(EnumType.STRING)
+	@Column(name = "IN_CLASSE_SOCIAL", length = 255)
+    private ClasseSocialIndicador inClasseSocial;
+	                    
     /*
      * TEXTO DA LOCALIZACAO
      */
@@ -154,38 +160,38 @@ public class PublicoAlvo extends DomainEntity<Long> {
      *
      * @param inSexo
      */
-    public void setInSexo(String inSexo) {
+    public void setInSexo(TipoPlataformaStatusIndicador inSexo) {
         this.inSexo = inSexo;
     }
 
     /**
      * INDICATIVO DO SEXO
      *
-     * @return String
+     * @return TipoPlataformaStatusIndicador
      */
-    public String getInSexo() {
-        return this.inSexo;
+    public TipoPlataformaStatusIndicador getInSexo() {
+         return this.inSexo;
     }
-                    
+                
      
     /**
-     * NOME DA CLASSE SOCIAL
+     * INDICATIVO DA CLASSE SOCIAL
      *
-     * @param nameClasseSocial
+     * @param inClasseSocial
      */
-    public void setNameClasseSocial(String nameClasseSocial) {
-        this.nameClasseSocial = nameClasseSocial;
+    public void setInClasseSocial(ClasseSocialIndicador inClasseSocial) {
+        this.inClasseSocial = inClasseSocial;
     }
 
     /**
-     * NOME DA CLASSE SOCIAL
+     * INDICATIVO DA CLASSE SOCIAL
      *
-     * @return String
+     * @return ClasseSocialIndicador
      */
-    public String getNameClasseSocial() {
-        return this.nameClasseSocial;
+    public ClasseSocialIndicador getInClasseSocial() {
+         return this.inClasseSocial;
     }
-                    
+                
      
     /**
      * TEXTO DA LOCALIZACAO

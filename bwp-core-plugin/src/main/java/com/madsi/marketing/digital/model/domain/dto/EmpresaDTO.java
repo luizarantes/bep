@@ -21,14 +21,19 @@ public class EmpresaDTO extends DataTransferObject {
 	private Long id;
 
   	/*
-     * ENDERECO DE EMAIL
+     * NOME DA EMPRESA
      */
-	private String descriptionEmail;
+	private String descriptionEmpresa;
 
   	/*
      * NUMERO DO TELEFONE
      */
 	private String descriptionTelefone;
+
+  	/*
+     * ENDERECO DE EMAIL
+     */
+	private String descriptionEmail;
 
 
     /**
@@ -46,21 +51,21 @@ public class EmpresaDTO extends DataTransferObject {
     }    
         
          /**
-     * ENDERECO DE EMAIL
+     * NOME DA EMPRESA
      *
-     * @param descriptionEmail
+     * @param descriptionEmpresa
      */
-    public void setDescriptionEmail(String descriptionEmail) {
-        this.descriptionEmail = descriptionEmail;
+    public void setDescriptionEmpresa(String descriptionEmpresa) {
+        this.descriptionEmpresa = descriptionEmpresa;
     }
 
     /**
-     * ENDERECO DE EMAIL
+     * NOME DA EMPRESA
      *
      * @return String
      */
-    public String getDescriptionEmail() {
-        return this.descriptionEmail;
+    public String getDescriptionEmpresa() {
+        return this.descriptionEmpresa;
     }
              
          /**
@@ -79,6 +84,24 @@ public class EmpresaDTO extends DataTransferObject {
      */
     public String getDescriptionTelefone() {
         return this.descriptionTelefone;
+    }
+             
+         /**
+     * ENDERECO DE EMAIL
+     *
+     * @param descriptionEmail
+     */
+    public void setDescriptionEmail(String descriptionEmail) {
+        this.descriptionEmail = descriptionEmail;
+    }
+
+    /**
+     * ENDERECO DE EMAIL
+     *
+     * @return String
+     */
+    public String getDescriptionEmail() {
+        return this.descriptionEmail;
     }
      
 }

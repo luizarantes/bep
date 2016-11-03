@@ -7,7 +7,6 @@
 package com.madsi.marketing.digital.data.repository;
 
 import com.madsi.marketing.digital.model.domain.PublicoAlvo;
-import com.madsi.marketing.digital.data.repository.custom.PublicoAlvoCustomRepository;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -17,6 +16,6 @@ import org.springframework.data.repository.CrudRepository;
  * @since 1.0
  * 
  */
-public abstract interface PublicoAlvoRepository extends CrudRepository<PublicoAlvo, Long>, PublicoAlvoCustomRepository {
+public abstract interface PublicoAlvoRepository extends CrudRepository<PublicoAlvo, Long> {
 
 }

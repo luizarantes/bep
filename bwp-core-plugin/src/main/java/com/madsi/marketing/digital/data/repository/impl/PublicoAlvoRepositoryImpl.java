@@ -6,8 +6,9 @@
 */
 package com.madsi.marketing.digital.data.repository.impl;
 
-import com.madsi.marketing.digital.data.repository.custom.PublicoAlvoCustomRepository;
+import org.springframework.stereotype.Repository;
 
+import com.madsi.marketing.digital.data.repository.custom.PublicoAlvoCustomRepository;
 
 /** 
  *
@@ -15,6 +16,7 @@ import com.madsi.marketing.digital.data.repository.custom.PublicoAlvoCustomRepos
  * @since 1.0
  * 
  */
+@Repository
 public class PublicoAlvoRepositoryImpl implements PublicoAlvoCustomRepository {
 
 }

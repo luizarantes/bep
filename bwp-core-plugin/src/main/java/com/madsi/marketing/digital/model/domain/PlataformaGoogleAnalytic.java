@@ -6,14 +6,11 @@
 */
 package com.madsi.marketing.digital.model.domain;
 
-import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 
@@ -27,21 +24,13 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "TB_PLATAFORMA_GOOGLE_ANALYTIC")
-public class PlataformaGoogleAnalytic extends DomainEntity<Long> {
+@DiscriminatorValue("3")
+@PrimaryKeyJoinColumn(name = "ID_PLATAFORMA_GOOGLE_ANALYTIC", referencedColumnName = "ID_PLATAFORMA")
+public class PlataformaGoogleAnalytic extends Plataforma {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @Column(name = "ID_PLATAFORMA_GOOGLE_ANALYTIC", nullable = false, updatable = false, precision = 12)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-                                                                                                    
-    /*
-     * ENTIDADE METRICA
-     */
-    @OneToMany(mappedBy = "plataformaGoogleAnalytic")
-    private List<Metrica> metricas;
-                                                                
+                                                                                                                            
     /*
      * PERCENTUAL DE VISITA
      */
@@ -79,41 +68,6 @@ public class PlataformaGoogleAnalytic extends DomainEntity<Long> {
 
     public PlataformaGoogleAnalytic() {
 
-    }
-
-    /**
-     * @return Long
-     */
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
-                    
-     
-    /**
-     * ENTIDADE METRICA
-     *
-     * @param metricas
-     */
-    public void setMetricas(List<Metrica> metricas) {
-        this.metricas = metricas;
-    }
-
-    /**
-     * ENTIDADE METRICA
-     *
-     * @return List<Metrica>
-     */
-    public List<Metrica> getMetricas() {
-        return this.metricas;
     }
                     
      

@@ -7,7 +7,6 @@
 package com.madsi.marketing.digital.model.domain;
 
 
-import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
@@ -22,7 +21,6 @@ import javax.persistence.metamodel.StaticMetamodel;
 public class PlataformaGoogleAnalytic_ {
 
 	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Long> id;	
-	public static volatile ListAttribute<PlataformaGoogleAnalytic, Metrica> metricas;
 	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Double> percentVisita;
 	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Double> percentTrafico;
 	public static volatile SingularAttribute<PlataformaGoogleAnalytic, Double> percentVisitaUnica;

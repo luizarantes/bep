@@ -7,7 +7,6 @@
 package com.madsi.marketing.digital.data.repository;
 
 import com.madsi.marketing.digital.model.domain.Empresa;
-import com.madsi.marketing.digital.data.repository.custom.EmpresaCustomRepository;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -17,6 +16,6 @@ import org.springframework.data.repository.CrudRepository;
  * @since 1.0
  * 
  */
-public abstract interface EmpresaRepository extends CrudRepository<Empresa, Long>, EmpresaCustomRepository {
+public abstract interface EmpresaRepository extends CrudRepository<Empresa, Long> {
 
 }

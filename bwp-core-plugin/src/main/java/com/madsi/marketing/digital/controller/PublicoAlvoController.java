@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.madsi.marketing.digital.model.domain.PublicoAlvo;
 import com.madsi.marketing.digital.model.domain.dto.PublicoAlvoDTO;
-import com.madsi.marketing.digital.service.impl.PublicoAlvoServiceImpl;
+import com.madsi.marketing.digital.service.PublicoAlvoService;
 import com.madsi.marketing.digital.data.repository.PublicoAlvoRepository;
 
 
@@ -29,11 +30,11 @@ import com.madsi.marketing.digital.data.repository.PublicoAlvoRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/publicoAlvo", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/publicoAlvo", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class PublicoAlvoController {
 
 	@Autowired
-	private PublicoAlvoServiceImpl service;
+	private PublicoAlvoService<PublicoAlvoDTO, PublicoAlvo, Long> service;
 
 	@Autowired
     private PublicoAlvoRepository dataRepository;
@@ -48,7 +49,7 @@ public class PublicoAlvoController {
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
 	public ResponseEntity<PublicoAlvoDTO> save(@RequestBody PublicoAlvoDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<PublicoAlvoDTO>(HttpStatus.OK);
+		return new ResponseEntity<PublicoAlvoDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
@@ -59,9 +60,8 @@ public class PublicoAlvoController {
 	
 	@ResponseBody	
 	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
+	public void delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}
 
 }

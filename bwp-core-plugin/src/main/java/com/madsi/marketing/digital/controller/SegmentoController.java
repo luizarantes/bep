@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.madsi.marketing.digital.model.domain.Segmento;
 import com.madsi.marketing.digital.model.domain.dto.SegmentoDTO;
-import com.madsi.marketing.digital.service.impl.SegmentoServiceImpl;
+import com.madsi.marketing.digital.service.SegmentoService;
 import com.madsi.marketing.digital.data.repository.SegmentoRepository;
 
 
@@ -29,11 +30,11 @@ import com.madsi.marketing.digital.data.repository.SegmentoRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/segmento", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/segmento", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class SegmentoController {
 
 	@Autowired
-	private SegmentoServiceImpl service;
+	private SegmentoService<SegmentoDTO, Segmento, Long> service;
 
 	@Autowired
     private SegmentoRepository dataRepository;
@@ -48,7 +49,7 @@ public class SegmentoController {
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
 	public ResponseEntity<SegmentoDTO> save(@RequestBody SegmentoDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<SegmentoDTO>(HttpStatus.OK);
+		return new ResponseEntity<SegmentoDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
@@ -59,9 +60,8 @@ public class SegmentoController {
 	
 	@ResponseBody	
 	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
+	public void delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}
 
 }

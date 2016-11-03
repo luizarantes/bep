@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.madsi.marketing.digital.model.domain.PlataformaFacebook;
 import com.madsi.marketing.digital.model.domain.dto.PlataformaFacebookDTO;
-import com.madsi.marketing.digital.service.impl.PlataformaFacebookServiceImpl;
+import com.madsi.marketing.digital.service.PlataformaFacebookService;
 import com.madsi.marketing.digital.data.repository.PlataformaFacebookRepository;
 
 
@@ -29,11 +30,11 @@ import com.madsi.marketing.digital.data.repository.PlataformaFacebookRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/plataformaFacebook", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/plataformaFacebook", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class PlataformaFacebookController {
 
 	@Autowired
-	private PlataformaFacebookServiceImpl service;
+	private PlataformaFacebookService<PlataformaFacebookDTO, PlataformaFacebook, Long> service;
 
 	@Autowired
     private PlataformaFacebookRepository dataRepository;
@@ -48,7 +49,7 @@ public class PlataformaFacebookController {
 	@RequestMapping(path = "/save", method = RequestMethod.POST)
 	public ResponseEntity<PlataformaFacebookDTO> save(@RequestBody PlataformaFacebookDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<PlataformaFacebookDTO>(HttpStatus.OK);
+		return new ResponseEntity<PlataformaFacebookDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
@@ -59,9 +60,8 @@ public class PlataformaFacebookController {
 	
 	@ResponseBody	
 	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
+	public void delete(@PathVariable Long id) {
 		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
 	}
 
 }

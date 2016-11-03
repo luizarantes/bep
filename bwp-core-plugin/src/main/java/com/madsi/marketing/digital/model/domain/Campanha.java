@@ -7,6 +7,7 @@
 package com.madsi.marketing.digital.model.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -39,16 +41,6 @@ public class Campanha extends DomainEntity<Long> {
     @Column(name = "ID_CAMPANHA", nullable = false, updatable = false, precision = 12)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-            
-    /*
-     * ENTIDADE METRICA
-     */
-    
-    @NotNull
-        
-    @ManyToOne
-    @JoinColumn(name   = "ID_METRICA", referencedColumnName = "ID_METRICA", nullable = false)
-    private Metrica metrica;
             
     /*
      * ENTIDADE OBJETIVO
@@ -79,7 +71,13 @@ public class Campanha extends DomainEntity<Long> {
     @ManyToOne
     @JoinColumn(name   = "ID_EMPRESA", referencedColumnName = "ID_EMPRESA", nullable = false)
     private Empresa empresa;
-                                                                                                                                                                                                                                
+                                                                                                                                                                                    
+    /*
+     * ENTIDADE CAMPANHA METRICA
+     */
+    @OneToMany(mappedBy = "campanha")
+    private List<CampanhaMetrica> campanhaMetricas;
+                                                
     /*
      * NOME DA CAMPANHA
      */
@@ -115,7 +113,7 @@ public class Campanha extends DomainEntity<Long> {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DH_FIM")
     private Date dateFim;
-            
+                    
     /**
      * @param id
      */
@@ -141,25 +139,6 @@ public class Campanha extends DomainEntity<Long> {
     @Override
     public void setId(Long id) {
         this.id = id;
-    }
-                    
-     
-    /**
-     * ENTIDADE METRICA
-     *
-     * @param metrica
-     */
-    public void setMetrica(Metrica metrica) {
-        this.metrica = metrica;
-    }
-
-    /**
-     * ENTIDADE METRICA
-     *
-     * @return Metrica
-     */
-    public Metrica getMetrica() {
-        return this.metrica;
     }
                     
      
@@ -293,6 +272,25 @@ public class Campanha extends DomainEntity<Long> {
      */
     public Date getDateFim() {
         return this.dateFim;
+    }
+                    
+     
+    /**
+     * ENTIDADE CAMPANHA METRICA
+     *
+     * @param campanhaMetricas
+     */
+    public void setCampanhaMetricas(List<CampanhaMetrica> campanhaMetricas) {
+        this.campanhaMetricas = campanhaMetricas;
+    }
+
+    /**
+     * ENTIDADE CAMPANHA METRICA
+     *
+     * @return List<CampanhaMetrica>
+     */
+    public List<CampanhaMetrica> getCampanhaMetricas() {
+        return this.campanhaMetricas;
     }
     
 }

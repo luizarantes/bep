@@ -7,7 +7,6 @@
 package com.madsi.marketing.digital.data.repository;
 
 import com.madsi.marketing.digital.model.domain.FaixaEtaria;
-import com.madsi.marketing.digital.data.repository.custom.FaixaEtariaCustomRepository;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -17,6 +16,6 @@ import org.springframework.data.repository.CrudRepository;
  * @since 1.0
  * 
  */
-public abstract interface FaixaEtariaRepository extends CrudRepository<FaixaEtaria, Long>, FaixaEtariaCustomRepository {
+public abstract interface FaixaEtariaRepository extends CrudRepository<FaixaEtaria, Long> {
 
 }

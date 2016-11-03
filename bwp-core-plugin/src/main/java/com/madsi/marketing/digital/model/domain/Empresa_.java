@@ -24,7 +24,8 @@ public class Empresa_ {
 	public static volatile SingularAttribute<Empresa, Long> id;	
 	public static volatile ListAttribute<Empresa, Campanha> campanhas;
 	public static volatile SingularAttribute<Empresa, Segmento> segmento;
-	public static volatile SingularAttribute<Empresa, String> descriptionEmail;
+	public static volatile SingularAttribute<Empresa, String> descriptionEmpresa;
 	public static volatile SingularAttribute<Empresa, String> descriptionTelefone;
+	public static volatile SingularAttribute<Empresa, String> descriptionEmail;
 	
 }

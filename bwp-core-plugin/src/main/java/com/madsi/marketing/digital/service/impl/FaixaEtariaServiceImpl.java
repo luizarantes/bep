@@ -10,12 +10,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.madsi.marketing.digital.data.repository.FaixaEtariaRepository;
 import com.madsi.marketing.digital.model.domain.FaixaEtaria;
 import com.madsi.marketing.digital.model.domain.dto.FaixaEtariaDTO;
+import com.madsi.marketing.digital.service.FaixaEtariaService;
 
 /** 
  *
@@ -24,62 +23,9 @@ import com.madsi.marketing.digital.model.domain.dto.FaixaEtariaDTO;
  * 
  */
 @Service
-public class FaixaEtariaServiceImpl extends AbstractService<FaixaEtariaDTO, FaixaEtaria, Long>  {
+public class FaixaEtariaServiceImpl extends AbstractService<FaixaEtariaDTO, FaixaEtaria, Long> implements FaixaEtariaService<FaixaEtariaDTO, FaixaEtaria, Long> {
     
-    @Autowired
-    private FaixaEtariaRepository dataRepository;
-    
-    /* (non-Javadoc)
-	 * @see com.madsi.marketing.digital.service.FaixaEtariaService#save(java.lang.Object)
-	 */
-	public FaixaEtariaDTO save(FaixaEtariaDTO dto) {
-		
-		if(dto != null) {
-			FaixaEtaria entity = new FaixaEtaria();
-			super.copyProperties(entity, dto);
-			entity = this.dataRepository.save(entity);
-			dto.setId(entity.getId());			
-		}
-		
-		return dto;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.madsi.marketing.digital.service.FaixaEtariaService#findOne(java.lang.Object)
-	 */
-	public FaixaEtariaDTO findOne(Long id) {
-		
-		if(id != null) {
-			FaixaEtariaDTO dto = new FaixaEtariaDTO();
-			super.copyProperties(dto, this.dataRepository.findOne(id));
-			return dto;
-		}
-		
-		return null;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.madsi.marketing.digital.service.FaixaEtariaService#findAll(java.lang.Object)
-	 */
-	public Iterable<FaixaEtariaDTO> findAll() {
-
-		Iterable<FaixaEtaria> iterableFindAll = this.dataRepository.findAll();
-		
-		if(iterableFindAll != null) {
-		
-			List<FaixaEtariaDTO> listResult = new ArrayList<FaixaEtariaDTO>(); 
-			Iterator<FaixaEtaria> iterator  = iterableFindAll.iterator();
-
-			while(iterator.hasNext()) {
-				FaixaEtariaDTO dto = new FaixaEtariaDTO();
-				super.copyProperties(dto, iterator.next());
-				listResult.add(dto);
-			}
-
-			return listResult;
-		}
-
-		return null;
-	}
-
+     public  FaixaEtariaServiceImpl() {
+    	super(FaixaEtariaDTO.class, FaixaEtaria.class);
+    }
 }
