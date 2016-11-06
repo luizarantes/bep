@@ -1,6 +1,6 @@
 #include("header.vm") 
 
-package ${package}.model.type;
+package ${package}.model.domain.type;
 
 #include("comments.vm")
 

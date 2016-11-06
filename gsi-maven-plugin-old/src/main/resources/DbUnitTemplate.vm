@@ -1,0 +1,8 @@
+<?xml version = "1.0" encoding = "ISO-8859-1"?>
+<dataset qualifiedTableNames   = "false" skipOracleRecycleBinTables = "true">
+
+#foreach ($dataXml in $entity.dataDbUnit)
+$dataXml
+
+#end
+</dataset>

@@ -1,0 +1,23 @@
+#include("header.vm") 
+
+package ${package}.service.impl;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import ${package}.model.domain.${entityName};
+import ${package}.model.domain.dto.${entityName}DTO;
+import ${package}.service.${entityName}Service;
+
+#include("comments.vm")
+
+@Service
+public class ${entityName}ServiceImpl extends AbstractService<${entityName}DTO, ${entityName}, Long> implements ${entityName}Service<${entityName}DTO, ${entityName}, Long> {
+    
+     public  ${entityName}ServiceImpl() {
+    	super(${entityName}DTO.class, ${entityName}.class);
+    }
+}

@@ -18,7 +18,7 @@ public enum TypeTemplate {
 
 	SERVICEDAO("/service/", "/service/impl/", "Service.java", "ServiceImpl.java", "ServiceImplTest.java", "ServiceTemplate.vm", "ServiceTemplateImpl.vm", "ServiceTemplateImplTest.vm"),
 
-	ENUM(null, "/type/", null, "Indicador.java", null, null, "EnumTemplate.vm", null),
+	ENUM(null, "/model/domain/type/", null, "Indicador.java", null, null, "EnumTemplate.vm", null),
 
 	PROPERTIES(null, "/model/domain/", null, ".properties", null, null, "PropertiesTemplate.vm", null),
 	
