@@ -36,5 +36,10 @@ public interface Service<T extends DataTransferObject, E extends DomainEntity<?>
 	 * @return Iterable<T>
 	 */
 	public Iterable<T> findAll();
+	
+	/**
+	 * @param id
+	 */
+	public void delete(ID id);
 
 }

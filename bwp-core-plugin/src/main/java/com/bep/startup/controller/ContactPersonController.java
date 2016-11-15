@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bep.startup.model.domain.ContactPerson;
 import com.bep.startup.model.domain.dto.ContactPersonDTO;
-import com.bep.startup.service.impl.ContactPersonServiceImpl;
-import com.bep.startup.data.repository.ContactPersonRepository;
-
+import com.bep.startup.service.ContactPersonService;
 
 /** 
  *
@@ -29,39 +28,42 @@ import com.bep.startup.data.repository.ContactPersonRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/contactPerson", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/contactPerson", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class ContactPersonController {
 
 	@Autowired
-	private ContactPersonServiceImpl service;
-
-	@Autowired
-    private ContactPersonRepository dataRepository;
+	private ContactPersonService<ContactPersonDTO, ContactPerson, Long> service;
 
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<ContactPersonDTO>> findAll() {
 		return new ResponseEntity<Iterable<ContactPersonDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<ContactPersonDTO> save(@RequestBody ContactPersonDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<ContactPersonDTO>(HttpStatus.OK);
+		return new ResponseEntity<ContactPersonDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<ContactPersonDTO> update(@RequestBody ContactPersonDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<ContactPersonDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<ContactPersonDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<ContactPersonDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+	public void delete(@PathVariable Long id) {
+		this.service.delete(id);
 	}
 
 }

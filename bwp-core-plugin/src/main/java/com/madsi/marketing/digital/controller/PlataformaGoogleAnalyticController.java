@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.madsi.marketing.digital.model.domain.PlataformaGoogleAnalytic;
 import com.madsi.marketing.digital.model.domain.dto.PlataformaGoogleAnalyticDTO;
 import com.madsi.marketing.digital.service.PlataformaGoogleAnalyticService;
-import com.madsi.marketing.digital.data.repository.PlataformaGoogleAnalyticRepository;
-
 
 /** 
  *
@@ -36,32 +34,36 @@ public class PlataformaGoogleAnalyticController {
 	@Autowired
 	private PlataformaGoogleAnalyticService<PlataformaGoogleAnalyticDTO, PlataformaGoogleAnalytic, Long> service;
 
-	@Autowired
-    private PlataformaGoogleAnalyticRepository dataRepository;
-
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<PlataformaGoogleAnalyticDTO>> findAll() {
 		return new ResponseEntity<Iterable<PlataformaGoogleAnalyticDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<PlataformaGoogleAnalyticDTO> save(@RequestBody PlataformaGoogleAnalyticDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<PlataformaGoogleAnalyticDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<PlataformaGoogleAnalyticDTO> update(@RequestBody PlataformaGoogleAnalyticDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<PlataformaGoogleAnalyticDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<PlataformaGoogleAnalyticDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<PlataformaGoogleAnalyticDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
+		this.service.delete(id);
 	}
 
 }

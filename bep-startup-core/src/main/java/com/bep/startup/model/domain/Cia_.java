@@ -1,7 +1,7 @@
 /**
 *
-* Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Application may be reproduced without express consent.
+* Copyright MADSI 2016 All Rights Reserved. 
+* No part of this Portal may be reproduced without GSI express consent.
 * 
 */
 package com.bep.startup.model.domain;
@@ -14,7 +14,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 
 /** 
  *
- * @author GSI
+ * @author MADSI
  * @since 1.0
  * 
  */
@@ -28,5 +28,7 @@ public class Cia_ {
 	public static volatile SingularAttribute<Cia, String> descriptionZipCode;
 	public static volatile SingularAttribute<Cia, String> descriptionTin;
 	public static volatile ListAttribute<Cia, ProjectCia> projectCias;
+	public static volatile ListAttribute<Cia, ProjectSchedule> projectSchedules;
+	public static volatile ListAttribute<Cia, ProjectTeam> projectTeams;
 	
 }

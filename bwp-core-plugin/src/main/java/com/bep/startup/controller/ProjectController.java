@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bep.startup.model.domain.Project;
 import com.bep.startup.model.domain.dto.ProjectDTO;
-import com.bep.startup.service.impl.ProjectServiceImpl;
-import com.bep.startup.data.repository.ProjectRepository;
-
+import com.bep.startup.service.ProjectService;
 
 /** 
  *
@@ -29,39 +28,42 @@ import com.bep.startup.data.repository.ProjectRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/project", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/project", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class ProjectController {
 
 	@Autowired
-	private ProjectServiceImpl service;
-
-	@Autowired
-    private ProjectRepository dataRepository;
+	private ProjectService<ProjectDTO, Project, Long> service;
 
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<ProjectDTO>> findAll() {
 		return new ResponseEntity<Iterable<ProjectDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<ProjectDTO> save(@RequestBody ProjectDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<ProjectDTO>(HttpStatus.OK);
+		return new ResponseEntity<ProjectDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<ProjectDTO> update(@RequestBody ProjectDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<ProjectDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<ProjectDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<ProjectDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+	public void delete(@PathVariable Long id) {
+		this.service.delete(id);
 	}
 
 }

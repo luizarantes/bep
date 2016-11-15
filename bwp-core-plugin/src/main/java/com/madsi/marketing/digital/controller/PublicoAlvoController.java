@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.madsi.marketing.digital.model.domain.PublicoAlvo;
 import com.madsi.marketing.digital.model.domain.dto.PublicoAlvoDTO;
 import com.madsi.marketing.digital.service.PublicoAlvoService;
-import com.madsi.marketing.digital.data.repository.PublicoAlvoRepository;
-
 
 /** 
  *
@@ -36,32 +34,36 @@ public class PublicoAlvoController {
 	@Autowired
 	private PublicoAlvoService<PublicoAlvoDTO, PublicoAlvo, Long> service;
 
-	@Autowired
-    private PublicoAlvoRepository dataRepository;
-
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<PublicoAlvoDTO>> findAll() {
 		return new ResponseEntity<Iterable<PublicoAlvoDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<PublicoAlvoDTO> save(@RequestBody PublicoAlvoDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<PublicoAlvoDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<PublicoAlvoDTO> update(@RequestBody PublicoAlvoDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<PublicoAlvoDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<PublicoAlvoDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<PublicoAlvoDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
+		this.service.delete(id);
 	}
 
 }

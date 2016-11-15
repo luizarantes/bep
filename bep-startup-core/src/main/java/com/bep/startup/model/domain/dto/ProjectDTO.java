@@ -1,7 +1,7 @@
 /**
 *
-* Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Application may be reproduced without express consent.
+* Copyright MADSI 2016 All Rights Reserved. 
+* No part of this Portal may be reproduced without GSI express consent.
 * 
 */
 package com.bep.startup.model.domain.dto;
@@ -11,7 +11,7 @@ import java.util.Date;
 
 /** 
  *
- * @author GSI
+ * @author MADSI
  * @since 1.0
  * 
  */
@@ -45,6 +45,16 @@ public class ProjectDTO extends DataTransferObject {
      * DESCRIPTION OF LOCATION
      */
 	private String descriptionLocation;
+
+  	/*
+     * ARQUIVO
+     */
+	private byte[] fileLogo;
+
+  	/*
+     * BRIEF OF PROJECT DESCRIPTION
+     */
+	private String descriptionBrief;
 
 
     /**
@@ -149,6 +159,42 @@ public class ProjectDTO extends DataTransferObject {
      */
     public String getDescriptionLocation() {
         return this.descriptionLocation;
+    }
+             
+         /**
+     * ARQUIVO
+     *
+     * @param fileLogo
+     */
+    public void setFileLogo(byte[] fileLogo) {
+        this.fileLogo = fileLogo;
+    }
+
+    /**
+     * ARQUIVO
+     *
+     * @return byte[]
+     */
+    public byte[] getFileLogo() {
+        return this.fileLogo;
+    }
+             
+         /**
+     * BRIEF OF PROJECT DESCRIPTION
+     *
+     * @param descriptionBrief
+     */
+    public void setDescriptionBrief(String descriptionBrief) {
+        this.descriptionBrief = descriptionBrief;
+    }
+
+    /**
+     * BRIEF OF PROJECT DESCRIPTION
+     *
+     * @return String
+     */
+    public String getDescriptionBrief() {
+        return this.descriptionBrief;
     }
      
 }

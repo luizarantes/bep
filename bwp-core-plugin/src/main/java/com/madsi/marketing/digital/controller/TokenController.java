@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.madsi.marketing.digital.model.domain.Token;
 import com.madsi.marketing.digital.model.domain.dto.TokenDTO;
 import com.madsi.marketing.digital.service.TokenService;
-import com.madsi.marketing.digital.data.repository.TokenRepository;
-
 
 /** 
  *
@@ -36,32 +34,36 @@ public class TokenController {
 	@Autowired
 	private TokenService<TokenDTO, Token, Long> service;
 
-	@Autowired
-    private TokenRepository dataRepository;
-
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<TokenDTO>> findAll() {
 		return new ResponseEntity<Iterable<TokenDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<TokenDTO> save(@RequestBody TokenDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<TokenDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<TokenDTO> update(@RequestBody TokenDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<TokenDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<TokenDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<TokenDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
+		this.service.delete(id);
 	}
 
 }

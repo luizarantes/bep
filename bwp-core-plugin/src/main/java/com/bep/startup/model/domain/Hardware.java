@@ -61,8 +61,8 @@ public class Hardware extends DomainEntity<Long> {
      * DESCRIPTION OF HARDWARE
      */
     
-	@Column(name = "DS_DESCRIPTION", length = 255)
-    private String descriptionDescription;
+	@Column(name = "DS_HARDWARE", length = 255)
+    private String descriptionHardware;
             
     /**
      * @param id
@@ -133,10 +133,10 @@ public class Hardware extends DomainEntity<Long> {
     /**
      * DESCRIPTION OF HARDWARE
      *
-     * @param descriptionDescription
+     * @param descriptionHardware
      */
-    public void setDescriptionDescription(String descriptionDescription) {
-        this.descriptionDescription = descriptionDescription;
+    public void setDescriptionHardware(String descriptionHardware) {
+        this.descriptionHardware = descriptionHardware;
     }
 
     /**
@@ -144,8 +144,8 @@ public class Hardware extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionDescription() {
-        return this.descriptionDescription;
+    public String getDescriptionHardware() {
+        return this.descriptionHardware;
     }
     
 }

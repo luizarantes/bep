@@ -23,7 +23,7 @@ public class HardwareDTO extends DataTransferObject {
   	/*
      * DESCRIPTION OF HARDWARE
      */
-	private String descriptionDescription;
+	private String descriptionHardware;
 
 
     /**
@@ -43,10 +43,10 @@ public class HardwareDTO extends DataTransferObject {
          /**
      * DESCRIPTION OF HARDWARE
      *
-     * @param descriptionDescription
+     * @param descriptionHardware
      */
-    public void setDescriptionDescription(String descriptionDescription) {
-        this.descriptionDescription = descriptionDescription;
+    public void setDescriptionHardware(String descriptionHardware) {
+        this.descriptionHardware = descriptionHardware;
     }
 
     /**
@@ -54,8 +54,8 @@ public class HardwareDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionDescription() {
-        return this.descriptionDescription;
+    public String getDescriptionHardware() {
+        return this.descriptionHardware;
     }
      
 }

@@ -28,5 +28,7 @@ public class Cia_ {
 	public static volatile SingularAttribute<Cia, String> descriptionZipCode;
 	public static volatile SingularAttribute<Cia, String> descriptionTin;
 	public static volatile ListAttribute<Cia, ProjectCia> projectCias;
+	public static volatile ListAttribute<Cia, ProjectSchedule> projectSchedules;
+	public static volatile ListAttribute<Cia, ProjectTeam> projectTeams;
 	
 }

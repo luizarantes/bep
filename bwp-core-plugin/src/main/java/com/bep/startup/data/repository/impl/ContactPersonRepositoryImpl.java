@@ -6,8 +6,9 @@
 */
 package com.bep.startup.data.repository.impl;
 
-import com.bep.startup.data.repository.custom.ContactPersonCustomRepository;
+import org.springframework.stereotype.Repository;
 
+import com.bep.startup.data.repository.custom.ContactPersonCustomRepository;
 
 /** 
  *
@@ -15,6 +16,7 @@ import com.bep.startup.data.repository.custom.ContactPersonCustomRepository;
  * @since 1.0
  * 
  */
+@Repository
 public class ContactPersonRepositoryImpl implements ContactPersonCustomRepository {
 
 }

@@ -46,6 +46,16 @@ public class ProjectDTO extends DataTransferObject {
      */
 	private String descriptionLocation;
 
+  	/*
+     * ARQUIVO
+     */
+	private byte[] fileLogo;
+
+  	/*
+     * BRIEF OF PROJECT DESCRIPTION
+     */
+	private String descriptionBrief;
+
 
     /**
      * @return Long
@@ -149,6 +159,42 @@ public class ProjectDTO extends DataTransferObject {
      */
     public String getDescriptionLocation() {
         return this.descriptionLocation;
+    }
+             
+         /**
+     * ARQUIVO
+     *
+     * @param fileLogo
+     */
+    public void setFileLogo(byte[] fileLogo) {
+        this.fileLogo = fileLogo;
+    }
+
+    /**
+     * ARQUIVO
+     *
+     * @return byte[]
+     */
+    public byte[] getFileLogo() {
+        return this.fileLogo;
+    }
+             
+         /**
+     * BRIEF OF PROJECT DESCRIPTION
+     *
+     * @param descriptionBrief
+     */
+    public void setDescriptionBrief(String descriptionBrief) {
+        this.descriptionBrief = descriptionBrief;
+    }
+
+    /**
+     * BRIEF OF PROJECT DESCRIPTION
+     *
+     * @return String
+     */
+    public String getDescriptionBrief() {
+        return this.descriptionBrief;
     }
      
 }

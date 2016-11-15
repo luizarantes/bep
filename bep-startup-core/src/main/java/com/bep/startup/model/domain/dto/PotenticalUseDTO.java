@@ -1,7 +1,7 @@
 /**
 *
-* Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Application may be reproduced without express consent.
+* Copyright MADSI 2016 All Rights Reserved. 
+* No part of this Portal may be reproduced without GSI express consent.
 * 
 */
 package com.bep.startup.model.domain.dto;
@@ -10,7 +10,7 @@ package com.bep.startup.model.domain.dto;
 
 /** 
  *
- * @author GSI
+ * @author MADSI
  * @since 1.0
  * 
  */

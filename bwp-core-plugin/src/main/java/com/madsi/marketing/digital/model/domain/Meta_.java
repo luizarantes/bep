@@ -11,8 +11,8 @@ import java.util.Date;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-import com.madsi.marketing.digital.model.type.TipoAcaoIndicador;
-import com.madsi.marketing.digital.model.type.TipoMetaIndicador;
+import com.madsi.marketing.digital.model.domain.type.TipoAcaoIndicador;
+import com.madsi.marketing.digital.model.domain.type.TipoMetaIndicador;
 
 /** 
  *

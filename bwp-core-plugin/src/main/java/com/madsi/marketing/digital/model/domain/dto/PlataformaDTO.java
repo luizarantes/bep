@@ -8,7 +8,7 @@ package com.madsi.marketing.digital.model.domain.dto;
 
 import java.util.Date;
 
-import com.madsi.marketing.digital.model.type.TipoPlataformaStatusIndicador;
+import com.madsi.marketing.digital.model.domain.type.TipoPlataformaStatusIndicador;
 
 /** 
  *

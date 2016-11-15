@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.madsi.marketing.digital.model.domain.Meta;
 import com.madsi.marketing.digital.model.domain.dto.MetaDTO;
 import com.madsi.marketing.digital.service.MetaService;
-import com.madsi.marketing.digital.data.repository.MetaRepository;
-
 
 /** 
  *
@@ -36,32 +34,36 @@ public class MetaController {
 	@Autowired
 	private MetaService<MetaDTO, Meta, Long> service;
 
-	@Autowired
-    private MetaRepository dataRepository;
-
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<MetaDTO>> findAll() {
 		return new ResponseEntity<Iterable<MetaDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<MetaDTO> save(@RequestBody MetaDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<MetaDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<MetaDTO> update(@RequestBody MetaDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<MetaDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<MetaDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<MetaDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
+		this.service.delete(id);
 	}
 
 }

@@ -7,7 +7,6 @@
 package com.bep.startup.data.repository;
 
 import com.bep.startup.model.domain.KeyMember;
-import com.bep.startup.data.repository.custom.KeyMemberCustomRepository;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -17,6 +16,6 @@ import org.springframework.data.repository.CrudRepository;
  * @since 1.0
  * 
  */
-public abstract interface KeyMemberRepository extends CrudRepository<KeyMember, Long>, KeyMemberCustomRepository {
+public abstract interface KeyMemberRepository extends CrudRepository<KeyMember, Long> {
 
 }

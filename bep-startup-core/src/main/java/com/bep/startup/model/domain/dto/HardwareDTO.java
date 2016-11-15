@@ -1,7 +1,7 @@
 /**
 *
-* Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Application may be reproduced without express consent.
+* Copyright MADSI 2016 All Rights Reserved. 
+* No part of this Portal may be reproduced without GSI express consent.
 * 
 */
 package com.bep.startup.model.domain.dto;
@@ -10,7 +10,7 @@ package com.bep.startup.model.domain.dto;
 
 /** 
  *
- * @author GSI
+ * @author MADSI
  * @since 1.0
  * 
  */
@@ -23,7 +23,7 @@ public class HardwareDTO extends DataTransferObject {
   	/*
      * DESCRIPTION OF HARDWARE
      */
-	private String descriptionDescription;
+	private String descriptionHardware;
 
 
     /**
@@ -43,10 +43,10 @@ public class HardwareDTO extends DataTransferObject {
          /**
      * DESCRIPTION OF HARDWARE
      *
-     * @param descriptionDescription
+     * @param descriptionHardware
      */
-    public void setDescriptionDescription(String descriptionDescription) {
-        this.descriptionDescription = descriptionDescription;
+    public void setDescriptionHardware(String descriptionHardware) {
+        this.descriptionHardware = descriptionHardware;
     }
 
     /**
@@ -54,8 +54,8 @@ public class HardwareDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionDescription() {
-        return this.descriptionDescription;
+    public String getDescriptionHardware() {
+        return this.descriptionHardware;
     }
      
 }

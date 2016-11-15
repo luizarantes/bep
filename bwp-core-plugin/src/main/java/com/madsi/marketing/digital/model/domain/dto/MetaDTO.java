@@ -8,8 +8,8 @@ package com.madsi.marketing.digital.model.domain.dto;
 
 import java.util.Date;
 
-import com.madsi.marketing.digital.model.type.TipoAcaoIndicador;
-import com.madsi.marketing.digital.model.type.TipoMetaIndicador;
+import com.madsi.marketing.digital.model.domain.type.TipoAcaoIndicador;
+import com.madsi.marketing.digital.model.domain.type.TipoMetaIndicador;
 
 /** 
  *

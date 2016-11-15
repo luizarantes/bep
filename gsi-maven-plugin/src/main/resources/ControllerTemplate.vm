@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import ${package}.model.domain.${entityName};
 import ${package}.model.domain.dto.${entityName}DTO;
 import ${package}.service.${entityName}Service;
-import ${package}.data.repository.${entityName}Repository;
-
 
 #include("comments.vm")
 
@@ -28,32 +26,36 @@ public class ${entityName}Controller {
 	@Autowired
 	private ${entityName}Service<${entityName}DTO, ${entityName}, Long> service;
 
-	@Autowired
-    private ${entityName}Repository dataRepository;
-
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<${entityName}DTO>> findAll() {
 		return new ResponseEntity<Iterable<${entityName}DTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<${entityName}DTO> save(@RequestBody ${entityName}DTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<${entityName}DTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<${entityName}DTO> update(@RequestBody ${entityName}DTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<${entityName}DTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<${entityName}DTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<${entityName}DTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
+		this.service.delete(id);
 	}
 
 }

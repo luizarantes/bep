@@ -121,4 +121,15 @@ public abstract class AbstractService<T extends DataTransferObject, E extends Do
 
 		return null;
 	}
+	
+	/**
+	 * @param id
+	 */
+	public void delete(ID id) {
+		
+		if (id != null) {
+			this.dataRepository.delete(id);
+		}
+		
+	}
 }

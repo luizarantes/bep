@@ -7,7 +7,6 @@
 package com.bep.startup.data.repository;
 
 import com.bep.startup.model.domain.ContactPerson;
-import com.bep.startup.data.repository.custom.ContactPersonCustomRepository;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -17,6 +16,6 @@ import org.springframework.data.repository.CrudRepository;
  * @since 1.0
  * 
  */
-public abstract interface ContactPersonRepository extends CrudRepository<ContactPerson, Long>, ContactPersonCustomRepository {
+public abstract interface ContactPersonRepository extends CrudRepository<ContactPerson, Long> {
 
 }

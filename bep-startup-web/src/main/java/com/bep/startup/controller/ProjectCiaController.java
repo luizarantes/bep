@@ -1,7 +1,7 @@
 /**
 *
-* Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Application may be reproduced without express consent.
+* Copyright MADSI 2016 All Rights Reserved. 
+* No part of this Portal may be reproduced without GSI express consent.
 * 
 */
 package com.bep.startup.controller;
@@ -17,15 +17,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bep.startup.data.repository.ProjectCiaRepository;
 import com.bep.startup.model.domain.ProjectCia;
 import com.bep.startup.model.domain.dto.ProjectCiaDTO;
 import com.bep.startup.service.ProjectCiaService;
 
-
 /** 
  *
- * @author GSI
+ * @author MADSI
  * @since 1.0
  * 
  */
@@ -36,32 +34,36 @@ public class ProjectCiaController {
 	@Autowired
 	private ProjectCiaService<ProjectCiaDTO, ProjectCia, Long> service;
 
-	@Autowired
-    private ProjectCiaRepository dataRepository;
-
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<ProjectCiaDTO>> findAll() {
 		return new ResponseEntity<Iterable<ProjectCiaDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<ProjectCiaDTO> save(@RequestBody ProjectCiaDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<ProjectCiaDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<ProjectCiaDTO> update(@RequestBody ProjectCiaDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<ProjectCiaDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<ProjectCiaDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<ProjectCiaDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
+		this.service.delete(id);
 	}
 
 }

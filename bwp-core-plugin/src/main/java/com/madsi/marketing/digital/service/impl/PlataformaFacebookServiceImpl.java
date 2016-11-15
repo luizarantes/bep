@@ -6,10 +6,6 @@
 */
 package com.madsi.marketing.digital.service.impl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.madsi.marketing.digital.model.domain.PlataformaFacebook;

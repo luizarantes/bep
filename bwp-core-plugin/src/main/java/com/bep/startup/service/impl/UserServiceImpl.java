@@ -6,16 +6,11 @@
 */
 package com.bep.startup.service.impl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bep.startup.data.repository.UserRepository;
 import com.bep.startup.model.domain.User;
 import com.bep.startup.model.domain.dto.UserDTO;
+import com.bep.startup.service.UserService;
 
 /** 
  *
@@ -24,62 +19,9 @@ import com.bep.startup.model.domain.dto.UserDTO;
  * 
  */
 @Service
-public class UserServiceImpl extends AbstractService<UserDTO, User, Long>  {
+public class UserServiceImpl extends AbstractService<UserDTO, User, Long> implements UserService<UserDTO, User, Long> {
     
-    @Autowired
-    private UserRepository dataRepository;
-    
-    /* (non-Javadoc)
-	 * @see com.bep.startup.service.UserService#save(java.lang.Object)
-	 */
-	public UserDTO save(UserDTO dto) {
-		
-		if(dto != null) {
-			User entity = new User();
-			super.copyProperties(entity, dto);
-			entity = this.dataRepository.save(entity);
-			dto.setId(entity.getId());			
-		}
-		
-		return dto;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.bep.startup.service.UserService#findOne(java.lang.Object)
-	 */
-	public UserDTO findOne(Long id) {
-		
-		if(id != null) {
-			UserDTO dto = new UserDTO();
-			super.copyProperties(dto, this.dataRepository.findOne(id));
-			return dto;
-		}
-		
-		return null;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.bep.startup.service.UserService#findAll(java.lang.Object)
-	 */
-	public Iterable<UserDTO> findAll() {
-
-		Iterable<User> iterableFindAll = this.dataRepository.findAll();
-		
-		if(iterableFindAll != null) {
-		
-			List<UserDTO> listResult = new ArrayList<UserDTO>(); 
-			Iterator<User> iterator  = iterableFindAll.iterator();
-
-			while(iterator.hasNext()) {
-				UserDTO dto = new UserDTO();
-				super.copyProperties(dto, iterator.next());
-				listResult.add(dto);
-			}
-
-			return listResult;
-		}
-
-		return null;
-	}
-
+     public  UserServiceImpl() {
+    	super(UserDTO.class, User.class);
+    }
 }

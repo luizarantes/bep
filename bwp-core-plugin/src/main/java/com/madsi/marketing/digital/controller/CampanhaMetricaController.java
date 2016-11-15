@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.madsi.marketing.digital.model.domain.CampanhaMetrica;
 import com.madsi.marketing.digital.model.domain.dto.CampanhaMetricaDTO;
 import com.madsi.marketing.digital.service.CampanhaMetricaService;
-import com.madsi.marketing.digital.data.repository.CampanhaMetricaRepository;
-
 
 /** 
  *
@@ -36,32 +34,36 @@ public class CampanhaMetricaController {
 	@Autowired
 	private CampanhaMetricaService<CampanhaMetricaDTO, CampanhaMetrica, Long> service;
 
-	@Autowired
-    private CampanhaMetricaRepository dataRepository;
-
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<CampanhaMetricaDTO>> findAll() {
 		return new ResponseEntity<Iterable<CampanhaMetricaDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<CampanhaMetricaDTO> save(@RequestBody CampanhaMetricaDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<CampanhaMetricaDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<CampanhaMetricaDTO> update(@RequestBody CampanhaMetricaDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<CampanhaMetricaDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<CampanhaMetricaDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<CampanhaMetricaDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
+		this.service.delete(id);
 	}
 
 }

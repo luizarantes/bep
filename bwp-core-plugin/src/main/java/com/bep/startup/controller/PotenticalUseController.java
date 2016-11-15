@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bep.startup.model.domain.PotenticalUse;
 import com.bep.startup.model.domain.dto.PotenticalUseDTO;
-import com.bep.startup.service.impl.PotenticalUseServiceImpl;
-import com.bep.startup.data.repository.PotenticalUseRepository;
-
+import com.bep.startup.service.PotenticalUseService;
 
 /** 
  *
@@ -29,39 +28,42 @@ import com.bep.startup.data.repository.PotenticalUseRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/potenticalUse", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/potenticalUse", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class PotenticalUseController {
 
 	@Autowired
-	private PotenticalUseServiceImpl service;
-
-	@Autowired
-    private PotenticalUseRepository dataRepository;
+	private PotenticalUseService<PotenticalUseDTO, PotenticalUse, Long> service;
 
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<PotenticalUseDTO>> findAll() {
 		return new ResponseEntity<Iterable<PotenticalUseDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<PotenticalUseDTO> save(@RequestBody PotenticalUseDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<PotenticalUseDTO>(HttpStatus.OK);
+		return new ResponseEntity<PotenticalUseDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<PotenticalUseDTO> update(@RequestBody PotenticalUseDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<PotenticalUseDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<PotenticalUseDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<PotenticalUseDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+	public void delete(@PathVariable Long id) {
+		this.service.delete(id);
 	}
 
 }

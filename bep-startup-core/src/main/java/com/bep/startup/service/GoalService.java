@@ -17,6 +17,6 @@ import com.bep.startup.model.domain.dto.DataTransferObject;
  * @since 1.0
  * 
  */
-public abstract interface GoalService<T extends DataTransferObject, E extends DomainEntity<?>, ID extends Serializable> extends Service<T, E, ID> {
+public abstract interface GoalService <T extends DataTransferObject, E extends DomainEntity<?>, ID extends Serializable> extends Service<T, E, ID> {
 
 }

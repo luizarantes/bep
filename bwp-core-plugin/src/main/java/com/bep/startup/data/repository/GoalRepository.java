@@ -7,7 +7,6 @@
 package com.bep.startup.data.repository;
 
 import com.bep.startup.model.domain.Goal;
-import com.bep.startup.data.repository.custom.GoalCustomRepository;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -17,6 +16,6 @@ import org.springframework.data.repository.CrudRepository;
  * @since 1.0
  * 
  */
-public abstract interface GoalRepository extends CrudRepository<Goal, Long>, GoalCustomRepository {
+public abstract interface GoalRepository extends CrudRepository<Goal, Long> {
 
 }

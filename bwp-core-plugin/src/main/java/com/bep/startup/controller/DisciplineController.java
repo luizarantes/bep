@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bep.startup.model.domain.Discipline;
 import com.bep.startup.model.domain.dto.DisciplineDTO;
-import com.bep.startup.service.impl.DisciplineServiceImpl;
-import com.bep.startup.data.repository.DisciplineRepository;
-
+import com.bep.startup.service.DisciplineService;
 
 /** 
  *
@@ -29,39 +28,42 @@ import com.bep.startup.data.repository.DisciplineRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/discipline", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/discipline", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class DisciplineController {
 
 	@Autowired
-	private DisciplineServiceImpl service;
-
-	@Autowired
-    private DisciplineRepository dataRepository;
+	private DisciplineService<DisciplineDTO, Discipline, Long> service;
 
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<DisciplineDTO>> findAll() {
 		return new ResponseEntity<Iterable<DisciplineDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<DisciplineDTO> save(@RequestBody DisciplineDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<DisciplineDTO>(HttpStatus.OK);
+		return new ResponseEntity<DisciplineDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<DisciplineDTO> update(@RequestBody DisciplineDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<DisciplineDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<DisciplineDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<DisciplineDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+	public void delete(@PathVariable Long id) {
+		this.service.delete(id);
 	}
 
 }

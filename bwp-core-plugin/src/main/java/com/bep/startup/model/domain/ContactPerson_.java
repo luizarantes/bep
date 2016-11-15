@@ -23,7 +23,6 @@ public class ContactPerson_ {
 
 	public static volatile SingularAttribute<ContactPerson, Long> id;	
 	public static volatile ListAttribute<ContactPerson, KeyMember> keyMembers;
-	public static volatile ListAttribute<ContactPerson, Project> projectContactPersonAdmins;
 	public static volatile ListAttribute<ContactPerson, Invite> invites;
 	public static volatile SingularAttribute<ContactPerson, String> descriptionContactPerson;
 	public static volatile SingularAttribute<ContactPerson, String> descriptionMail;

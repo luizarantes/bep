@@ -6,16 +6,11 @@
 */
 package com.bep.startup.service.impl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bep.startup.data.repository.HardwareTypeRepository;
 import com.bep.startup.model.domain.HardwareType;
 import com.bep.startup.model.domain.dto.HardwareTypeDTO;
+import com.bep.startup.service.HardwareTypeService;
 
 /** 
  *
@@ -24,62 +19,9 @@ import com.bep.startup.model.domain.dto.HardwareTypeDTO;
  * 
  */
 @Service
-public class HardwareTypeServiceImpl extends AbstractService<HardwareTypeDTO, HardwareType, Long>  {
+public class HardwareTypeServiceImpl extends AbstractService<HardwareTypeDTO, HardwareType, Long> implements HardwareTypeService<HardwareTypeDTO, HardwareType, Long> {
     
-    @Autowired
-    private HardwareTypeRepository dataRepository;
-    
-    /* (non-Javadoc)
-	 * @see com.bep.startup.service.HardwareTypeService#save(java.lang.Object)
-	 */
-	public HardwareTypeDTO save(HardwareTypeDTO dto) {
-		
-		if(dto != null) {
-			HardwareType entity = new HardwareType();
-			super.copyProperties(entity, dto);
-			entity = this.dataRepository.save(entity);
-			dto.setId(entity.getId());			
-		}
-		
-		return dto;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.bep.startup.service.HardwareTypeService#findOne(java.lang.Object)
-	 */
-	public HardwareTypeDTO findOne(Long id) {
-		
-		if(id != null) {
-			HardwareTypeDTO dto = new HardwareTypeDTO();
-			super.copyProperties(dto, this.dataRepository.findOne(id));
-			return dto;
-		}
-		
-		return null;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.bep.startup.service.HardwareTypeService#findAll(java.lang.Object)
-	 */
-	public Iterable<HardwareTypeDTO> findAll() {
-
-		Iterable<HardwareType> iterableFindAll = this.dataRepository.findAll();
-		
-		if(iterableFindAll != null) {
-		
-			List<HardwareTypeDTO> listResult = new ArrayList<HardwareTypeDTO>(); 
-			Iterator<HardwareType> iterator  = iterableFindAll.iterator();
-
-			while(iterator.hasNext()) {
-				HardwareTypeDTO dto = new HardwareTypeDTO();
-				super.copyProperties(dto, iterator.next());
-				listResult.add(dto);
-			}
-
-			return listResult;
-		}
-
-		return null;
-	}
-
+     public  HardwareTypeServiceImpl() {
+    	super(HardwareTypeDTO.class, HardwareType.class);
+    }
 }

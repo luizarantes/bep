@@ -12,7 +12,7 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-import com.madsi.marketing.digital.model.type.TipoPlataformaStatusIndicador;
+import com.madsi.marketing.digital.model.domain.type.TipoPlataformaStatusIndicador;
 
 /** 
  *

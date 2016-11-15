@@ -22,8 +22,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
-import com.madsi.marketing.digital.model.type.TipoAcaoIndicador;
-import com.madsi.marketing.digital.model.type.TipoMetaIndicador;
+import com.madsi.marketing.digital.model.domain.type.TipoAcaoIndicador;
+import com.madsi.marketing.digital.model.domain.type.TipoMetaIndicador;
 
 
 

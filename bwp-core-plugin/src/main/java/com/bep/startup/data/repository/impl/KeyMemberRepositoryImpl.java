@@ -6,8 +6,9 @@
 */
 package com.bep.startup.data.repository.impl;
 
-import com.bep.startup.data.repository.custom.KeyMemberCustomRepository;
+import org.springframework.stereotype.Repository;
 
+import com.bep.startup.data.repository.custom.KeyMemberCustomRepository;
 
 /** 
  *
@@ -15,6 +16,7 @@ import com.bep.startup.data.repository.custom.KeyMemberCustomRepository;
  * @since 1.0
  * 
  */
+@Repository
 public class KeyMemberRepositoryImpl implements KeyMemberCustomRepository {
 
 }

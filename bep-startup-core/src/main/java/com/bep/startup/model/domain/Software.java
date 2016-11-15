@@ -1,11 +1,12 @@
 /**
 *
-* Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Application may be reproduced without express consent.
+* Copyright MADSI 2016 All Rights Reserved. 
+* No part of this Portal may be reproduced without GSI express consent.
 * 
 */
 package com.bep.startup.model.domain;
 
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -22,7 +24,7 @@ import javax.validation.constraints.NotNull;
 
 /** 
  *
- * @author GSI
+ * @author MADSI
  * @since 1.0
  * 
  */
@@ -36,6 +38,16 @@ public class Software extends DomainEntity<Long> {
     @Column(name = "ID_SOFTWARE", nullable = false, updatable = false, precision = 12)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+            
+    /*
+     * ENTITY RESPONSIBLE OF BIM USE
+     */
+    
+    @NotNull
+        
+    @ManyToOne
+    @JoinColumn(name   = "ID_BIM_USE", referencedColumnName = "ID_BIM_USE", nullable = false)
+    private BimUse bimUse;
             
     /*
      * ENTITY RESPONSIBLE OF INFORMATION OF A PROJECT
@@ -56,14 +68,20 @@ public class Software extends DomainEntity<Long> {
     @ManyToOne
     @JoinColumn(name   = "ID_SOFTWARE_TYPE", referencedColumnName = "ID_SOFTWARE_TYPE", nullable = false)
     private SoftwareType softwareType;
-                                                                                                        
+                                                                                                            
+    /*
+     * ENTITY RESPONSIBLE OF QUALITY CONTROL
+     */
+    @OneToMany(mappedBy = "software")
+    private List<QualityControl> qualityControls;
+                                                
     /*
      * DESCRIPTION OF SOFTWARE
      */
     
-	@Column(name = "DS_DESCRIPTION", length = 255)
-    private String descriptionDescription;
-            
+	@Column(name = "DS_SOFTWARE", length = 255)
+    private String descriptionSoftware;
+                    
     /**
      * @param id
      */
@@ -89,6 +107,25 @@ public class Software extends DomainEntity<Long> {
     @Override
     public void setId(Long id) {
         this.id = id;
+    }
+                    
+     
+    /**
+     * ENTITY RESPONSIBLE OF BIM USE
+     *
+     * @param bimUse
+     */
+    public void setBimUse(BimUse bimUse) {
+        this.bimUse = bimUse;
+    }
+
+    /**
+     * ENTITY RESPONSIBLE OF BIM USE
+     *
+     * @return BimUse
+     */
+    public BimUse getBimUse() {
+        return this.bimUse;
     }
                     
      
@@ -133,10 +170,10 @@ public class Software extends DomainEntity<Long> {
     /**
      * DESCRIPTION OF SOFTWARE
      *
-     * @param descriptionDescription
+     * @param descriptionSoftware
      */
-    public void setDescriptionDescription(String descriptionDescription) {
-        this.descriptionDescription = descriptionDescription;
+    public void setDescriptionSoftware(String descriptionSoftware) {
+        this.descriptionSoftware = descriptionSoftware;
     }
 
     /**
@@ -144,8 +181,27 @@ public class Software extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionDescription() {
-        return this.descriptionDescription;
+    public String getDescriptionSoftware() {
+        return this.descriptionSoftware;
+    }
+                    
+     
+    /**
+     * ENTITY RESPONSIBLE OF QUALITY CONTROL
+     *
+     * @param qualityControls
+     */
+    public void setQualityControls(List<QualityControl> qualityControls) {
+        this.qualityControls = qualityControls;
+    }
+
+    /**
+     * ENTITY RESPONSIBLE OF QUALITY CONTROL
+     *
+     * @return List<QualityControl>
+     */
+    public List<QualityControl> getQualityControls() {
+        return this.qualityControls;
     }
     
 }

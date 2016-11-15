@@ -6,16 +6,11 @@
 */
 package com.bep.startup.service.impl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bep.startup.data.repository.KeyMemberRepository;
 import com.bep.startup.model.domain.KeyMember;
 import com.bep.startup.model.domain.dto.KeyMemberDTO;
+import com.bep.startup.service.KeyMemberService;
 
 /** 
  *
@@ -24,62 +19,9 @@ import com.bep.startup.model.domain.dto.KeyMemberDTO;
  * 
  */
 @Service
-public class KeyMemberServiceImpl extends AbstractService<KeyMemberDTO, KeyMember, Long>  {
+public class KeyMemberServiceImpl extends AbstractService<KeyMemberDTO, KeyMember, Long> implements KeyMemberService<KeyMemberDTO, KeyMember, Long> {
     
-    @Autowired
-    private KeyMemberRepository dataRepository;
-    
-    /* (non-Javadoc)
-	 * @see com.bep.startup.service.KeyMemberService#save(java.lang.Object)
-	 */
-	public KeyMemberDTO save(KeyMemberDTO dto) {
-		
-		if(dto != null) {
-			KeyMember entity = new KeyMember();
-			super.copyProperties(entity, dto);
-			entity = this.dataRepository.save(entity);
-			dto.setId(entity.getId());			
-		}
-		
-		return dto;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.bep.startup.service.KeyMemberService#findOne(java.lang.Object)
-	 */
-	public KeyMemberDTO findOne(Long id) {
-		
-		if(id != null) {
-			KeyMemberDTO dto = new KeyMemberDTO();
-			super.copyProperties(dto, this.dataRepository.findOne(id));
-			return dto;
-		}
-		
-		return null;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.bep.startup.service.KeyMemberService#findAll(java.lang.Object)
-	 */
-	public Iterable<KeyMemberDTO> findAll() {
-
-		Iterable<KeyMember> iterableFindAll = this.dataRepository.findAll();
-		
-		if(iterableFindAll != null) {
-		
-			List<KeyMemberDTO> listResult = new ArrayList<KeyMemberDTO>(); 
-			Iterator<KeyMember> iterator  = iterableFindAll.iterator();
-
-			while(iterator.hasNext()) {
-				KeyMemberDTO dto = new KeyMemberDTO();
-				super.copyProperties(dto, iterator.next());
-				listResult.add(dto);
-			}
-
-			return listResult;
-		}
-
-		return null;
-	}
-
+     public  KeyMemberServiceImpl() {
+    	super(KeyMemberDTO.class, KeyMember.class);
+    }
 }

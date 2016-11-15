@@ -27,7 +27,7 @@ import javax.validation.constraints.NotNull;
  * 
  */
 @Entity
-@Table(name = "DISCIPLINE")
+@Table(name = "TB_DISCIPLINE")
 public class Discipline extends DomainEntity<Long> {
 
     private static final long serialVersionUID = 1L;
@@ -36,7 +36,7 @@ public class Discipline extends DomainEntity<Long> {
     @Column(name = "ID_DISCIPLINE", nullable = false, updatable = false, precision = 12)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-                                                                    
+                                                                                                                    
     /*
      * ENTITY RESPONSIBLE OF INFORMATION OF KEY MEMBERS OF A PROJECT
      */
@@ -48,6 +48,24 @@ public class Discipline extends DomainEntity<Long> {
      */
     @OneToMany(mappedBy = "discipline")
     private List<Goal> goals;
+            
+    /*
+     * ENTITY RESPONSIBLE OF PROJECT TEAM
+     */
+    @OneToMany(mappedBy = "discipline")
+    private List<ProjectTeam> projectTeams;
+            
+    /*
+     * ENTITY RESPONSIBLE OF MEETING PARTICIPANT
+     */
+    @OneToMany(mappedBy = "discipline")
+    private List<MeetingParticipant> meetingParticipants;
+            
+    /*
+     * ENTITY RESPONSIBLE OF QUALITY CONTROL
+     */
+    @OneToMany(mappedBy = "discipline")
+    private List<QualityControl> qualityControls;
                                 
     /*
      * NAME OF DISCIPLINE
@@ -57,7 +75,7 @@ public class Discipline extends DomainEntity<Long> {
         
 	@Column(name = "TX_DISCIPLINE", length = 30, nullable = false)
     private String descriptionDiscipline;
-                    
+                                            
     /**
      * @param id
      */
@@ -140,6 +158,63 @@ public class Discipline extends DomainEntity<Long> {
      */
     public List<Goal> getGoals() {
         return this.goals;
+    }
+                    
+     
+    /**
+     * ENTITY RESPONSIBLE OF PROJECT TEAM
+     *
+     * @param projectTeams
+     */
+    public void setProjectTeams(List<ProjectTeam> projectTeams) {
+        this.projectTeams = projectTeams;
+    }
+
+    /**
+     * ENTITY RESPONSIBLE OF PROJECT TEAM
+     *
+     * @return List<ProjectTeam>
+     */
+    public List<ProjectTeam> getProjectTeams() {
+        return this.projectTeams;
+    }
+                    
+     
+    /**
+     * ENTITY RESPONSIBLE OF MEETING PARTICIPANT
+     *
+     * @param meetingParticipants
+     */
+    public void setMeetingParticipants(List<MeetingParticipant> meetingParticipants) {
+        this.meetingParticipants = meetingParticipants;
+    }
+
+    /**
+     * ENTITY RESPONSIBLE OF MEETING PARTICIPANT
+     *
+     * @return List<MeetingParticipant>
+     */
+    public List<MeetingParticipant> getMeetingParticipants() {
+        return this.meetingParticipants;
+    }
+                    
+     
+    /**
+     * ENTITY RESPONSIBLE OF QUALITY CONTROL
+     *
+     * @param qualityControls
+     */
+    public void setQualityControls(List<QualityControl> qualityControls) {
+        this.qualityControls = qualityControls;
+    }
+
+    /**
+     * ENTITY RESPONSIBLE OF QUALITY CONTROL
+     *
+     * @return List<QualityControl>
+     */
+    public List<QualityControl> getQualityControls() {
+        return this.qualityControls;
     }
     
 }

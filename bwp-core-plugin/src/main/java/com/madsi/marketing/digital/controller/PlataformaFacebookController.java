@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.madsi.marketing.digital.model.domain.PlataformaFacebook;
 import com.madsi.marketing.digital.model.domain.dto.PlataformaFacebookDTO;
 import com.madsi.marketing.digital.service.PlataformaFacebookService;
-import com.madsi.marketing.digital.data.repository.PlataformaFacebookRepository;
-
 
 /** 
  *
@@ -36,32 +34,36 @@ public class PlataformaFacebookController {
 	@Autowired
 	private PlataformaFacebookService<PlataformaFacebookDTO, PlataformaFacebook, Long> service;
 
-	@Autowired
-    private PlataformaFacebookRepository dataRepository;
-
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<PlataformaFacebookDTO>> findAll() {
 		return new ResponseEntity<Iterable<PlataformaFacebookDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<PlataformaFacebookDTO> save(@RequestBody PlataformaFacebookDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<PlataformaFacebookDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<PlataformaFacebookDTO> update(@RequestBody PlataformaFacebookDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<PlataformaFacebookDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<PlataformaFacebookDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<PlataformaFacebookDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
+		this.service.delete(id);
 	}
 
 }

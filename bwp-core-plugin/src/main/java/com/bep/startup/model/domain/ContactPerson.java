@@ -36,7 +36,7 @@ public class ContactPerson extends DomainEntity<Long> {
     @Column(name = "ID_CONTACT_PERSON", nullable = false, updatable = false, precision = 12)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-                                                                                                                    
+                                                                                                    
     /*
      * ENTITY RESPONSIBLE OF INFORMATION OF KEY MEMBERS OF A PROJECT
      */
@@ -44,17 +44,11 @@ public class ContactPerson extends DomainEntity<Long> {
     private List<KeyMember> keyMembers;
             
     /*
-     * ENTITY RESPONSIBLE OF INFORMATION OF A PROJECT
-     */
-    @OneToMany(mappedBy = "contactPersonAdmin")
-    private List<Project> projectContactPersonAdmins;
-            
-    /*
      * ENTITY RESPONSIBLE OF INFORMATION OF INVITE A KEY MEMBER OR OTHER CONTACT PERSON OF PROJECT
      */
     @OneToMany(mappedBy = "contactPerson")
     private List<Invite> invites;
-                                                                        
+                                                                
     /*
      * NAME OF CONTACT PERSON
      */
@@ -124,25 +118,6 @@ public class ContactPerson extends DomainEntity<Long> {
      */
     public List<KeyMember> getKeyMembers() {
         return this.keyMembers;
-    }
-                    
-     
-    /**
-     * ENTITY RESPONSIBLE OF INFORMATION OF A PROJECT
-     *
-     * @param projectContactPersonAdmins
-     */
-    public void setProjectContactPersonAdmins(List<Project> projectContactPersonAdmins) {
-        this.projectContactPersonAdmins = projectContactPersonAdmins;
-    }
-
-    /**
-     * ENTITY RESPONSIBLE OF INFORMATION OF A PROJECT
-     *
-     * @return List<Project>
-     */
-    public List<Project> getProjectContactPersonAdmins() {
-        return this.projectContactPersonAdmins;
     }
                     
      

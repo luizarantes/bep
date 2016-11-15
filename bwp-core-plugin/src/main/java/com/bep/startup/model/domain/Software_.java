@@ -7,6 +7,7 @@
 package com.bep.startup.model.domain;
 
 
+import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
@@ -21,8 +22,10 @@ import javax.persistence.metamodel.StaticMetamodel;
 public class Software_ {
 
 	public static volatile SingularAttribute<Software, Long> id;	
+	public static volatile SingularAttribute<Software, BimUse> bimUse;
 	public static volatile SingularAttribute<Software, Project> project;
 	public static volatile SingularAttribute<Software, SoftwareType> softwareType;
-	public static volatile SingularAttribute<Software, String> descriptionDescription;
+	public static volatile SingularAttribute<Software, String> descriptionSoftware;
+	public static volatile ListAttribute<Software, QualityControl> qualityControls;
 	
 }

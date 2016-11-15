@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bep.startup.model.domain.User;
 import com.bep.startup.model.domain.dto.UserDTO;
-import com.bep.startup.service.impl.UserServiceImpl;
-import com.bep.startup.data.repository.UserRepository;
-
+import com.bep.startup.service.UserService;
 
 /** 
  *
@@ -29,39 +28,42 @@ import com.bep.startup.data.repository.UserRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/user", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/user", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class UserController {
 
 	@Autowired
-	private UserServiceImpl service;
-
-	@Autowired
-    private UserRepository dataRepository;
+	private UserService<UserDTO, User, Long> service;
 
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<UserDTO>> findAll() {
 		return new ResponseEntity<Iterable<UserDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<UserDTO> save(@RequestBody UserDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<UserDTO>(HttpStatus.OK);
+		return new ResponseEntity<UserDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<UserDTO> update(@RequestBody UserDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<UserDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<UserDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<UserDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+	public void delete(@PathVariable Long id) {
+		this.service.delete(id);
 	}
 
 }

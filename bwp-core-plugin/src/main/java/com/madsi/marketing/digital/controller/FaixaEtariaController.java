@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.madsi.marketing.digital.model.domain.FaixaEtaria;
 import com.madsi.marketing.digital.model.domain.dto.FaixaEtariaDTO;
 import com.madsi.marketing.digital.service.FaixaEtariaService;
-import com.madsi.marketing.digital.data.repository.FaixaEtariaRepository;
-
 
 /** 
  *
@@ -36,32 +34,36 @@ public class FaixaEtariaController {
 	@Autowired
 	private FaixaEtariaService<FaixaEtariaDTO, FaixaEtaria, Long> service;
 
-	@Autowired
-    private FaixaEtariaRepository dataRepository;
-
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<FaixaEtariaDTO>> findAll() {
 		return new ResponseEntity<Iterable<FaixaEtariaDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<FaixaEtariaDTO> save(@RequestBody FaixaEtariaDTO dto) {
 		this.service.save(dto);
 		return new ResponseEntity<FaixaEtariaDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<FaixaEtariaDTO> update(@RequestBody FaixaEtariaDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<FaixaEtariaDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<FaixaEtariaDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<FaixaEtariaDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
+		this.service.delete(id);
 	}
 
 }

@@ -7,8 +7,8 @@
 package com.madsi.marketing.digital.model.domain.dto;
 
 
-import com.madsi.marketing.digital.model.type.ClasseSocialIndicador;
-import com.madsi.marketing.digital.model.type.TipoPlataformaStatusIndicador;
+import com.madsi.marketing.digital.model.domain.type.ClasseSocialIndicador;
+import com.madsi.marketing.digital.model.domain.type.TipoPlataformaStatusIndicador;
 
 /** 
  *

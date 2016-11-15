@@ -23,7 +23,7 @@ public class GoalDTO extends DataTransferObject {
   	/*
      * DESCRIPTION OF GOAL
      */
-	private String descriptionDescription;
+	private String descriptionGoal;
 
   	/*
      * TYPE OF PRIORITY FOR EXAMPLE: PRIMARY OR SECONDARY
@@ -48,10 +48,10 @@ public class GoalDTO extends DataTransferObject {
          /**
      * DESCRIPTION OF GOAL
      *
-     * @param descriptionDescription
+     * @param descriptionGoal
      */
-    public void setDescriptionDescription(String descriptionDescription) {
-        this.descriptionDescription = descriptionDescription;
+    public void setDescriptionGoal(String descriptionGoal) {
+        this.descriptionGoal = descriptionGoal;
     }
 
     /**
@@ -59,8 +59,8 @@ public class GoalDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionDescription() {
-        return this.descriptionDescription;
+    public String getDescriptionGoal() {
+        return this.descriptionGoal;
     }
              
          /**

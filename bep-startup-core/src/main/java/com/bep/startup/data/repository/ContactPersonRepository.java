@@ -1,18 +1,18 @@
 /**
 *
-* Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Application may be reproduced without express consent.
+* Copyright MADSI 2016 All Rights Reserved. 
+* No part of this Portal may be reproduced without GSI express consent.
 * 
 */
 package com.bep.startup.data.repository;
 
-import org.springframework.data.repository.CrudRepository;
-
 import com.bep.startup.model.domain.ContactPerson;
+
+import org.springframework.data.repository.CrudRepository;
 
 /** 
  *
- * @author GSI
+ * @author MADSI
  * @since 1.0
  * 
  */

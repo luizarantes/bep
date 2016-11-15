@@ -23,7 +23,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
-import com.madsi.marketing.digital.model.type.TipoPlataformaStatusIndicador;
+import com.madsi.marketing.digital.model.domain.type.TipoPlataformaStatusIndicador;
 
 
 

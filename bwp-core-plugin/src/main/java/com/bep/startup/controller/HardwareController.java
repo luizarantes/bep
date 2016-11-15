@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bep.startup.model.domain.Hardware;
 import com.bep.startup.model.domain.dto.HardwareDTO;
-import com.bep.startup.service.impl.HardwareServiceImpl;
-import com.bep.startup.data.repository.HardwareRepository;
-
+import com.bep.startup.service.HardwareService;
 
 /** 
  *
@@ -29,39 +28,42 @@ import com.bep.startup.data.repository.HardwareRepository;
  * 
  */
 @RestController
-@RequestMapping("/api/v1/hardware", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/v1/hardware", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
 public class HardwareController {
 
 	@Autowired
-	private HardwareServiceImpl service;
-
-	@Autowired
-    private HardwareRepository dataRepository;
+	private HardwareService<HardwareDTO, Hardware, Long> service;
 
 	@ResponseBody
-	@RequestMapping(path = "/find/all", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Iterable<HardwareDTO>> findAll() {
 		return new ResponseEntity<Iterable<HardwareDTO>>(this.service.findAll(), HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/save", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<HardwareDTO> save(@RequestBody HardwareDTO dto) {
 		this.service.save(dto);
-		return new ResponseEntity<HardwareDTO>(HttpStatus.OK);
+		return new ResponseEntity<HardwareDTO>(dto, HttpStatus.OK);
 	}
 	
 	@ResponseBody
-	@RequestMapping(path = "/find/one/{id}", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<HardwareDTO> update(@RequestBody HardwareDTO dto) {
+		this.service.save(dto);
+		return new ResponseEntity<HardwareDTO>(dto, HttpStatus.OK);
+	}
+	
+	@ResponseBody
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<HardwareDTO> findOne(@PathVariable Long id) {
 		return new ResponseEntity<HardwareDTO>(this.service.findOne(id), HttpStatus.OK);
 	}
 	
 	@ResponseBody	
-	@RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> delete(@PathVariable Long id) {
-		this.dataRepository.delete(id);
-		return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+	public void delete(@PathVariable Long id) {
+		this.service.delete(id);
 	}
 
 }

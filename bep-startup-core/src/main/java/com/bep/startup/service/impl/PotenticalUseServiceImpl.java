@@ -1,7 +1,7 @@
 /**
 *
-* Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Application may be reproduced without express consent.
+* Copyright MADSI 2016 All Rights Reserved. 
+* No part of this Portal may be reproduced without GSI express consent.
 * 
 */
 package com.bep.startup.service.impl;
@@ -14,15 +14,14 @@ import com.bep.startup.service.PotenticalUseService;
 
 /** 
  *
- * @author GSI
+ * @author MADSI
  * @since 1.0
  * 
  */
 @Service
 public class PotenticalUseServiceImpl extends AbstractService<PotenticalUseDTO, PotenticalUse, Long> implements PotenticalUseService<PotenticalUseDTO, PotenticalUse, Long> {
     
-	public PotenticalUseServiceImpl() {
+     public  PotenticalUseServiceImpl() {
     	super(PotenticalUseDTO.class, PotenticalUse.class);
     }
-    
 }

@@ -1,7 +1,7 @@
 /**
 *
-* Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Application may be reproduced without express consent.
+* Copyright MADSI 2016 All Rights Reserved. 
+* No part of this Portal may be reproduced without GSI express consent.
 * 
 */
 package com.bep.startup.model.domain;
@@ -13,7 +13,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 
 /** 
  *
- * @author GSI
+ * @author MADSI
  * @since 1.0
  * 
  */
@@ -24,7 +24,7 @@ public class Goal_ {
 	public static volatile SingularAttribute<Goal, Project> project;
 	public static volatile SingularAttribute<Goal, PotenticalUse> potencialUse;
 	public static volatile SingularAttribute<Goal, Discipline> discipline;
-	public static volatile SingularAttribute<Goal, String> descriptionDescription;
+	public static volatile SingularAttribute<Goal, String> descriptionGoal;
 	public static volatile SingularAttribute<Goal, String> inPriority;
 	
 }

@@ -1,7 +1,7 @@
 /**
 *
-* Copyright BEP STARTUP All Rights Reserved. 
-* No part of this Application may be reproduced without express consent.
+* Copyright MADSI 2016 All Rights Reserved. 
+* No part of this Portal may be reproduced without GSI express consent.
 * 
 */
 package com.bep.startup.model.domain;
@@ -22,7 +22,7 @@ import javax.validation.constraints.NotNull;
 
 /** 
  *
- * @author GSI
+ * @author MADSI
  * @since 1.0
  * 
  */
@@ -36,7 +36,7 @@ public class Cia extends DomainEntity<Long> {
     @Column(name = "ID_CIA", nullable = false, updatable = false, precision = 12)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-                                                                                                                    
+                                                                                                                                                    
     /*
      * ENTITY RESPONSIBLE OF INFORMATION OF KEY MEMBERS OF A PROJECT
      */
@@ -48,6 +48,18 @@ public class Cia extends DomainEntity<Long> {
      */
     @OneToMany(mappedBy = "cia")
     private List<ProjectCia> projectCias;
+            
+    /*
+     * ENTITY RESPONSIBLE OF PROJECT SCHEDULE
+     */
+    @OneToMany(mappedBy = "cia")
+    private List<ProjectSchedule> projectSchedules;
+            
+    /*
+     * ENTITY RESPONSIBLE OF PROJECT TEAM
+     */
+    @OneToMany(mappedBy = "cia")
+    private List<ProjectTeam> projectTeams;
                                 
     /*
      * INFORMATION OF ADDRESS
@@ -80,7 +92,7 @@ public class Cia extends DomainEntity<Long> {
     
 	@Column(name = "TX_TIN", length = 10)
     private String descriptionTin;
-                    
+                                    
     /**
      * @param id
      */
@@ -220,6 +232,44 @@ public class Cia extends DomainEntity<Long> {
      */
     public List<ProjectCia> getProjectCias() {
         return this.projectCias;
+    }
+                    
+     
+    /**
+     * ENTITY RESPONSIBLE OF PROJECT SCHEDULE
+     *
+     * @param projectSchedules
+     */
+    public void setProjectSchedules(List<ProjectSchedule> projectSchedules) {
+        this.projectSchedules = projectSchedules;
+    }
+
+    /**
+     * ENTITY RESPONSIBLE OF PROJECT SCHEDULE
+     *
+     * @return List<ProjectSchedule>
+     */
+    public List<ProjectSchedule> getProjectSchedules() {
+        return this.projectSchedules;
+    }
+                    
+     
+    /**
+     * ENTITY RESPONSIBLE OF PROJECT TEAM
+     *
+     * @param projectTeams
+     */
+    public void setProjectTeams(List<ProjectTeam> projectTeams) {
+        this.projectTeams = projectTeams;
+    }
+
+    /**
+     * ENTITY RESPONSIBLE OF PROJECT TEAM
+     *
+     * @return List<ProjectTeam>
+     */
+    public List<ProjectTeam> getProjectTeams() {
+        return this.projectTeams;
     }
     
 }
