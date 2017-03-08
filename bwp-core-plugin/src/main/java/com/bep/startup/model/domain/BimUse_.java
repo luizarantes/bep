@@ -23,7 +23,7 @@ public class BimUse_ {
 
 	public static volatile SingularAttribute<BimUse, Long> id;	
 	public static volatile ListAttribute<BimUse, Software> softwares;
-	public static volatile SingularAttribute<BimUse, String> nameBimUse;
-	public static volatile SingularAttribute<BimUse, String> descriptionBimUse;
+	public static volatile SingularAttribute<BimUse, String> nomeBimUse;
+	public static volatile SingularAttribute<BimUse, String> descricaoBimUse;
 	
 }

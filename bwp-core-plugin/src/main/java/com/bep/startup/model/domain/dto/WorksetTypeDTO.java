@@ -23,7 +23,7 @@ public class WorksetTypeDTO extends DataTransferObject {
   	/*
      * NAME OF WORKSET TYPE
      */
-	private String nameWorksetType;
+	private String nomeWorksetType;
 
 
     /**
@@ -43,10 +43,10 @@ public class WorksetTypeDTO extends DataTransferObject {
          /**
      * NAME OF WORKSET TYPE
      *
-     * @param nameWorksetType
+     * @param nomeWorksetType
      */
-    public void setNameWorksetType(String nameWorksetType) {
-        this.nameWorksetType = nameWorksetType;
+    public void setNomeWorksetType(String nomeWorksetType) {
+        this.nomeWorksetType = nomeWorksetType;
     }
 
     /**
@@ -54,8 +54,8 @@ public class WorksetTypeDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNameWorksetType() {
-        return this.nameWorksetType;
+    public String getNomeWorksetType() {
+        return this.nomeWorksetType;
     }
      
 }

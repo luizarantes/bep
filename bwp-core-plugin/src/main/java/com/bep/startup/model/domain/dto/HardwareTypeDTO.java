@@ -23,7 +23,7 @@ public class HardwareTypeDTO extends DataTransferObject {
   	/*
      * NAME OF HARDWARE TYPE
      */
-	private String nameHardwareType;
+	private String nomeHardwareType;
 
 
     /**
@@ -43,10 +43,10 @@ public class HardwareTypeDTO extends DataTransferObject {
          /**
      * NAME OF HARDWARE TYPE
      *
-     * @param nameHardwareType
+     * @param nomeHardwareType
      */
-    public void setNameHardwareType(String nameHardwareType) {
-        this.nameHardwareType = nameHardwareType;
+    public void setNomeHardwareType(String nomeHardwareType) {
+        this.nomeHardwareType = nomeHardwareType;
     }
 
     /**
@@ -54,8 +54,8 @@ public class HardwareTypeDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNameHardwareType() {
-        return this.nameHardwareType;
+    public String getNomeHardwareType() {
+        return this.nomeHardwareType;
     }
      
 }

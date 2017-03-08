@@ -25,7 +25,7 @@ public class Software_ {
 	public static volatile SingularAttribute<Software, BimUse> bimUse;
 	public static volatile SingularAttribute<Software, Project> project;
 	public static volatile SingularAttribute<Software, SoftwareType> softwareType;
-	public static volatile SingularAttribute<Software, String> descriptionSoftware;
+	public static volatile SingularAttribute<Software, String> descricaoSoftware;
 	public static volatile ListAttribute<Software, QualityControl> qualityControls;
 	
 }

@@ -23,7 +23,7 @@ public class PotenticalUseDTO extends DataTransferObject {
   	/*
      * NAME OF POTENCIAL BIM USE
      */
-	private String descriptionPotencialUse;
+	private String descricaoPotencialUse;
 
 
     /**
@@ -43,10 +43,10 @@ public class PotenticalUseDTO extends DataTransferObject {
          /**
      * NAME OF POTENCIAL BIM USE
      *
-     * @param descriptionPotencialUse
+     * @param descricaoPotencialUse
      */
-    public void setDescriptionPotencialUse(String descriptionPotencialUse) {
-        this.descriptionPotencialUse = descriptionPotencialUse;
+    public void setDescricaoPotencialUse(String descricaoPotencialUse) {
+        this.descricaoPotencialUse = descricaoPotencialUse;
     }
 
     /**
@@ -54,8 +54,8 @@ public class PotenticalUseDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionPotencialUse() {
-        return this.descriptionPotencialUse;
+    public String getDescricaoPotencialUse() {
+        return this.descricaoPotencialUse;
     }
      
 }

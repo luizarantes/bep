@@ -23,7 +23,7 @@ public class ProjectPhaseDTO extends DataTransferObject {
   	/*
      * NAME OF PROJECT PHASE
      */
-	private String nameProjectPhase;
+	private String nomeProjectPhase;
 
 
     /**
@@ -43,10 +43,10 @@ public class ProjectPhaseDTO extends DataTransferObject {
          /**
      * NAME OF PROJECT PHASE
      *
-     * @param nameProjectPhase
+     * @param nomeProjectPhase
      */
-    public void setNameProjectPhase(String nameProjectPhase) {
-        this.nameProjectPhase = nameProjectPhase;
+    public void setNomeProjectPhase(String nomeProjectPhase) {
+        this.nomeProjectPhase = nomeProjectPhase;
     }
 
     /**
@@ -54,8 +54,8 @@ public class ProjectPhaseDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNameProjectPhase() {
-        return this.nameProjectPhase;
+    public String getNomeProjectPhase() {
+        return this.nomeProjectPhase;
     }
      
 }

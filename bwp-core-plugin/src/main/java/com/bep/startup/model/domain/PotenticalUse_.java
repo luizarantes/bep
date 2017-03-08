@@ -23,6 +23,6 @@ public class PotenticalUse_ {
 
 	public static volatile SingularAttribute<PotenticalUse, Long> id;	
 	public static volatile ListAttribute<PotenticalUse, Goal> goalPotencialUses;
-	public static volatile SingularAttribute<PotenticalUse, String> descriptionPotencialUse;
+	public static volatile SingularAttribute<PotenticalUse, String> descricaoPotencialUse;
 	
 }

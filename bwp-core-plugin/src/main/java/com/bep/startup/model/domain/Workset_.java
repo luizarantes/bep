@@ -23,6 +23,6 @@ public class Workset_ {
 	public static volatile SingularAttribute<Workset, Long> id;	
 	public static volatile SingularAttribute<Workset, Project> project;
 	public static volatile SingularAttribute<Workset, WorksetType> worksetType;
-	public static volatile SingularAttribute<Workset, String> descriptionWorkset;
+	public static volatile SingularAttribute<Workset, String> descricaoWorkset;
 	
 }

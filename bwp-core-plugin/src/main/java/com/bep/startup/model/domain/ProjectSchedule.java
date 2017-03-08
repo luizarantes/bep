@@ -78,14 +78,14 @@ public class ProjectSchedule extends DomainEntity<Long> {
         
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DT_ESTIMATE_DELIVERY", nullable = false)
-    private Date dateEstimateDelivery;
+    private Date dataEstimateDelivery;
                         
     /*
      * PERCENT OF PROJECT PHASE
      */
     
 	@Column(name = "PC_PHASE", precision = 3, nullable = false)
-    private Short percentPhase;
+    private Short percentualPhase;
             
     /**
      * @param id
@@ -175,10 +175,10 @@ public class ProjectSchedule extends DomainEntity<Long> {
     /**
      * DATE OF ESTIMATE DELIVERY
      *
-     * @param dateEstimateDelivery
+     * @param dataEstimateDelivery
      */
-    public void setDateEstimateDelivery(Date dateEstimateDelivery) {
-        this.dateEstimateDelivery = dateEstimateDelivery;
+    public void setDataEstimateDelivery(Date dataEstimateDelivery) {
+        this.dataEstimateDelivery = dataEstimateDelivery;
     }
 
     /**
@@ -186,18 +186,18 @@ public class ProjectSchedule extends DomainEntity<Long> {
      *
      * @return Date
      */
-    public Date getDateEstimateDelivery() {
-        return this.dateEstimateDelivery;
+    public Date getDataEstimateDelivery() {
+        return this.dataEstimateDelivery;
     }
                     
      
     /**
      * PERCENT OF PROJECT PHASE
      *
-     * @param percentPhase
+     * @param percentualPhase
      */
-    public void setPercentPhase(Short percentPhase) {
-        this.percentPhase = percentPhase;
+    public void setPercentualPhase(Short percentualPhase) {
+        this.percentualPhase = percentualPhase;
     }
 
     /**
@@ -205,8 +205,8 @@ public class ProjectSchedule extends DomainEntity<Long> {
      *
      * @return Short
      */
-    public Short getPercentPhase() {
-        return this.percentPhase;
+    public Short getPercentualPhase() {
+        return this.percentualPhase;
     }
     
 }

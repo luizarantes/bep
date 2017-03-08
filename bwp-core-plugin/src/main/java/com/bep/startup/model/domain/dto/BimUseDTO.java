@@ -23,12 +23,12 @@ public class BimUseDTO extends DataTransferObject {
   	/*
      * NAME OF BIM USE
      */
-	private String nameBimUse;
+	private String nomeBimUse;
 
   	/*
      * 
      */
-	private String descriptionBimUse;
+	private String descricaoBimUse;
 
 
     /**
@@ -48,10 +48,10 @@ public class BimUseDTO extends DataTransferObject {
          /**
      * NAME OF BIM USE
      *
-     * @param nameBimUse
+     * @param nomeBimUse
      */
-    public void setNameBimUse(String nameBimUse) {
-        this.nameBimUse = nameBimUse;
+    public void setNomeBimUse(String nomeBimUse) {
+        this.nomeBimUse = nomeBimUse;
     }
 
     /**
@@ -59,17 +59,17 @@ public class BimUseDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNameBimUse() {
-        return this.nameBimUse;
+    public String getNomeBimUse() {
+        return this.nomeBimUse;
     }
              
          /**
      * 
      *
-     * @param descriptionBimUse
+     * @param descricaoBimUse
      */
-    public void setDescriptionBimUse(String descriptionBimUse) {
-        this.descriptionBimUse = descriptionBimUse;
+    public void setDescricaoBimUse(String descricaoBimUse) {
+        this.descricaoBimUse = descricaoBimUse;
     }
 
     /**
@@ -77,8 +77,8 @@ public class BimUseDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionBimUse() {
-        return this.descriptionBimUse;
+    public String getDescricaoBimUse() {
+        return this.descricaoBimUse;
     }
      
 }

@@ -22,7 +22,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 public class WorksetType_ {
 
 	public static volatile SingularAttribute<WorksetType, Long> id;	
-	public static volatile SingularAttribute<WorksetType, String> nameWorksetType;
+	public static volatile SingularAttribute<WorksetType, String> nomeWorksetType;
 	public static volatile ListAttribute<WorksetType, Workset> worksets;
 	
 }

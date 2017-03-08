@@ -50,14 +50,14 @@ public class BimUse extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "NM_BIM_USE", length = 255, nullable = false)
-    private String nameBimUse;
+    private String nomeBimUse;
                         
     /*
      * 
      */
     
 	@Column(name = "DS_BIM_USE", length = 255)
-    private String descriptionBimUse;
+    private String descricaoBimUse;
             
     /**
      * @param id
@@ -109,10 +109,10 @@ public class BimUse extends DomainEntity<Long> {
     /**
      * NAME OF BIM USE
      *
-     * @param nameBimUse
+     * @param nomeBimUse
      */
-    public void setNameBimUse(String nameBimUse) {
-        this.nameBimUse = nameBimUse;
+    public void setNomeBimUse(String nomeBimUse) {
+        this.nomeBimUse = nomeBimUse;
     }
 
     /**
@@ -120,18 +120,18 @@ public class BimUse extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNameBimUse() {
-        return this.nameBimUse;
+    public String getNomeBimUse() {
+        return this.nomeBimUse;
     }
                     
      
     /**
      * 
      *
-     * @param descriptionBimUse
+     * @param descricaoBimUse
      */
-    public void setDescriptionBimUse(String descriptionBimUse) {
-        this.descriptionBimUse = descriptionBimUse;
+    public void setDescricaoBimUse(String descricaoBimUse) {
+        this.descricaoBimUse = descricaoBimUse;
     }
 
     /**
@@ -139,8 +139,8 @@ public class BimUse extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionBimUse() {
-        return this.descriptionBimUse;
+    public String getDescricaoBimUse() {
+        return this.descricaoBimUse;
     }
     
 }

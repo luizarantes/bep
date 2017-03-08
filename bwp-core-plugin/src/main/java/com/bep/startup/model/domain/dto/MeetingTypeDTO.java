@@ -23,7 +23,7 @@ public class MeetingTypeDTO extends DataTransferObject {
   	/*
      * NAME OF MEETING TYPE
      */
-	private String nameMeetingType;
+	private String nomeMeetingType;
 
 
     /**
@@ -43,10 +43,10 @@ public class MeetingTypeDTO extends DataTransferObject {
          /**
      * NAME OF MEETING TYPE
      *
-     * @param nameMeetingType
+     * @param nomeMeetingType
      */
-    public void setNameMeetingType(String nameMeetingType) {
-        this.nameMeetingType = nameMeetingType;
+    public void setNomeMeetingType(String nomeMeetingType) {
+        this.nomeMeetingType = nomeMeetingType;
     }
 
     /**
@@ -54,8 +54,8 @@ public class MeetingTypeDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNameMeetingType() {
-        return this.nameMeetingType;
+    public String getNomeMeetingType() {
+        return this.nomeMeetingType;
     }
      
 }

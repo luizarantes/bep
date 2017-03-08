@@ -23,6 +23,6 @@ public class ProjectPhase_ {
 
 	public static volatile SingularAttribute<ProjectPhase, Long> id;	
 	public static volatile ListAttribute<ProjectPhase, ProjectSchedule> projectSchedules;
-	public static volatile SingularAttribute<ProjectPhase, String> nameProjectPhase;
+	public static volatile SingularAttribute<ProjectPhase, String> nomeProjectPhase;
 	
 }

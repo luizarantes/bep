@@ -62,7 +62,7 @@ public class Workset extends DomainEntity<Long> {
      */
     
 	@Column(name = "DS_WORKSET", length = 255)
-    private String descriptionWorkset;
+    private String descricaoWorkset;
             
     /**
      * @param id
@@ -133,10 +133,10 @@ public class Workset extends DomainEntity<Long> {
     /**
      * DESCRIPTION OF WORKSET
      *
-     * @param descriptionWorkset
+     * @param descricaoWorkset
      */
-    public void setDescriptionWorkset(String descriptionWorkset) {
-        this.descriptionWorkset = descriptionWorkset;
+    public void setDescricaoWorkset(String descricaoWorkset) {
+        this.descricaoWorkset = descricaoWorkset;
     }
 
     /**
@@ -144,8 +144,8 @@ public class Workset extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionWorkset() {
-        return this.descriptionWorkset;
+    public String getDescricaoWorkset() {
+        return this.descricaoWorkset;
     }
     
 }

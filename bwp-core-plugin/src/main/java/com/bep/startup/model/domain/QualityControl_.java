@@ -24,7 +24,7 @@ public class QualityControl_ {
 	public static volatile SingularAttribute<QualityControl, Discipline> discipline;
 	public static volatile SingularAttribute<QualityControl, Software> software;
 	public static volatile SingularAttribute<QualityControl, CheckType> checkType;
-	public static volatile SingularAttribute<QualityControl, String> descriptionDefinition;
-	public static volatile SingularAttribute<QualityControl, String> descriptionFrequency;
+	public static volatile SingularAttribute<QualityControl, String> descricaoDefinition;
+	public static volatile SingularAttribute<QualityControl, String> descricaoFrequency;
 	
 }

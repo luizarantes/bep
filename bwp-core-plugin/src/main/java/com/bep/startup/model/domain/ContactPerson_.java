@@ -24,8 +24,8 @@ public class ContactPerson_ {
 	public static volatile SingularAttribute<ContactPerson, Long> id;	
 	public static volatile ListAttribute<ContactPerson, KeyMember> keyMembers;
 	public static volatile ListAttribute<ContactPerson, Invite> invites;
-	public static volatile SingularAttribute<ContactPerson, String> descriptionContactPerson;
-	public static volatile SingularAttribute<ContactPerson, String> descriptionMail;
-	public static volatile SingularAttribute<ContactPerson, String> descriptionMobile;
+	public static volatile SingularAttribute<ContactPerson, String> descricaoContactPerson;
+	public static volatile SingularAttribute<ContactPerson, String> descricaoMail;
+	public static volatile SingularAttribute<ContactPerson, String> descricaoMobile;
 	
 }

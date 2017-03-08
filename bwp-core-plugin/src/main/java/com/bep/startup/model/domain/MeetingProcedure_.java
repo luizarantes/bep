@@ -26,7 +26,7 @@ public class MeetingProcedure_ {
 	public static volatile SingularAttribute<MeetingProcedure, Project> project;
 	public static volatile SingularAttribute<MeetingProcedure, MeetingType> meetingType;
 	public static volatile SingularAttribute<MeetingProcedure, ProjectStageIndicador> inProjectStage;
-	public static volatile SingularAttribute<MeetingProcedure, String> descriptionLocation;
+	public static volatile SingularAttribute<MeetingProcedure, String> descricaoLocation;
 	public static volatile ListAttribute<MeetingProcedure, MeetingParticipant> meetingParticipants;
 	
 }

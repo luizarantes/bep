@@ -24,37 +24,37 @@ public class ProjectDTO extends DataTransferObject {
   	/*
      * NUMBER OF VERSION
      */
-	private String numberVersion;
+	private String numeroVersion;
 
   	/*
      * DATE OF LAST UPDATE
      */
-	private Date dateLastUpdate;
+	private Date dataLastUpdate;
 
   	/*
      * DESCRIPTION OF OVERVIEW
      */
-	private String descriptionOverview;
+	private String descricaoOverview;
 
   	/*
      * NAME OF PROJECT
      */
-	private String descriptionName;
+	private String descricaoName;
 
   	/*
      * DESCRIPTION OF LOCATION
      */
-	private String descriptionLocation;
+	private String descricaoLocation;
 
   	/*
      * ARQUIVO
      */
-	private byte[] fileLogo;
+	private byte[] arquivoLogo;
 
   	/*
      * BRIEF OF PROJECT DESCRIPTION
      */
-	private String descriptionBrief;
+	private String descricaoBrief;
 
 
     /**
@@ -74,10 +74,10 @@ public class ProjectDTO extends DataTransferObject {
          /**
      * NUMBER OF VERSION
      *
-     * @param numberVersion
+     * @param numeroVersion
      */
-    public void setNumberVersion(String numberVersion) {
-        this.numberVersion = numberVersion;
+    public void setNumeroVersion(String numeroVersion) {
+        this.numeroVersion = numeroVersion;
     }
 
     /**
@@ -85,17 +85,17 @@ public class ProjectDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNumberVersion() {
-        return this.numberVersion;
+    public String getNumeroVersion() {
+        return this.numeroVersion;
     }
              
          /**
      * DATE OF LAST UPDATE
      *
-     * @param dateLastUpdate
+     * @param dataLastUpdate
      */
-    public void setDateLastUpdate(Date dateLastUpdate) {
-        this.dateLastUpdate = dateLastUpdate;
+    public void setDataLastUpdate(Date dataLastUpdate) {
+        this.dataLastUpdate = dataLastUpdate;
     }
 
     /**
@@ -103,17 +103,17 @@ public class ProjectDTO extends DataTransferObject {
      *
      * @return Date
      */
-    public Date getDateLastUpdate() {
-        return this.dateLastUpdate;
+    public Date getDataLastUpdate() {
+        return this.dataLastUpdate;
     }
              
          /**
      * DESCRIPTION OF OVERVIEW
      *
-     * @param descriptionOverview
+     * @param descricaoOverview
      */
-    public void setDescriptionOverview(String descriptionOverview) {
-        this.descriptionOverview = descriptionOverview;
+    public void setDescricaoOverview(String descricaoOverview) {
+        this.descricaoOverview = descricaoOverview;
     }
 
     /**
@@ -121,17 +121,17 @@ public class ProjectDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionOverview() {
-        return this.descriptionOverview;
+    public String getDescricaoOverview() {
+        return this.descricaoOverview;
     }
              
          /**
      * NAME OF PROJECT
      *
-     * @param descriptionName
+     * @param descricaoName
      */
-    public void setDescriptionName(String descriptionName) {
-        this.descriptionName = descriptionName;
+    public void setDescricaoName(String descricaoName) {
+        this.descricaoName = descricaoName;
     }
 
     /**
@@ -139,17 +139,17 @@ public class ProjectDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionName() {
-        return this.descriptionName;
+    public String getDescricaoName() {
+        return this.descricaoName;
     }
              
          /**
      * DESCRIPTION OF LOCATION
      *
-     * @param descriptionLocation
+     * @param descricaoLocation
      */
-    public void setDescriptionLocation(String descriptionLocation) {
-        this.descriptionLocation = descriptionLocation;
+    public void setDescricaoLocation(String descricaoLocation) {
+        this.descricaoLocation = descricaoLocation;
     }
 
     /**
@@ -157,17 +157,17 @@ public class ProjectDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionLocation() {
-        return this.descriptionLocation;
+    public String getDescricaoLocation() {
+        return this.descricaoLocation;
     }
              
          /**
      * ARQUIVO
      *
-     * @param fileLogo
+     * @param arquivoLogo
      */
-    public void setFileLogo(byte[] fileLogo) {
-        this.fileLogo = fileLogo;
+    public void setArquivoLogo(byte[] arquivoLogo) {
+        this.arquivoLogo = arquivoLogo;
     }
 
     /**
@@ -175,17 +175,17 @@ public class ProjectDTO extends DataTransferObject {
      *
      * @return byte[]
      */
-    public byte[] getFileLogo() {
-        return this.fileLogo;
+    public byte[] getArquivoLogo() {
+        return this.arquivoLogo;
     }
              
          /**
      * BRIEF OF PROJECT DESCRIPTION
      *
-     * @param descriptionBrief
+     * @param descricaoBrief
      */
-    public void setDescriptionBrief(String descriptionBrief) {
-        this.descriptionBrief = descriptionBrief;
+    public void setDescricaoBrief(String descricaoBrief) {
+        this.descricaoBrief = descricaoBrief;
     }
 
     /**
@@ -193,8 +193,8 @@ public class ProjectDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionBrief() {
-        return this.descriptionBrief;
+    public String getDescricaoBrief() {
+        return this.descricaoBrief;
     }
      
 }

@@ -25,7 +25,7 @@ public class ProjectSchedule_ {
 	public static volatile SingularAttribute<ProjectSchedule, Cia> cia;
 	public static volatile SingularAttribute<ProjectSchedule, Project> project;
 	public static volatile SingularAttribute<ProjectSchedule, ProjectPhase> projectPhase;
-	public static volatile SingularAttribute<ProjectSchedule, Date> dateEstimateDelivery;
-	public static volatile SingularAttribute<ProjectSchedule, Short> percentPhase;
+	public static volatile SingularAttribute<ProjectSchedule, Date> dataEstimateDelivery;
+	public static volatile SingularAttribute<ProjectSchedule, Short> percentualPhase;
 	
 }

@@ -24,12 +24,12 @@ public class ProjectScheduleDTO extends DataTransferObject {
   	/*
      * DATE OF ESTIMATE DELIVERY
      */
-	private Date dateEstimateDelivery;
+	private Date dataEstimateDelivery;
 
   	/*
      * PERCENT OF PROJECT PHASE
      */
-	private Short percentPhase;
+	private Short percentualPhase;
 
 
     /**
@@ -49,10 +49,10 @@ public class ProjectScheduleDTO extends DataTransferObject {
          /**
      * DATE OF ESTIMATE DELIVERY
      *
-     * @param dateEstimateDelivery
+     * @param dataEstimateDelivery
      */
-    public void setDateEstimateDelivery(Date dateEstimateDelivery) {
-        this.dateEstimateDelivery = dateEstimateDelivery;
+    public void setDataEstimateDelivery(Date dataEstimateDelivery) {
+        this.dataEstimateDelivery = dataEstimateDelivery;
     }
 
     /**
@@ -60,17 +60,17 @@ public class ProjectScheduleDTO extends DataTransferObject {
      *
      * @return Date
      */
-    public Date getDateEstimateDelivery() {
-        return this.dateEstimateDelivery;
+    public Date getDataEstimateDelivery() {
+        return this.dataEstimateDelivery;
     }
              
          /**
      * PERCENT OF PROJECT PHASE
      *
-     * @param percentPhase
+     * @param percentualPhase
      */
-    public void setPercentPhase(Short percentPhase) {
-        this.percentPhase = percentPhase;
+    public void setPercentualPhase(Short percentualPhase) {
+        this.percentualPhase = percentualPhase;
     }
 
     /**
@@ -78,8 +78,8 @@ public class ProjectScheduleDTO extends DataTransferObject {
      *
      * @return Short
      */
-    public Short getPercentPhase() {
-        return this.percentPhase;
+    public Short getPercentualPhase() {
+        return this.percentualPhase;
     }
      
 }

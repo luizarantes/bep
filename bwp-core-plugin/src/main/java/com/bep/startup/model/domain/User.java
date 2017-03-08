@@ -50,7 +50,7 @@ public class User extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "TX_MAIL", length = 60, nullable = false)
-    private String descriptionMail;
+    private String descricaoMail;
                         
     /*
      * PASSWORD OF USER
@@ -59,7 +59,7 @@ public class User extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "TX_PASSWORD", length = 255, nullable = false)
-    private String descriptionPassword;
+    private String descricaoPassword;
             
     /**
      * @param id
@@ -111,10 +111,10 @@ public class User extends DomainEntity<Long> {
     /**
      * MAIL UTILIZED TO LOGIN
      *
-     * @param descriptionMail
+     * @param descricaoMail
      */
-    public void setDescriptionMail(String descriptionMail) {
-        this.descriptionMail = descriptionMail;
+    public void setDescricaoMail(String descricaoMail) {
+        this.descricaoMail = descricaoMail;
     }
 
     /**
@@ -122,18 +122,18 @@ public class User extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionMail() {
-        return this.descriptionMail;
+    public String getDescricaoMail() {
+        return this.descricaoMail;
     }
                     
      
     /**
      * PASSWORD OF USER
      *
-     * @param descriptionPassword
+     * @param descricaoPassword
      */
-    public void setDescriptionPassword(String descriptionPassword) {
-        this.descriptionPassword = descriptionPassword;
+    public void setDescricaoPassword(String descricaoPassword) {
+        this.descricaoPassword = descricaoPassword;
     }
 
     /**
@@ -141,8 +141,8 @@ public class User extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionPassword() {
-        return this.descriptionPassword;
+    public String getDescricaoPassword() {
+        return this.descricaoPassword;
     }
     
 }

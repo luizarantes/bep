@@ -23,10 +23,10 @@ public class Cia_ {
 
 	public static volatile SingularAttribute<Cia, Long> id;	
 	public static volatile ListAttribute<Cia, KeyMember> keyMembers;
-	public static volatile SingularAttribute<Cia, String> descriptionAddress;
-	public static volatile SingularAttribute<Cia, String> nameCity;
-	public static volatile SingularAttribute<Cia, String> descriptionZipCode;
-	public static volatile SingularAttribute<Cia, String> descriptionTin;
+	public static volatile SingularAttribute<Cia, String> descricaoAddress;
+	public static volatile SingularAttribute<Cia, String> nomeCity;
+	public static volatile SingularAttribute<Cia, String> descricaoZipCode;
+	public static volatile SingularAttribute<Cia, String> descricaoTin;
 	public static volatile ListAttribute<Cia, ProjectCia> projectCias;
 	public static volatile ListAttribute<Cia, ProjectSchedule> projectSchedules;
 	public static volatile ListAttribute<Cia, ProjectTeam> projectTeams;

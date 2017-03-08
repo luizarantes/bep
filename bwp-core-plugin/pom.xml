@@ -49,7 +49,7 @@
 					<execution>
 						<phase>package</phase>
 						<goals>
-							<goal>generate</goal>
+								<goal>generate</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -60,7 +60,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.1.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<dependencies>		
 		<dependency>

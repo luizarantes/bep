@@ -23,7 +23,7 @@ public class CheckTypeDTO extends DataTransferObject {
   	/*
      * NAME OF CHECK TYPE
      */
-	private String nameCheckType;
+	private String nomeCheckType;
 
 
     /**
@@ -43,10 +43,10 @@ public class CheckTypeDTO extends DataTransferObject {
          /**
      * NAME OF CHECK TYPE
      *
-     * @param nameCheckType
+     * @param nomeCheckType
      */
-    public void setNameCheckType(String nameCheckType) {
-        this.nameCheckType = nameCheckType;
+    public void setNomeCheckType(String nomeCheckType) {
+        this.nomeCheckType = nomeCheckType;
     }
 
     /**
@@ -54,8 +54,8 @@ public class CheckTypeDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getNameCheckType() {
-        return this.nameCheckType;
+    public String getNomeCheckType() {
+        return this.nomeCheckType;
     }
      
 }

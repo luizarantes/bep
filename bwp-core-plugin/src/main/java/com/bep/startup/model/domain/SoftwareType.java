@@ -47,7 +47,7 @@ public class SoftwareType extends DomainEntity<Long> {
      */
     
 	@Column(name = "NM_SOFTWARE_TYPE", length = 255)
-    private String nameSoftwareType;
+    private String nomeSoftwareType;
             
     /**
      * @param id
@@ -99,10 +99,10 @@ public class SoftwareType extends DomainEntity<Long> {
     /**
      * NAME OF SOFTWARE TYPE
      *
-     * @param nameSoftwareType
+     * @param nomeSoftwareType
      */
-    public void setNameSoftwareType(String nameSoftwareType) {
-        this.nameSoftwareType = nameSoftwareType;
+    public void setNomeSoftwareType(String nomeSoftwareType) {
+        this.nomeSoftwareType = nomeSoftwareType;
     }
 
     /**
@@ -110,8 +110,8 @@ public class SoftwareType extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNameSoftwareType() {
-        return this.nameSoftwareType;
+    public String getNomeSoftwareType() {
+        return this.nomeSoftwareType;
     }
     
 }

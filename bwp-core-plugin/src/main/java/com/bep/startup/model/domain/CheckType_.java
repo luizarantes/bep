@@ -23,6 +23,6 @@ public class CheckType_ {
 
 	public static volatile SingularAttribute<CheckType, Long> id;	
 	public static volatile ListAttribute<CheckType, QualityControl> qualityControls;
-	public static volatile SingularAttribute<CheckType, String> nameCheckType;
+	public static volatile SingularAttribute<CheckType, String> nomeCheckType;
 	
 }

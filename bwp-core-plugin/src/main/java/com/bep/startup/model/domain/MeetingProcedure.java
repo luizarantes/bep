@@ -81,7 +81,7 @@ public class MeetingProcedure extends DomainEntity<Long> {
      */
     
 	@Column(name = "TX_LOCATION", length = 255)
-    private String descriptionLocation;
+    private String descricaoLocation;
                     
     /**
      * @param id
@@ -171,10 +171,10 @@ public class MeetingProcedure extends DomainEntity<Long> {
     /**
      * LOCATION OF MEETING
      *
-     * @param descriptionLocation
+     * @param descricaoLocation
      */
-    public void setDescriptionLocation(String descriptionLocation) {
-        this.descriptionLocation = descriptionLocation;
+    public void setDescricaoLocation(String descricaoLocation) {
+        this.descricaoLocation = descricaoLocation;
     }
 
     /**
@@ -182,8 +182,8 @@ public class MeetingProcedure extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionLocation() {
-        return this.descriptionLocation;
+    public String getDescricaoLocation() {
+        return this.descricaoLocation;
     }
                     
      

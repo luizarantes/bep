@@ -23,7 +23,7 @@ public class DisciplineDTO extends DataTransferObject {
   	/*
      * NAME OF DISCIPLINE
      */
-	private String descriptionDiscipline;
+	private String descricaoDiscipline;
 
 
     /**
@@ -43,10 +43,10 @@ public class DisciplineDTO extends DataTransferObject {
          /**
      * NAME OF DISCIPLINE
      *
-     * @param descriptionDiscipline
+     * @param descricaoDiscipline
      */
-    public void setDescriptionDiscipline(String descriptionDiscipline) {
-        this.descriptionDiscipline = descriptionDiscipline;
+    public void setDescricaoDiscipline(String descricaoDiscipline) {
+        this.descricaoDiscipline = descricaoDiscipline;
     }
 
     /**
@@ -54,8 +54,8 @@ public class DisciplineDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionDiscipline() {
-        return this.descriptionDiscipline;
+    public String getDescricaoDiscipline() {
+        return this.descricaoDiscipline;
     }
      
 }

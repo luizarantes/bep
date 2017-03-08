@@ -23,7 +23,7 @@ public class User_ {
 
 	public static volatile SingularAttribute<User, Long> id;	
 	public static volatile ListAttribute<User, Project> projects;
-	public static volatile SingularAttribute<User, String> descriptionMail;
-	public static volatile SingularAttribute<User, String> descriptionPassword;
+	public static volatile SingularAttribute<User, String> descricaoMail;
+	public static volatile SingularAttribute<User, String> descricaoPassword;
 	
 }

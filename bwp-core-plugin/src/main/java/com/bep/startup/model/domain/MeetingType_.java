@@ -22,7 +22,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 public class MeetingType_ {
 
 	public static volatile SingularAttribute<MeetingType, Long> id;	
-	public static volatile SingularAttribute<MeetingType, String> nameMeetingType;
+	public static volatile SingularAttribute<MeetingType, String> nomeMeetingType;
 	public static volatile ListAttribute<MeetingType, MeetingProcedure> meetingProcedures;
 	
 }

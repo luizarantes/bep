@@ -23,6 +23,6 @@ public class HardwareType_ {
 
 	public static volatile SingularAttribute<HardwareType, Long> id;	
 	public static volatile ListAttribute<HardwareType, Hardware> hardwares;
-	public static volatile SingularAttribute<HardwareType, String> nameHardwareType;
+	public static volatile SingularAttribute<HardwareType, String> nomeHardwareType;
 	
 }

@@ -38,7 +38,7 @@ import com.indracompany.jaxb.note.column.NoteValidator;
 import com.indracompany.jaxb.note.entity.NoteEntityConfiguration;
 import com.indracompany.to.ColumnTO;
 import com.indracompany.to.EntityTO;
-import com.indracompany.type.NomeClaturaTypeEnglish;
+import com.indracompany.type.NomeClaturaTypePortugues;
 import com.indracompany.type.PackageType;
 import com.indracompany.type.TypeTemplate;
 import com.indracompany.type.Types;
@@ -168,7 +168,7 @@ public class EngineEntityTemplate extends AbstractTemplateMethod {
 							.getContent().substring(0, 2).toUpperCase());*/
 					
 
-					NomeClaturaTypeEnglish nomeClaturaType = NomeClaturaTypeEnglish
+					NomeClaturaTypePortugues nomeClaturaType = NomeClaturaTypePortugues
 							.valueOf(attribute.getAttributeProps().getName()
 									.getContent().substring(0, 2).toUpperCase());
 					if (nomeClaturaType != null) {

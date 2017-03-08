@@ -23,6 +23,6 @@ public class SoftwareType_ {
 
 	public static volatile SingularAttribute<SoftwareType, Long> id;	
 	public static volatile ListAttribute<SoftwareType, Software> softwares;
-	public static volatile SingularAttribute<SoftwareType, String> nameSoftwareType;
+	public static volatile SingularAttribute<SoftwareType, String> nomeSoftwareType;
 	
 }

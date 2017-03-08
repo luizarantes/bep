@@ -47,7 +47,7 @@ public class CheckType extends DomainEntity<Long> {
      */
     
 	@Column(name = "NM_CHECK_TYPE", length = 255)
-    private String nameCheckType;
+    private String nomeCheckType;
             
     /**
      * @param id
@@ -99,10 +99,10 @@ public class CheckType extends DomainEntity<Long> {
     /**
      * NAME OF CHECK TYPE
      *
-     * @param nameCheckType
+     * @param nomeCheckType
      */
-    public void setNameCheckType(String nameCheckType) {
-        this.nameCheckType = nameCheckType;
+    public void setNomeCheckType(String nomeCheckType) {
+        this.nomeCheckType = nomeCheckType;
     }
 
     /**
@@ -110,8 +110,8 @@ public class CheckType extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNameCheckType() {
-        return this.nameCheckType;
+    public String getNomeCheckType() {
+        return this.nomeCheckType;
     }
     
 }

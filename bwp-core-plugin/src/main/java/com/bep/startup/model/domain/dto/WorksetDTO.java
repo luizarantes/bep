@@ -23,7 +23,7 @@ public class WorksetDTO extends DataTransferObject {
   	/*
      * DESCRIPTION OF WORKSET
      */
-	private String descriptionWorkset;
+	private String descricaoWorkset;
 
 
     /**
@@ -43,10 +43,10 @@ public class WorksetDTO extends DataTransferObject {
          /**
      * DESCRIPTION OF WORKSET
      *
-     * @param descriptionWorkset
+     * @param descricaoWorkset
      */
-    public void setDescriptionWorkset(String descriptionWorkset) {
-        this.descriptionWorkset = descriptionWorkset;
+    public void setDescricaoWorkset(String descricaoWorkset) {
+        this.descricaoWorkset = descricaoWorkset;
     }
 
     /**
@@ -54,8 +54,8 @@ public class WorksetDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionWorkset() {
-        return this.descriptionWorkset;
+    public String getDescricaoWorkset() {
+        return this.descricaoWorkset;
     }
      
 }

@@ -23,7 +23,7 @@ public class SoftwareDTO extends DataTransferObject {
   	/*
      * DESCRIPTION OF SOFTWARE
      */
-	private String descriptionSoftware;
+	private String descricaoSoftware;
 
 
     /**
@@ -43,10 +43,10 @@ public class SoftwareDTO extends DataTransferObject {
          /**
      * DESCRIPTION OF SOFTWARE
      *
-     * @param descriptionSoftware
+     * @param descricaoSoftware
      */
-    public void setDescriptionSoftware(String descriptionSoftware) {
-        this.descriptionSoftware = descriptionSoftware;
+    public void setDescricaoSoftware(String descricaoSoftware) {
+        this.descricaoSoftware = descricaoSoftware;
     }
 
     /**
@@ -54,8 +54,8 @@ public class SoftwareDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionSoftware() {
-        return this.descriptionSoftware;
+    public String getDescricaoSoftware() {
+        return this.descricaoSoftware;
     }
      
 }

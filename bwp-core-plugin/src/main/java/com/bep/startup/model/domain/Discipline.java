@@ -74,7 +74,7 @@ public class Discipline extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "TX_DISCIPLINE", length = 30, nullable = false)
-    private String descriptionDiscipline;
+    private String descricaoDiscipline;
                                             
     /**
      * @param id
@@ -126,10 +126,10 @@ public class Discipline extends DomainEntity<Long> {
     /**
      * NAME OF DISCIPLINE
      *
-     * @param descriptionDiscipline
+     * @param descricaoDiscipline
      */
-    public void setDescriptionDiscipline(String descriptionDiscipline) {
-        this.descriptionDiscipline = descriptionDiscipline;
+    public void setDescricaoDiscipline(String descricaoDiscipline) {
+        this.descricaoDiscipline = descricaoDiscipline;
     }
 
     /**
@@ -137,8 +137,8 @@ public class Discipline extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionDiscipline() {
-        return this.descriptionDiscipline;
+    public String getDescricaoDiscipline() {
+        return this.descricaoDiscipline;
     }
                     
      

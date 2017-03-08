@@ -50,7 +50,7 @@ public class WorksetType extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "NM_WORKSET_TYPE", length = 255, nullable = false)
-    private String nameWorksetType;
+    private String nomeWorksetType;
                     
     /**
      * @param id
@@ -83,10 +83,10 @@ public class WorksetType extends DomainEntity<Long> {
     /**
      * NAME OF WORKSET TYPE
      *
-     * @param nameWorksetType
+     * @param nomeWorksetType
      */
-    public void setNameWorksetType(String nameWorksetType) {
-        this.nameWorksetType = nameWorksetType;
+    public void setNomeWorksetType(String nomeWorksetType) {
+        this.nomeWorksetType = nomeWorksetType;
     }
 
     /**
@@ -94,8 +94,8 @@ public class WorksetType extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNameWorksetType() {
-        return this.nameWorksetType;
+    public String getNomeWorksetType() {
+        return this.nomeWorksetType;
     }
                     
      

@@ -29,7 +29,7 @@ public class MeetingProcedureDTO extends DataTransferObject {
   	/*
      * LOCATION OF MEETING
      */
-	private String descriptionLocation;
+	private String descricaoLocation;
 
 
     /**
@@ -68,10 +68,10 @@ public class MeetingProcedureDTO extends DataTransferObject {
          /**
      * LOCATION OF MEETING
      *
-     * @param descriptionLocation
+     * @param descricaoLocation
      */
-    public void setDescriptionLocation(String descriptionLocation) {
-        this.descriptionLocation = descriptionLocation;
+    public void setDescricaoLocation(String descricaoLocation) {
+        this.descricaoLocation = descricaoLocation;
     }
 
     /**
@@ -79,8 +79,8 @@ public class MeetingProcedureDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionLocation() {
-        return this.descriptionLocation;
+    public String getDescricaoLocation() {
+        return this.descricaoLocation;
     }
      
 }

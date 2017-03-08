@@ -23,7 +23,7 @@ public class InviteDTO extends DataTransferObject {
   	/*
      * CODE OF INVITE
      */
-	private String codeInvite;
+	private String codigoInvite;
 
 
     /**
@@ -43,10 +43,10 @@ public class InviteDTO extends DataTransferObject {
          /**
      * CODE OF INVITE
      *
-     * @param codeInvite
+     * @param codigoInvite
      */
-    public void setCodeInvite(String codeInvite) {
-        this.codeInvite = codeInvite;
+    public void setCodigoInvite(String codigoInvite) {
+        this.codigoInvite = codigoInvite;
     }
 
     /**
@@ -54,8 +54,8 @@ public class InviteDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getCodeInvite() {
-        return this.codeInvite;
+    public String getCodigoInvite() {
+        return this.codigoInvite;
     }
      
 }

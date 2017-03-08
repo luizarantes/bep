@@ -80,7 +80,7 @@ public class Software extends DomainEntity<Long> {
      */
     
 	@Column(name = "DS_SOFTWARE", length = 255)
-    private String descriptionSoftware;
+    private String descricaoSoftware;
                     
     /**
      * @param id
@@ -170,10 +170,10 @@ public class Software extends DomainEntity<Long> {
     /**
      * DESCRIPTION OF SOFTWARE
      *
-     * @param descriptionSoftware
+     * @param descricaoSoftware
      */
-    public void setDescriptionSoftware(String descriptionSoftware) {
-        this.descriptionSoftware = descriptionSoftware;
+    public void setDescricaoSoftware(String descricaoSoftware) {
+        this.descricaoSoftware = descricaoSoftware;
     }
 
     /**
@@ -181,8 +181,8 @@ public class Software extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionSoftware() {
-        return this.descriptionSoftware;
+    public String getDescricaoSoftware() {
+        return this.descricaoSoftware;
     }
                     
      

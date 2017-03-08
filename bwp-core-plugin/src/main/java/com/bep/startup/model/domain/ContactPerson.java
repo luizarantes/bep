@@ -56,7 +56,7 @@ public class ContactPerson extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "TX_CONTACT_PERSON", length = 60, nullable = false)
-    private String descriptionContactPerson;
+    private String descricaoContactPerson;
                         
     /*
      * MAIL OF CONTACT PERSON
@@ -65,14 +65,14 @@ public class ContactPerson extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "TX_MAIL", length = 60, nullable = false)
-    private String descriptionMail;
+    private String descricaoMail;
                         
     /*
      * NUMBER OF MOBILE
      */
     
 	@Column(name = "TX_MOBILE", length = 10)
-    private String descriptionMobile;
+    private String descricaoMobile;
             
     /**
      * @param id
@@ -143,10 +143,10 @@ public class ContactPerson extends DomainEntity<Long> {
     /**
      * NAME OF CONTACT PERSON
      *
-     * @param descriptionContactPerson
+     * @param descricaoContactPerson
      */
-    public void setDescriptionContactPerson(String descriptionContactPerson) {
-        this.descriptionContactPerson = descriptionContactPerson;
+    public void setDescricaoContactPerson(String descricaoContactPerson) {
+        this.descricaoContactPerson = descricaoContactPerson;
     }
 
     /**
@@ -154,18 +154,18 @@ public class ContactPerson extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionContactPerson() {
-        return this.descriptionContactPerson;
+    public String getDescricaoContactPerson() {
+        return this.descricaoContactPerson;
     }
                     
      
     /**
      * MAIL OF CONTACT PERSON
      *
-     * @param descriptionMail
+     * @param descricaoMail
      */
-    public void setDescriptionMail(String descriptionMail) {
-        this.descriptionMail = descriptionMail;
+    public void setDescricaoMail(String descricaoMail) {
+        this.descricaoMail = descricaoMail;
     }
 
     /**
@@ -173,18 +173,18 @@ public class ContactPerson extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionMail() {
-        return this.descriptionMail;
+    public String getDescricaoMail() {
+        return this.descricaoMail;
     }
                     
      
     /**
      * NUMBER OF MOBILE
      *
-     * @param descriptionMobile
+     * @param descricaoMobile
      */
-    public void setDescriptionMobile(String descriptionMobile) {
-        this.descriptionMobile = descriptionMobile;
+    public void setDescricaoMobile(String descricaoMobile) {
+        this.descricaoMobile = descricaoMobile;
     }
 
     /**
@@ -192,8 +192,8 @@ public class ContactPerson extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionMobile() {
-        return this.descriptionMobile;
+    public String getDescricaoMobile() {
+        return this.descricaoMobile;
     }
     
 }

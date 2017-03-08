@@ -23,12 +23,12 @@ public class QualityControlDTO extends DataTransferObject {
   	/*
      * DESCRIPTION OF DEFINITION
      */
-	private String descriptionDefinition;
+	private String descricaoDefinition;
 
   	/*
      * DESCRIPTION OF FREQUENCY
      */
-	private String descriptionFrequency;
+	private String descricaoFrequency;
 
 
     /**
@@ -48,10 +48,10 @@ public class QualityControlDTO extends DataTransferObject {
          /**
      * DESCRIPTION OF DEFINITION
      *
-     * @param descriptionDefinition
+     * @param descricaoDefinition
      */
-    public void setDescriptionDefinition(String descriptionDefinition) {
-        this.descriptionDefinition = descriptionDefinition;
+    public void setDescricaoDefinition(String descricaoDefinition) {
+        this.descricaoDefinition = descricaoDefinition;
     }
 
     /**
@@ -59,17 +59,17 @@ public class QualityControlDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionDefinition() {
-        return this.descriptionDefinition;
+    public String getDescricaoDefinition() {
+        return this.descricaoDefinition;
     }
              
          /**
      * DESCRIPTION OF FREQUENCY
      *
-     * @param descriptionFrequency
+     * @param descricaoFrequency
      */
-    public void setDescriptionFrequency(String descriptionFrequency) {
-        this.descriptionFrequency = descriptionFrequency;
+    public void setDescricaoFrequency(String descricaoFrequency) {
+        this.descricaoFrequency = descricaoFrequency;
     }
 
     /**
@@ -77,8 +77,8 @@ public class QualityControlDTO extends DataTransferObject {
      *
      * @return String
      */
-    public String getDescriptionFrequency() {
-        return this.descriptionFrequency;
+    public String getDescricaoFrequency() {
+        return this.descricaoFrequency;
     }
      
 }

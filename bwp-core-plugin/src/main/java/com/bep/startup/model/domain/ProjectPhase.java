@@ -47,7 +47,7 @@ public class ProjectPhase extends DomainEntity<Long> {
      */
     
 	@Column(name = "NM_PROJECT_PHASE", length = 255)
-    private String nameProjectPhase;
+    private String nomeProjectPhase;
             
     /**
      * @param id
@@ -99,10 +99,10 @@ public class ProjectPhase extends DomainEntity<Long> {
     /**
      * NAME OF PROJECT PHASE
      *
-     * @param nameProjectPhase
+     * @param nomeProjectPhase
      */
-    public void setNameProjectPhase(String nameProjectPhase) {
-        this.nameProjectPhase = nameProjectPhase;
+    public void setNomeProjectPhase(String nomeProjectPhase) {
+        this.nomeProjectPhase = nomeProjectPhase;
     }
 
     /**
@@ -110,8 +110,8 @@ public class ProjectPhase extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getNameProjectPhase() {
-        return this.nameProjectPhase;
+    public String getNomeProjectPhase() {
+        return this.nomeProjectPhase;
     }
     
 }

@@ -50,7 +50,7 @@ public class PotenticalUse extends DomainEntity<Long> {
     @NotNull
         
 	@Column(name = "TX_POTENCIAL_USE", length = 60, nullable = false)
-    private String descriptionPotencialUse;
+    private String descricaoPotencialUse;
             
     /**
      * @param id
@@ -102,10 +102,10 @@ public class PotenticalUse extends DomainEntity<Long> {
     /**
      * NAME OF POTENCIAL BIM USE
      *
-     * @param descriptionPotencialUse
+     * @param descricaoPotencialUse
      */
-    public void setDescriptionPotencialUse(String descriptionPotencialUse) {
-        this.descriptionPotencialUse = descriptionPotencialUse;
+    public void setDescricaoPotencialUse(String descricaoPotencialUse) {
+        this.descricaoPotencialUse = descricaoPotencialUse;
     }
 
     /**
@@ -113,8 +113,8 @@ public class PotenticalUse extends DomainEntity<Long> {
      *
      * @return String
      */
-    public String getDescriptionPotencialUse() {
-        return this.descriptionPotencialUse;
+    public String getDescricaoPotencialUse() {
+        return this.descricaoPotencialUse;
     }
     
 }
